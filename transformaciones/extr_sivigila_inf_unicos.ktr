@@ -531,14 +531,14 @@
       <schema/>
       <table>duplicados_st_sivigila_inf</table>
       <key>
-        <name>id_st_sivigila_adu</name>
-        <field>id_st_sivigila_adu</field>
+        <name>num_ide</name>
+        <field>num_ide</field>
         <condition>=</condition>
         <name2/>
       </key>
       <value>
-        <name>id_st_sivigila_adu</name>
-        <rename>id_st_sivigila_adu</rename>
+        <name>id_st_sivigila_inf</name>
+        <rename>id_st_sivigila_inf</rename>
         <update>Y</update>
       </value>
       <value>
@@ -753,14 +753,14 @@
       <schema/>
       <table>st_sivigila_inf_unicos</table>
       <key>
-        <name>id_st_sivigila_adu</name>
-        <field>id_st_sivigila_adu</field>
+        <name>num_ide</name>
+        <field>num_ide</field>
         <condition>=</condition>
         <name2/>
       </key>
       <value>
-        <name>id_st_sivigila_adu</name>
-        <rename>id_st_sivigila_adu</rename>
+        <name>id_st_sivigila_inf</name>
+        <rename>id_st_sivigila_inf</rename>
         <update>Y</update>
       </value>
       <value>
@@ -1018,7 +1018,7 @@
     <unique_rows>N</unique_rows>
     <fields>
       <field>
-        <name>id_st_sivigila_adu</name>
+        <name>id_st_sivigila_inf</name>
         <ascending>Y</ascending>
         <case_sensitive>N</case_sensitive>
         <collator_enabled>N</collator_enabled>
@@ -1052,7 +1052,7 @@
     </partitioning>
     <connection>localhost</connection>
     <sql>SELECT
-  id_st_sivigila_adu
+  id_st_sivigila_inf
 , cod_eve
 , fec_not
 , año

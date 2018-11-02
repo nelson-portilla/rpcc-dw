@@ -20,7 +20,7 @@ institucion,
 ruta_archivo,
 id_ext_rips,
 substring(dx from 1 for 3) as cie10
-from extr_rips as rips  
+from extr_rips_cleandate as rips  
 where exists (select 1 from dict_cie10cancer as cie where rips.dx=cie.cie_10 )
 and 
 (rips.dx like 'C50%' or rips.dx like 'C53%') --and fecha_nacimiento::date>='01/01/2000'

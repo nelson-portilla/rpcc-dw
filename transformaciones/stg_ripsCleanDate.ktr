@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>extr_sivigila_inf</name>
+    <name>stg_ripsCleanDate</name>
     <description/>
     <extended_description/>
     <trans_version/>
     <trans_type>Normal</trans_type>
+    <trans_status>0</trans_status>
     <directory>/</directory>
     <parameters>
     </parameters>
@@ -427,10 +428,10 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>-</created_user>
-    <created_date>2018/10/19 11:54:00.314</created_date>
+    <created_date>2018/10/25 09:43:48.750</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2018/10/19 11:54:00.314</modified_date>
-    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
+    <modified_date>2018/10/25 09:43:48.750</modified_date>
+    <key_for_session_key/>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
@@ -488,63 +489,34 @@
   </connection>
   <order>
     <hop>
-      <from>Add sequence</from>
-      <to>tabla_extr_rips</to>
-      <enabled>N</enabled>
-    </hop>
-    <hop>
-      <from>Add sequence</from>
-      <to>Insert_tabla_extr_sivigila_inf</to>
+      <from>Table input</from>
+      <to>Select values</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Select values</from>
-      <to>Add sequence</to>
+      <to>Select values 2</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>tabla_st_sivigila_inf_unicos</from>
-      <to>Select values</to>
+      <from>Select values</from>
+      <to>Table output</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values 2</from>
+      <to>Microsoft Excel Output</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values 2</from>
+      <to>Table output</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <step>
-    <name>Add sequence</name>
-    <type>Sequence</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <valuename>id_ext_sivigila_inf</valuename>
-    <use_database>N</use_database>
-    <connection>localhost</connection>
-    <schema/>
-    <seqname>SEQ_</seqname>
-    <use_counter>Y</use_counter>
-    <counter_name/>
-    <start_at>1</start_at>
-    <increment_by>1</increment_by>
-    <max_value>999999999</max_value>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>670</xloc>
-      <yloc>215</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Insert_tabla_extr_sivigila_inf</name>
-    <type>InsertUpdate</type>
+    <name>Table input</name>
+    <type>TableInput</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -554,208 +526,35 @@
       <schema_name/>
     </partitioning>
     <connection>localhost</connection>
-    <commit>100</commit>
-    <update_bypassed>N</update_bypassed>
-    <lookup>
-      <schema>public</schema>
-      <table>extr_sivigila_inf</table>
-      <key>
-        <name>numero_identificacion</name>
-        <field>numero_identificacion</field>
-        <condition>=</condition>
-        <name2/>
-      </key>
-      <value>
-        <name>id_ext_sivigila_inf</name>
-        <rename>id_ext_sivigila_inf</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>id_st_sivigila_inf</name>
-        <rename>id_st_sivigila_inf</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>cod_evento</name>
-        <rename>cod_evento</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>fecha_notificacion</name>
-        <rename>fecha_notificacion</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>anio</name>
-        <rename>anio</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>cod_pre</name>
-        <rename>cod_pre</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>primer_nombre</name>
-        <rename>primer_nombre</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>segundo_nombre</name>
-        <rename>segundo_nombre</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>primer_apellido</name>
-        <rename>primer_apellido</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>segundo_apellido</name>
-        <rename>segundo_apellido</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>tipo_documento</name>
-        <rename>tipo_documento</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>numero_identificacion</name>
-        <rename>numero_identificacion</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>edad</name>
-        <rename>edad</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>sexo</name>
-        <rename>sexo</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>cod_dpto_o</name>
-        <rename>cod_dpto_o</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>cod_mun_o</name>
-        <rename>cod_mun_o</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>area</name>
-        <rename>area</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>barrio</name>
-        <rename>barrio</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>direccion</name>
-        <rename>direccion</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>ocupacion</name>
-        <rename>ocupacion</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>tipo_seguridad_social</name>
-        <rename>tipo_seguridad_social</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>cod_asegurador</name>
-        <rename>cod_asegurador</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>dpto_residencia</name>
-        <rename>dpto_residencia</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>minicipio_residencia</name>
-        <rename>minicipio_residencia</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>fecha_defuncion</name>
-        <rename>fecha_defuncion</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>telefono</name>
-        <rename>telefono</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>fecha_nacimiento</name>
-        <rename>fecha_nacimiento</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>certificado_defuncion</name>
-        <rename>certificado_defuncion</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>nit_upgd</name>
-        <rename>nit_upgd</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>tipo_cancer</name>
-        <rename>tipo_cancer</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>nombre_evento</name>
-        <rename>nombre_evento</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>nom_upgd</name>
-        <rename>nom_upgd</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>dpto_procedencia</name>
-        <rename>dpto_procedencia</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>ciudad_procedencia</name>
-        <rename>ciudad_procedencia</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>departamento</name>
-        <rename>departamento</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>ciudad</name>
-        <rename>ciudad</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>num_registro</name>
-        <rename>num_registro</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>ruta</name>
-        <rename>ruta</rename>
-        <update>Y</update>
-      </value>
-    </lookup>
+    <sql>SELECT
+  id_st_ripsraw
+, tipo_documento
+, numero_identificacion
+, fecha_procedimiento
+, dx
+, nom_cie
+, dx_ppal
+, nom_dx_pal
+, cod_bai
+, cod_eapb
+, primer_apellido
+, segundo_apellido
+, primer_nombre
+, segundo_nombre
+, edad
+, sexo
+, cod_departamento
+, cod_municipio
+, institucion
+, ruta_archivo
+, id_ext_rips
+FROM extr_rips
+</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
     <cluster_schema/>
     <remotesteps>
       <input>
@@ -764,8 +563,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>796</xloc>
-      <yloc>319</yloc>
+      <xloc>176</xloc>
+      <yloc>112</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -781,155 +580,24 @@
       <schema_name/>
     </partitioning>
     <fields>
-      <field>
-        <name>id_st_sivigila_inf</name>
-        <rename/>
-      </field>
-      <field>
-        <name>cod_eve</name>
-        <rename>cod_evento</rename>
-      </field>
-      <field>
-        <name>fec_not</name>
-        <rename>fecha_notificacion</rename>
-      </field>
-      <field>
-        <name>año</name>
-        <rename>anio</rename>
-      </field>
-      <field>
-        <name>cod_pre</name>
-        <rename/>
-      </field>
-      <field>
-        <name>pri_nom</name>
-        <rename>primer_nombre</rename>
-      </field>
-      <field>
-        <name>seg_nom</name>
-        <rename>segundo_nombre</rename>
-      </field>
-      <field>
-        <name>pri_ape</name>
-        <rename>primer_apellido</rename>
-      </field>
-      <field>
-        <name>seg_ape</name>
-        <rename>segundo_apellido</rename>
-      </field>
-      <field>
-        <name>tip_ide</name>
-        <rename>tipo_documento</rename>
-      </field>
-      <field>
-        <name>num_ide</name>
-        <rename>numero_identificacion</rename>
-      </field>
-      <field>
-        <name>edad</name>
-        <rename/>
-      </field>
-      <field>
-        <name>sexo</name>
-        <rename/>
-      </field>
-      <field>
-        <name>cod_dpto_o</name>
-        <rename/>
-      </field>
-      <field>
-        <name>cod_mun_o</name>
-        <rename/>
-      </field>
-      <field>
-        <name>area</name>
-        <rename/>
-      </field>
-      <field>
-        <name>bar_ver</name>
-        <rename>barrio</rename>
-      </field>
-      <field>
-        <name>dir_res</name>
-        <rename>direccion</rename>
-      </field>
-      <field>
-        <name>ocupacion</name>
-        <rename/>
-      </field>
-      <field>
-        <name>tip_ss</name>
-        <rename>tipo_seguridad_social</rename>
-      </field>
-      <field>
-        <name>cod_ase</name>
-        <rename>cod_asegurador</rename>
-      </field>
-      <field>
-        <name>cod_dpto_r</name>
-        <rename>dpto_residencia</rename>
-      </field>
-      <field>
-        <name>cod_mun_r</name>
-        <rename>minicipio_residencia</rename>
-      </field>
-      <field>
-        <name>fec_def</name>
-        <rename>fecha_defuncion</rename>
-      </field>
-      <field>
-        <name>telefono</name>
-        <rename/>
-      </field>
-      <field>
-        <name>fecha_nto</name>
-        <rename>fecha_nacimiento</rename>
-      </field>
-      <field>
-        <name>cer_def</name>
-        <rename>certificado_defuncion</rename>
-      </field>
-      <field>
-        <name>nit_upgd</name>
-        <rename/>
-      </field>
-      <field>
-        <name>tipo_ca</name>
-        <rename>tipo_cancer</rename>
-      </field>
-      <field>
-        <name>nom_eve</name>
-        <rename>nombre_evento</rename>
-      </field>
-      <field>
-        <name>nom_upgd</name>
-        <rename/>
-      </field>
-      <field>
-        <name>ndep_proce</name>
-        <rename>dpto_procedencia</rename>
-      </field>
-      <field>
-        <name>nmun_proce</name>
-        <rename>ciudad_procedencia</rename>
-      </field>
-      <field>
-        <name>ndep_resi</name>
-        <rename>departamento</rename>
-      </field>
-      <field>
-        <name>nmun_resi</name>
-        <rename>ciudad</rename>
-      </field>
-      <field>
-        <name>nreg</name>
-        <rename>num_registro</rename>
-      </field>
-      <field>
-        <name>ruta</name>
-        <rename/>
-      </field>
       <select_unspecified>N</select_unspecified>
+      <meta>
+        <name>fecha_procedimiento</name>
+        <rename>fecha_procedimiento</rename>
+        <type>Date</type>
+        <length>10</length>
+        <precision>-2</precision>
+        <conversion_mask>dd/MM/yyyy</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
     </fields>
     <cluster_schema/>
     <remotesteps>
@@ -939,13 +607,57 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>526</xloc>
-      <yloc>215</yloc>
+      <xloc>336</xloc>
+      <yloc>112</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>tabla_extr_rips</name>
+    <name>Select values 2</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <select_unspecified>N</select_unspecified>
+      <meta>
+        <name>fecha_procedimiento</name>
+        <rename>fecha_procedimiento</rename>
+        <type>Date</type>
+        <length>10</length>
+        <precision>-2</precision>
+        <conversion_mask>yyyy/MM/dd</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>336</xloc>
+      <yloc>240</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Table output</name>
     <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>
@@ -955,9 +667,9 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection/>
+    <connection>localhost</connection>
     <schema>public</schema>
-    <table>extr_sivigila_adu</table>
+    <table>extr_rips_cleandate</table>
     <commit>1000</commit>
     <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
@@ -982,14 +694,14 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>814</xloc>
-      <yloc>215</yloc>
+      <xloc>528</xloc>
+      <yloc>128</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>tabla_st_sivigila_inf_unicos</name>
-    <type>TableInput</type>
+    <name>Microsoft Excel Output</name>
+    <type>ExcelOutput</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -998,52 +710,159 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>localhost</connection>
-    <sql>SELECT
-  id_st_sivigila_inf
-, cod_eve
-, fec_not
-, año
-, cod_pre
-, pri_nom
-, seg_nom
-, pri_ape
-, seg_ape
-, tip_ide
-, num_ide
-, edad
-, sexo
-, cod_dpto_o
-, cod_mun_o
-, area
-, bar_ver
-, dir_res
-, ocupacion
-, tip_ss
-, cod_ase
-, cod_dpto_r
-, cod_mun_r
-, fec_def
-, telefono
-, fecha_nto
-, cer_def
-, nit_upgd
-, tipo_ca
-, nom_eve
-, nom_upgd
-, ndep_proce
-, nmun_proce
-, ndep_resi
-, nmun_resi
-, nreg
-, ruta
-FROM st_sivigila_inf_unicos
-</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
+    <header>Y</header>
+    <footer>N</footer>
+    <encoding/>
+    <append>N</append>
+    <add_to_result_filenames>Y</add_to_result_filenames>
+    <file>
+      <name>C:\Users\usuario\Documents\pentaho\sql\file.xls</name>
+      <extention>xls</extention>
+      <do_not_open_newfile_init>N</do_not_open_newfile_init>
+      <create_parent_folder>N</create_parent_folder>
+      <split>N</split>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format/>
+      <sheetname>Sheet1</sheetname>
+      <autosizecolums>N</autosizecolums>
+      <nullisblank>N</nullisblank>
+      <protect_sheet>N</protect_sheet>
+      <password>Encrypted </password>
+      <splitevery>0</splitevery>
+      <usetempfiles>N</usetempfiles>
+      <tempdirectory/>
+    </file>
+    <template>
+      <enabled>N</enabled>
+      <append>N</append>
+      <filename>template.xls</filename>
+    </template>
+    <fields>
+      <field>
+        <name>id_st_ripsraw</name>
+        <type>Number</type>
+        <format/>
+      </field>
+      <field>
+        <name>tipo_documento</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>numero_identificacion</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>fecha_procedimiento</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>dx</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>nom_cie</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>dx_ppal</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>nom_dx_pal</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>cod_bai</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>cod_eapb</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>primer_apellido</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>segundo_apellido</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>primer_nombre</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>segundo_nombre</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>edad</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>sexo</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>cod_departamento</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>cod_municipio</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>institucion</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>ruta_archivo</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>id_ext_rips</name>
+        <type>Number</type>
+        <format/>
+      </field>
+    </fields>
+    <custom>
+      <header_font_name>arial</header_font_name>
+      <header_font_size>10</header_font_size>
+      <header_font_bold>N</header_font_bold>
+      <header_font_italic>N</header_font_italic>
+      <header_font_underline>no</header_font_underline>
+      <header_font_orientation>horizontal</header_font_orientation>
+      <header_font_color>black</header_font_color>
+      <header_background_color>none</header_background_color>
+      <header_row_height>255</header_row_height>
+      <header_alignment>left</header_alignment>
+      <header_image/>
+      <row_font_name>arial</row_font_name>
+      <row_font_size>10</row_font_size>
+      <row_font_color>black</row_font_color>
+      <row_background_color>none</row_background_color>
+    </custom>
     <cluster_schema/>
     <remotesteps>
       <input>
@@ -1052,12 +871,36 @@ FROM st_sivigila_inf_unicos
       </output>
     </remotesteps>
     <GUI>
-      <xloc>366</xloc>
-      <yloc>215</yloc>
+      <xloc>528</xloc>
+      <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step_error_handling>
+    <error>
+      <source_step>Select values</source_step>
+      <target_step>Select values 2</target_step>
+      <is_enabled>Y</is_enabled>
+      <nr_valuename/>
+      <descriptions_valuename/>
+      <fields_valuename/>
+      <codes_valuename/>
+      <max_errors/>
+      <max_pct_errors/>
+      <min_pct_rows/>
+    </error>
+    <error>
+      <source_step>Select values 2</source_step>
+      <target_step>Microsoft Excel Output</target_step>
+      <is_enabled>Y</is_enabled>
+      <nr_valuename/>
+      <descriptions_valuename/>
+      <fields_valuename/>
+      <codes_valuename/>
+      <max_errors/>
+      <max_pct_errors/>
+      <min_pct_rows/>
+    </error>
   </step_error_handling>
   <slave-step-copy-partition-distribution>
   </slave-step-copy-partition-distribution>

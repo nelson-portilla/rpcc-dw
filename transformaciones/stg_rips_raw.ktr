@@ -430,7 +430,7 @@
     <created_date>2018/10/13 12:02:40.219</created_date>
     <modified_user>-</modified_user>
     <modified_date>2018/10/13 12:02:40.219</modified_date>
-    <key_for_session_key/>
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
@@ -489,15 +489,49 @@
   <order>
     <hop>
       <from>Microsoft Excel Input</from>
-      <to>Add sequence</to>
+      <to>Agregar secuencia</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Add sequence</from>
-      <to>Insert / Update</to>
+      <from>Agregar secuencia</from>
+      <to>table_st_rips_raw</to>
       <enabled>Y</enabled>
     </hop>
   </order>
+  <step>
+    <name>Agregar secuencia</name>
+    <type>Sequence</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <valuename>id_st_ripsraw</valuename>
+    <use_database>N</use_database>
+    <connection>localhost</connection>
+    <schema/>
+    <seqname>SEQ_</seqname>
+    <use_counter>Y</use_counter>
+    <counter_name/>
+    <start_at>1</start_at>
+    <increment_by>1</increment_by>
+    <max_value>999999999</max_value>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>416</xloc>
+      <yloc>176</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
   <step>
     <name>Microsoft Excel Input</name>
     <type>ExcelInput</type>
@@ -541,6 +575,11 @@
       <file_required>N</file_required>
       <include_subfolders>N</include_subfolders>
       <name>C:\Users\usuario\Desktop\secretaria\rips_raw\registro_enero_mayo.xlsx</name>
+      <filemask/>
+      <exclude_filemask/>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+      <name>C:\Users\usuario\Desktop\secretaria\rips_raw\RIPS_cancer_agosto_sep.xlsx</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -1026,42 +1065,8 @@
     </GUI>
   </step>
   <step>
-    <name>Add sequence</name>
-    <type>Sequence</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <valuename>id_stg_ripsraw</valuename>
-    <use_database>N</use_database>
-    <connection>localhost</connection>
-    <schema/>
-    <seqname>SEQ_</seqname>
-    <use_counter>Y</use_counter>
-    <counter_name/>
-    <start_at>1</start_at>
-    <increment_by>1</increment_by>
-    <max_value>999999999</max_value>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>480</xloc>
-      <yloc>176</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Insert / Update</name>
-    <type>InsertUpdate</type>
+    <name>table_st_rips_raw</name>
+    <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -1071,213 +1076,24 @@
       <schema_name/>
     </partitioning>
     <connection>localhost</connection>
-    <commit>100</commit>
-    <update_bypassed>N</update_bypassed>
-    <lookup>
-      <schema/>
-      <table>stg_rips_raw</table>
-      <key>
-        <name>id_stg_ripsraw</name>
-        <field>id_stg_ripsraw</field>
-        <condition>=</condition>
-        <name2/>
-      </key>
-      <value>
-        <name>id_stg_ripsraw</name>
-        <rename>id_stg_ripsraw</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>cod_pre</name>
-        <rename>cod_pre</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>cod_con</name>
-        <rename>cod_con</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>tip_doc</name>
-        <rename>tip_doc</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>num_doc</name>
-        <rename>num_doc</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>fecha</name>
-        <rename>fecha</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>dx</name>
-        <rename>dx</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>tipo_dx</name>
-        <rename>tipo_dx</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>num_dx</name>
-        <rename>num_dx</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>nom_cie</name>
-        <rename>nom_cie</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>dx_ppal</name>
-        <rename>dx_ppal</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>nom_dx_pal</name>
-        <rename>nom_dx_pal</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>cod_bai</name>
-        <rename>cod_bai</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>nt_subgru</name>
-        <rename>nt_subgru</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>evto_int</name>
-        <rename>evto_int</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>s_evto_int</name>
-        <rename>s_evto_int</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>cod_eapb</name>
-        <rename>cod_eapb</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>tip_usu</name>
-        <rename>tip_usu</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>pri_ape</name>
-        <rename>pri_ape</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>seg_ape</name>
-        <rename>seg_ape</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>pri_nom</name>
-        <rename>pri_nom</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>seg_nom</name>
-        <rename>seg_nom</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>edad</name>
-        <rename>edad</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>uni_med</name>
-        <rename>uni_med</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>sexo</name>
-        <rename>sexo</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>cod_dep</name>
-        <rename>cod_dep</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>cod_mun</name>
-        <rename>cod_mun</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>zona</name>
-        <rename>zona</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>fin_con</name>
-        <rename>fin_con</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>cau_ext</name>
-        <rename>cau_ext</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>est_salida</name>
-        <rename>est_salida</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>rips</name>
-        <rename>rips</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>raz_soc</name>
-        <rename>raz_soc</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>nombre_cup</name>
-        <rename>nombre_cup</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>cal_rips</name>
-        <rename>cal_rips</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>orden</name>
-        <rename>orden</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>ctrl_</name>
-        <rename>ctrl_</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>registro</name>
-        <rename>registro</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>ruta_archivo</name>
-        <rename>ruta_archivo</rename>
-        <update>Y</update>
-      </value>
-    </lookup>
+    <schema>public</schema>
+    <table>st_rips_raw</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>N</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+    </fields>
     <cluster_schema/>
     <remotesteps>
       <input>
@@ -1286,7 +1102,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>672</xloc>
+      <xloc>560</xloc>
       <yloc>176</yloc>
       <draw>Y</draw>
     </GUI>

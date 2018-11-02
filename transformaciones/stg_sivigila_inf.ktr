@@ -500,7 +500,7 @@
     <hop>
       <from>Add sequence</from>
       <to>tabla_st_sivigila_inf</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Microsoft Excel Input 2 2</from>
@@ -522,6 +522,11 @@
       <to>Add sequence</to>
       <enabled>Y</enabled>
     </hop>
+    <hop>
+      <from>Add sequence</from>
+      <to>tabla_st_sivigila_inf 2</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
   <step>
     <name>Add sequence</name>
@@ -534,9 +539,9 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <valuename>id_st_sivigila_adu</valuename>
+    <valuename>id_st_sivigila_inf</valuename>
     <use_database>N</use_database>
-    <connection/>
+    <connection>localhost</connection>
     <schema/>
     <seqname>SEQ_</seqname>
     <use_counter>Y</use_counter>
@@ -1762,6 +1767,11 @@
       <file_required>N</file_required>
       <include_subfolders>N</include_subfolders>
       <name>C:\Users\usuario\Desktop\secretaria\sivigila_inf_raw\4evento 115 datos basicos y complementarios.xlsx</name>
+      <filemask/>
+      <exclude_filemask/>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+      <name>C:\Users\usuario\Desktop\secretaria\sivigila_inf_raw\5evento 115 datos basicos y complementarios_181018.xlsx</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -4104,19 +4114,15 @@
     <fields>
       <field>
         <name>cod_eve</name>
-        <rename/>
       </field>
       <field>
         <name>fec_not</name>
-        <rename/>
       </field>
       <field>
         <name>año</name>
-        <rename/>
       </field>
       <field>
         <name>cod_pre</name>
-        <rename/>
       </field>
       <field>
         <name>pri_nom_</name>
@@ -4152,11 +4158,9 @@
       </field>
       <field>
         <name>cod_dpto_o</name>
-        <rename/>
       </field>
       <field>
         <name>cod_mun_o</name>
-        <rename/>
       </field>
       <field>
         <name>area_</name>
@@ -4184,11 +4188,9 @@
       </field>
       <field>
         <name>cod_dpto_r</name>
-        <rename/>
       </field>
       <field>
         <name>cod_mun_r</name>
-        <rename/>
       </field>
       <field>
         <name>fec_def_</name>
@@ -4208,43 +4210,33 @@
       </field>
       <field>
         <name>nit_upgd</name>
-        <rename/>
       </field>
       <field>
         <name>tipo_ca</name>
-        <rename/>
       </field>
       <field>
         <name>nom_eve</name>
-        <rename/>
       </field>
       <field>
         <name>nom_upgd</name>
-        <rename/>
       </field>
       <field>
         <name>ndep_proce</name>
-        <rename/>
       </field>
       <field>
         <name>nmun_proce</name>
-        <rename/>
       </field>
       <field>
         <name>ndep_resi</name>
-        <rename/>
       </field>
       <field>
         <name>nmun_resi</name>
-        <rename/>
       </field>
       <field>
         <name>nreg</name>
-        <rename/>
       </field>
       <field>
         <name>ruta</name>
-        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -4428,19 +4420,15 @@
     <fields>
       <field>
         <name>cod_eve</name>
-        <rename/>
       </field>
       <field>
         <name>fec_not</name>
-        <rename/>
       </field>
       <field>
         <name>año</name>
-        <rename/>
       </field>
       <field>
         <name>cod_pre</name>
-        <rename/>
       </field>
       <field>
         <name>pri_nom_</name>
@@ -4476,11 +4464,9 @@
       </field>
       <field>
         <name>cod_dpto_o</name>
-        <rename/>
       </field>
       <field>
         <name>cod_mun_o</name>
-        <rename/>
       </field>
       <field>
         <name>area_</name>
@@ -4508,11 +4494,9 @@
       </field>
       <field>
         <name>cod_dpto_r</name>
-        <rename/>
       </field>
       <field>
         <name>cod_mun_r</name>
-        <rename/>
       </field>
       <field>
         <name>fec_def_</name>
@@ -4532,43 +4516,33 @@
       </field>
       <field>
         <name>nit_upgd</name>
-        <rename/>
       </field>
       <field>
         <name>tipo_ca</name>
-        <rename/>
       </field>
       <field>
         <name>nom_eve</name>
-        <rename/>
       </field>
       <field>
         <name>nom_upgd</name>
-        <rename/>
       </field>
       <field>
         <name>ndep_proce</name>
-        <rename/>
       </field>
       <field>
         <name>nmun_proce</name>
-        <rename/>
       </field>
       <field>
         <name>ndep_resi</name>
-        <rename/>
       </field>
       <field>
         <name>nmun_resi</name>
-        <rename/>
       </field>
       <field>
         <name>nreg</name>
-        <rename/>
       </field>
       <field>
         <name>ruta</name>
-        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -4802,8 +4776,51 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>848</xloc>
-      <yloc>208</yloc>
+      <xloc>832</xloc>
+      <yloc>96</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>tabla_st_sivigila_inf 2</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>localhost</connection>
+    <schema/>
+    <table>st_sivigila_inf</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>N</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>864</xloc>
+      <yloc>224</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

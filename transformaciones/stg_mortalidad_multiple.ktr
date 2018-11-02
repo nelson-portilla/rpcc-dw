@@ -519,6 +519,40 @@
     </hop>
   </order>
   <step>
+    <name>Add sequence</name>
+    <type>Sequence</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <valuename>id_st_mortalidad</valuename>
+    <use_database>N</use_database>
+    <connection>localhost</connection>
+    <schema/>
+    <seqname>SEQ_</seqname>
+    <use_counter>Y</use_counter>
+    <counter_name/>
+    <start_at>1</start_at>
+    <increment_by>1</increment_by>
+    <max_value>999999999</max_value>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>496</xloc>
+      <yloc>224</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
     <name>Insert / Update</name>
     <type>InsertUpdate</type>
     <description/>
@@ -948,6 +982,11 @@
       <file_required>N</file_required>
       <include_subfolders>N</include_subfolders>
       <name>C:\Users\usuario\Desktop\secretaria\mortalidad\Defunciones2017_parte4.xlsx</name>
+      <filemask/>
+      <exclude_filemask/>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+      <name>C:\Users\usuario\Desktop\secretaria\mortalidad\DEF 2018-corte 2018-10-18-registros 12669.xlsx</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -1824,40 +1863,6 @@
     </remotesteps>
     <GUI>
       <xloc>144</xloc>
-      <yloc>64</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>secuencia_mortalidad</name>
-    <type>Sequence</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <valuename>id_st_mortalidad</valuename>
-    <use_database>N</use_database>
-    <connection>localhost</connection>
-    <schema/>
-    <seqname>SEQ_</seqname>
-    <use_counter>Y</use_counter>
-    <counter_name/>
-    <start_at>1</start_at>
-    <increment_by>1</increment_by>
-    <max_value>999999999</max_value>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>496</xloc>
       <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
@@ -2748,271 +2753,204 @@
     <fields>
       <field>
         <name>Id</name>
-        <rename/>
       </field>
       <field>
         <name>num_form</name>
-        <rename/>
       </field>
       <field>
         <name>dig_con</name>
-        <rename/>
       </field>
       <field>
         <name>cod_medi</name>
-        <rename/>
       </field>
       <field>
         <name>fech_lic</name>
-        <rename/>
       </field>
       <field>
         <name>tipo_def</name>
-        <rename/>
       </field>
       <field>
         <name>fech_def</name>
-        <rename/>
       </field>
       <field>
         <name>sexo</name>
-        <rename/>
       </field>
       <field>
         <name>dpto_def</name>
-        <rename/>
       </field>
       <field>
         <name>muni_def</name>
-        <rename/>
       </field>
       <field>
         <name>insp_def</name>
-        <rename/>
       </field>
       <field>
         <name>a_defun</name>
-        <rename/>
       </field>
       <field>
         <name>sit_defu</name>
-        <rename/>
       </field>
       <field>
         <name>institucion</name>
-        <rename/>
       </field>
       <field>
         <name>Pri_Apel</name>
-        <rename/>
       </field>
       <field>
         <name>Seg_Apel</name>
-        <rename/>
       </field>
       <field>
         <name>Nombre</name>
-        <rename/>
       </field>
       <field>
         <name>Fech_nac</name>
-        <rename/>
       </field>
       <field>
         <name>Tip_docu</name>
-        <rename/>
       </field>
       <field>
         <name>num_docu</name>
-        <rename/>
       </field>
       <field>
         <name>Tip_edad</name>
-        <rename/>
       </field>
       <field>
         <name>Val_edad</name>
-        <rename/>
       </field>
       <field>
         <name>nivel_ed</name>
-        <rename/>
       </field>
       <field>
         <name>Seg_soci</name>
-        <rename/>
       </field>
       <field>
         <name>Est_civil</name>
-        <rename/>
       </field>
       <field>
         <name>Mun_resi</name>
-        <rename/>
       </field>
       <field>
         <name>barrio</name>
-        <rename/>
       </field>
       <field>
         <name>direccio</name>
-        <rename/>
       </field>
       <field>
         <name>area_res</name>
-        <rename/>
       </field>
       <field>
         <name>Pman_mue</name>
-        <rename/>
       </field>
       <field>
         <name>Cert_exp</name>
-        <rename/>
       </field>
       <field>
         <name>Nom_Qexp</name>
-        <rename/>
       </field>
       <field>
         <name>Dir_Qexp</name>
-        <rename/>
       </field>
       <field>
         <name>Tel_Qexp</name>
-        <rename/>
       </field>
       <field>
         <name>Mu_parto</name>
-        <rename/>
       </field>
       <field>
         <name>T_Parto</name>
-        <rename/>
       </field>
       <field>
         <name>Tipo_Emb</name>
-        <rename/>
       </field>
       <field>
         <name>T_ges</name>
-        <rename/>
       </field>
       <field>
         <name>Peso_Nac</name>
-        <rename/>
       </field>
       <field>
         <name>Nomb_ma</name>
-        <rename/>
       </field>
       <field>
         <name>edad_ma</name>
-        <rename/>
       </field>
       <field>
         <name>Docu_ma</name>
-        <rename/>
       </field>
       <field>
         <name>Tdocu_ma</name>
-        <rename/>
       </field>
       <field>
         <name>N_hijosV</name>
-        <rename/>
       </field>
       <field>
         <name>N_hijosM</name>
-        <rename/>
       </field>
       <field>
         <name>Est_civM</name>
-        <rename/>
       </field>
       <field>
         <name>Nivel_EM</name>
-        <rename/>
       </field>
       <field>
         <name>Emb_fal</name>
-        <rename/>
       </field>
       <field>
         <name>Emb_sem</name>
-        <rename/>
       </field>
       <field>
         <name>Emb_mes</name>
-        <rename/>
       </field>
       <field>
         <name>Pman_mueV</name>
-        <rename/>
       </field>
       <field>
         <name>como_ocu</name>
-        <rename/>
       </field>
       <field>
         <name>dir_ocu</name>
-        <rename/>
       </field>
       <field>
         <name>C_muerte</name>
-        <rename/>
       </field>
       <field>
         <name>Asis_Med</name>
-        <rename/>
       </field>
       <field>
         <name>C_dir1</name>
-        <rename/>
       </field>
       <field>
         <name>C_ant1</name>
-        <rename/>
       </field>
       <field>
         <name>C_ant2</name>
-        <rename/>
       </field>
       <field>
         <name>C_ant3</name>
-        <rename/>
       </field>
       <field>
         <name>C_pat1</name>
-        <rename/>
       </field>
       <field>
         <name>C_bas1</name>
-        <rename/>
       </field>
       <field>
         <name>Ult_ocu</name>
-        <rename/>
       </field>
       <field>
         <name>Cultura</name>
-        <rename/>
       </field>
       <field>
         <name>Aque_Pueblo</name>
-        <rename/>
       </field>
       <field>
         <name>Ent_Adm_sal</name>
-        <rename/>
       </field>
       <field>
         <name>nom_adm_sal</name>
-        <rename/>
       </field>
       <field>
         <name>ruta</name>
-        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -3030,7 +2968,235 @@
     </GUI>
   </step>
   <step>
-    <name>Add sequence</name>
+    <name>Select values 2</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>Id</name>
+      </field>
+      <field>
+        <name>num_form</name>
+      </field>
+      <field>
+        <name>dig_con</name>
+      </field>
+      <field>
+        <name>cod_medi</name>
+      </field>
+      <field>
+        <name>fech_lic</name>
+      </field>
+      <field>
+        <name>tipo_def</name>
+      </field>
+      <field>
+        <name>fech_def</name>
+      </field>
+      <field>
+        <name>sexo</name>
+      </field>
+      <field>
+        <name>dpto_def</name>
+      </field>
+      <field>
+        <name>muni_def</name>
+      </field>
+      <field>
+        <name>insp_def</name>
+      </field>
+      <field>
+        <name>a_defun</name>
+      </field>
+      <field>
+        <name>sit_defu</name>
+      </field>
+      <field>
+        <name>institucion</name>
+      </field>
+      <field>
+        <name>Pri_Apel</name>
+      </field>
+      <field>
+        <name>Seg_Apel</name>
+      </field>
+      <field>
+        <name>Nombre</name>
+      </field>
+      <field>
+        <name>Fech_nac</name>
+      </field>
+      <field>
+        <name>Tip_docu</name>
+      </field>
+      <field>
+        <name>num_docu</name>
+      </field>
+      <field>
+        <name>Tip_edad</name>
+      </field>
+      <field>
+        <name>Val_edad</name>
+      </field>
+      <field>
+        <name>nivel_ed</name>
+      </field>
+      <field>
+        <name>Seg_soci</name>
+      </field>
+      <field>
+        <name>Est_civil</name>
+      </field>
+      <field>
+        <name>Mun_resi</name>
+      </field>
+      <field>
+        <name>barrio</name>
+      </field>
+      <field>
+        <name>direccio</name>
+      </field>
+      <field>
+        <name>area_res</name>
+      </field>
+      <field>
+        <name>Pman_mue</name>
+      </field>
+      <field>
+        <name>Cert_exp</name>
+      </field>
+      <field>
+        <name>Nom_Qexp</name>
+      </field>
+      <field>
+        <name>Dir_Qexp</name>
+      </field>
+      <field>
+        <name>Tel_Qexp</name>
+      </field>
+      <field>
+        <name>Mu_parto</name>
+      </field>
+      <field>
+        <name>T_Parto</name>
+      </field>
+      <field>
+        <name>Tipo_Emb</name>
+      </field>
+      <field>
+        <name>T_ges</name>
+      </field>
+      <field>
+        <name>Peso_Nac</name>
+      </field>
+      <field>
+        <name>Nomb_ma</name>
+      </field>
+      <field>
+        <name>edad_ma</name>
+      </field>
+      <field>
+        <name>Docu_ma</name>
+      </field>
+      <field>
+        <name>Tdocu_ma</name>
+      </field>
+      <field>
+        <name>N_hijosV</name>
+      </field>
+      <field>
+        <name>N_hijosM</name>
+      </field>
+      <field>
+        <name>Est_civM</name>
+      </field>
+      <field>
+        <name>Nivel_EM</name>
+      </field>
+      <field>
+        <name>Emb_fal</name>
+      </field>
+      <field>
+        <name>Emb_sem</name>
+      </field>
+      <field>
+        <name>Emb_mes</name>
+      </field>
+      <field>
+        <name>Pman_mueV</name>
+      </field>
+      <field>
+        <name>como_ocu</name>
+      </field>
+      <field>
+        <name>dir_ocu</name>
+      </field>
+      <field>
+        <name>C_muerte</name>
+      </field>
+      <field>
+        <name>Asis_Med</name>
+      </field>
+      <field>
+        <name>C_dir1</name>
+      </field>
+      <field>
+        <name>C_ant1</name>
+      </field>
+      <field>
+        <name>C_ant2</name>
+      </field>
+      <field>
+        <name>C_ant3</name>
+      </field>
+      <field>
+        <name>C_pat1</name>
+      </field>
+      <field>
+        <name>C_bas1</name>
+      </field>
+      <field>
+        <name>Ult_ocu</name>
+      </field>
+      <field>
+        <name>Cultura</name>
+      </field>
+      <field>
+        <name>Aque_Pueblo</name>
+      </field>
+      <field>
+        <name>Ent_Adm_sal</name>
+      </field>
+      <field>
+        <name>nom_adm_sal</name>
+      </field>
+      <field>
+        <name>ruta</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>304</xloc>
+      <yloc>224</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>secuencia_mortalidad</name>
     <type>Sequence</type>
     <description/>
     <distribute>Y</distribute>
@@ -3059,302 +3225,7 @@
     </remotesteps>
     <GUI>
       <xloc>496</xloc>
-      <yloc>224</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Select values 2</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>
-      <field>
-        <name>Id</name>
-        <rename/>
-      </field>
-      <field>
-        <name>num_form</name>
-        <rename/>
-      </field>
-      <field>
-        <name>dig_con</name>
-        <rename/>
-      </field>
-      <field>
-        <name>cod_medi</name>
-        <rename/>
-      </field>
-      <field>
-        <name>fech_lic</name>
-        <rename/>
-      </field>
-      <field>
-        <name>tipo_def</name>
-        <rename/>
-      </field>
-      <field>
-        <name>fech_def</name>
-        <rename/>
-      </field>
-      <field>
-        <name>sexo</name>
-        <rename/>
-      </field>
-      <field>
-        <name>dpto_def</name>
-        <rename/>
-      </field>
-      <field>
-        <name>muni_def</name>
-        <rename/>
-      </field>
-      <field>
-        <name>insp_def</name>
-        <rename/>
-      </field>
-      <field>
-        <name>a_defun</name>
-        <rename/>
-      </field>
-      <field>
-        <name>sit_defu</name>
-        <rename/>
-      </field>
-      <field>
-        <name>institucion</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Pri_Apel</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Seg_Apel</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Nombre</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Fech_nac</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Tip_docu</name>
-        <rename/>
-      </field>
-      <field>
-        <name>num_docu</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Tip_edad</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Val_edad</name>
-        <rename/>
-      </field>
-      <field>
-        <name>nivel_ed</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Seg_soci</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Est_civil</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Mun_resi</name>
-        <rename/>
-      </field>
-      <field>
-        <name>barrio</name>
-        <rename/>
-      </field>
-      <field>
-        <name>direccio</name>
-        <rename/>
-      </field>
-      <field>
-        <name>area_res</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Pman_mue</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Cert_exp</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Nom_Qexp</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Dir_Qexp</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Tel_Qexp</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Mu_parto</name>
-        <rename/>
-      </field>
-      <field>
-        <name>T_Parto</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Tipo_Emb</name>
-        <rename/>
-      </field>
-      <field>
-        <name>T_ges</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Peso_Nac</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Nomb_ma</name>
-        <rename/>
-      </field>
-      <field>
-        <name>edad_ma</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Docu_ma</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Tdocu_ma</name>
-        <rename/>
-      </field>
-      <field>
-        <name>N_hijosV</name>
-        <rename/>
-      </field>
-      <field>
-        <name>N_hijosM</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Est_civM</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Nivel_EM</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Emb_fal</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Emb_sem</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Emb_mes</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Pman_mueV</name>
-        <rename/>
-      </field>
-      <field>
-        <name>como_ocu</name>
-        <rename/>
-      </field>
-      <field>
-        <name>dir_ocu</name>
-        <rename/>
-      </field>
-      <field>
-        <name>C_muerte</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Asis_Med</name>
-        <rename/>
-      </field>
-      <field>
-        <name>C_dir1</name>
-        <rename/>
-      </field>
-      <field>
-        <name>C_ant1</name>
-        <rename/>
-      </field>
-      <field>
-        <name>C_ant2</name>
-        <rename/>
-      </field>
-      <field>
-        <name>C_ant3</name>
-        <rename/>
-      </field>
-      <field>
-        <name>C_pat1</name>
-        <rename/>
-      </field>
-      <field>
-        <name>C_bas1</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Ult_ocu</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Cultura</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Aque_Pueblo</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Ent_Adm_sal</name>
-        <rename/>
-      </field>
-      <field>
-        <name>nom_adm_sal</name>
-        <rename/>
-      </field>
-      <field>
-        <name>ruta</name>
-        <rename/>
-      </field>
-      <select_unspecified>N</select_unspecified>
-    </fields>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>304</xloc>
-      <yloc>224</yloc>
+      <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

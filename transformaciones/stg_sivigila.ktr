@@ -510,6 +510,11 @@
     <hop>
       <from>Add sequence</from>
       <to>Insert / Update</to>
+      <enabled>N</enabled>
+    </hop>
+    <hop>
+      <from>Add sequence</from>
+      <to>Table output</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -562,11 +567,11 @@
     <commit>100</commit>
     <update_bypassed>N</update_bypassed>
     <lookup>
-      <schema/>
+      <schema>public</schema>
       <table>st_sivigila_adu</table>
       <key>
-        <name>id_st_sivigila_adu</name>
-        <field>id_st_sivigila_adu</field>
+        <name>num_ide</name>
+        <field>num_ide</field>
         <condition>=</condition>
         <name2/>
       </key>
@@ -764,8 +769,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>576</xloc>
-      <yloc>256</yloc>
+      <xloc>592</xloc>
+      <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2043,6 +2048,11 @@
       <exclude_filemask/>
       <file_required>N</file_required>
       <include_subfolders>N</include_subfolders>
+      <name>C:\Users\usuario\Desktop\secretaria\sivigila_adu_raw\5evento 155 datos basicos y complementarios_181018.xlsx</name>
+      <filemask/>
+      <exclude_filemask/>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
     </file>
     <fields>
       <field>
@@ -3305,19 +3315,15 @@
     <fields>
       <field>
         <name>cod_eve</name>
-        <rename/>
       </field>
       <field>
         <name>fec_not</name>
-        <rename/>
       </field>
       <field>
         <name>año</name>
-        <rename/>
       </field>
       <field>
         <name>cod_pre</name>
-        <rename/>
       </field>
       <field>
         <name>pri_nom_</name>
@@ -3353,11 +3359,9 @@
       </field>
       <field>
         <name>cod_dpto_o</name>
-        <rename/>
       </field>
       <field>
         <name>cod_mun_o</name>
-        <rename/>
       </field>
       <field>
         <name>area_</name>
@@ -3385,11 +3389,9 @@
       </field>
       <field>
         <name>cod_dpto_r</name>
-        <rename/>
       </field>
       <field>
         <name>cod_mun_r</name>
-        <rename/>
       </field>
       <field>
         <name>fec_def_</name>
@@ -3409,43 +3411,33 @@
       </field>
       <field>
         <name>nit_upgd</name>
-        <rename/>
       </field>
       <field>
         <name>tipo_cance</name>
-        <rename/>
       </field>
       <field>
         <name>nom_eve</name>
-        <rename/>
       </field>
       <field>
         <name>nom_upgd</name>
-        <rename/>
       </field>
       <field>
         <name>ndep_proce</name>
-        <rename/>
       </field>
       <field>
         <name>nmun_proce</name>
-        <rename/>
       </field>
       <field>
         <name>ndep_resi</name>
-        <rename/>
       </field>
       <field>
         <name>nmun_resi</name>
-        <rename/>
       </field>
       <field>
         <name>nreg</name>
-        <rename/>
       </field>
       <field>
         <name>ruta</name>
-        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -3476,19 +3468,15 @@
     <fields>
       <field>
         <name>cod_eve</name>
-        <rename/>
       </field>
       <field>
         <name>fec_not</name>
-        <rename/>
       </field>
       <field>
         <name>año</name>
-        <rename/>
       </field>
       <field>
         <name>cod_pre</name>
-        <rename/>
       </field>
       <field>
         <name>pri_nom_</name>
@@ -3524,11 +3512,9 @@
       </field>
       <field>
         <name>cod_dpto_o</name>
-        <rename/>
       </field>
       <field>
         <name>cod_mun_o</name>
-        <rename/>
       </field>
       <field>
         <name>area_</name>
@@ -3556,11 +3542,9 @@
       </field>
       <field>
         <name>cod_dpto_r</name>
-        <rename/>
       </field>
       <field>
         <name>cod_mun_r</name>
-        <rename/>
       </field>
       <field>
         <name>fec_def_</name>
@@ -3580,43 +3564,33 @@
       </field>
       <field>
         <name>nit_upgd</name>
-        <rename/>
       </field>
       <field>
         <name>tipo_cance</name>
-        <rename/>
       </field>
       <field>
         <name>nom_eve</name>
-        <rename/>
       </field>
       <field>
         <name>nom_upgd</name>
-        <rename/>
       </field>
       <field>
         <name>ndep_proce</name>
-        <rename/>
       </field>
       <field>
         <name>nmun_proce</name>
-        <rename/>
       </field>
       <field>
         <name>ndep_resi</name>
-        <rename/>
       </field>
       <field>
         <name>nmun_resi</name>
-        <rename/>
       </field>
       <field>
         <name>nreg</name>
-        <rename/>
       </field>
       <field>
         <name>ruta</name>
-        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -3630,6 +3604,49 @@
     <GUI>
       <xloc>320</xloc>
       <yloc>320</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Table output</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>localhost</connection>
+    <schema>public</schema>
+    <table>st_sivigila_adu</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>N</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>560</xloc>
+      <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

@@ -560,8 +560,8 @@
       <schema>public</schema>
       <table>extr_sivigila_adu</table>
       <key>
-        <name>id_ext_sivigila_adu</name>
-        <field>id_ext_sivigila_adu</field>
+        <name>numero_identificacion</name>
+        <field>numero_identificacion</field>
         <condition>=</condition>
         <name2/>
       </key>
@@ -616,8 +616,8 @@
         <update>Y</update>
       </value>
       <value>
-        <name>numero_documento</name>
-        <rename>numero_documento</rename>
+        <name>numero_identificacion</name>
+        <rename>numero_identificacion</rename>
         <update>Y</update>
       </value>
       <value>
@@ -783,6 +783,7 @@
     <fields>
       <field>
         <name>id_st_sivigila_adu</name>
+        <rename/>
       </field>
       <field>
         <name>cod_eve</name>
@@ -798,6 +799,7 @@
       </field>
       <field>
         <name>cod_pre</name>
+        <rename/>
       </field>
       <field>
         <name>pri_nom</name>
@@ -821,22 +823,27 @@
       </field>
       <field>
         <name>num_ide</name>
-        <rename>numero_documento</rename>
+        <rename>numero_identificacion</rename>
       </field>
       <field>
         <name>edad</name>
+        <rename/>
       </field>
       <field>
         <name>sexo</name>
+        <rename/>
       </field>
       <field>
         <name>cod_dpto_o</name>
+        <rename/>
       </field>
       <field>
         <name>cod_mun_o</name>
+        <rename/>
       </field>
       <field>
         <name>area</name>
+        <rename/>
       </field>
       <field>
         <name>bar_ver</name>
@@ -848,6 +855,7 @@
       </field>
       <field>
         <name>ocupacion</name>
+        <rename/>
       </field>
       <field>
         <name>tip_ss</name>
@@ -871,6 +879,7 @@
       </field>
       <field>
         <name>telefono</name>
+        <rename/>
       </field>
       <field>
         <name>fecha_nto</name>
@@ -882,6 +891,7 @@
       </field>
       <field>
         <name>nit_upgd</name>
+        <rename/>
       </field>
       <field>
         <name>tipo_cance</name>
@@ -893,6 +903,7 @@
       </field>
       <field>
         <name>nom_upgd</name>
+        <rename/>
       </field>
       <field>
         <name>ndep_proce</name>
@@ -916,6 +927,7 @@
       </field>
       <field>
         <name>ruta</name>
+        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>

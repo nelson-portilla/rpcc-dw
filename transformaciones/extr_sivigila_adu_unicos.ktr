@@ -531,8 +531,8 @@
       <schema/>
       <table>duplicados_st_sivigila_adu</table>
       <key>
-        <name>id_st_sivigila_adu</name>
-        <field>id_st_sivigila_adu</field>
+        <name>num_ide</name>
+        <field>num_ide</field>
         <condition>=</condition>
         <name2/>
       </key>
@@ -753,8 +753,8 @@
       <schema/>
       <table>st_sivigila_adu_unicos</table>
       <key>
-        <name>id_st_sivigila_adu</name>
-        <field>id_st_sivigila_adu</field>
+        <name>num_ide</name>
+        <field>num_ide</field>
         <condition>=</condition>
         <name2/>
       </key>

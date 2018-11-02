@@ -531,14 +531,14 @@
       <schema/>
       <table>duplicados_st_rips</table>
       <key>
-        <name>id_stg_ripsraw</name>
-        <field>id_stg_ripsraw</field>
+        <name>id_st_ripsraw</name>
+        <field>id_st_ripsraw</field>
         <condition>=</condition>
         <name2/>
       </key>
       <value>
-        <name>id_stg_ripsraw</name>
-        <rename>id_stg_ripsraw</rename>
+        <name>id_st_ripsraw</name>
+        <rename>id_st_ripsraw</rename>
         <update>Y</update>
       </value>
       <value>
@@ -763,14 +763,14 @@
       <schema/>
       <table>st_rips_unicos</table>
       <key>
-        <name>id_stg_ripsraw</name>
-        <field>id_stg_ripsraw</field>
+        <name>num_doc</name>
+        <field>num_doc</field>
         <condition>=</condition>
         <name2/>
       </key>
       <value>
-        <name>id_stg_ripsraw</name>
-        <rename>id_stg_ripsraw</rename>
+        <name>id_st_ripsraw</name>
+        <rename>id_st_ripsraw</rename>
         <update>Y</update>
       </value>
       <value>
@@ -1038,7 +1038,7 @@
     <unique_rows>N</unique_rows>
     <fields>
       <field>
-        <name>id_stg_ripsraw</name>
+        <name>id_st_ripsraw</name>
         <ascending>Y</ascending>
         <case_sensitive>N</case_sensitive>
         <collator_enabled>N</collator_enabled>
@@ -1072,7 +1072,7 @@
     </partitioning>
     <connection>localhost</connection>
     <sql>SELECT
-  id_stg_ripsraw
+  id_st_ripsraw
 , cod_pre
 , cod_con
 , tip_doc
@@ -1111,7 +1111,7 @@
 , ctrl_
 , registro
 , ruta_archivo
-FROM stg_rips_raw
+FROM st_rips_raw
 </sql>
     <limit>0</limit>
     <lookup/>
