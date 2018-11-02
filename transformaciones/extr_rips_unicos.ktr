@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>reporte_mort_no_sivigila_inf</name>
+    <name>extr_rips_unicos</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -427,10 +427,10 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>-</created_user>
-    <created_date>2018/10/24 14:46:24.852</created_date>
+    <created_date>2018/10/16 09:49:06.325</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2018/10/24 14:46:24.852</modified_date>
-    <key_for_session_key/>
+    <modified_date>2018/10/16 09:49:06.325</modified_date>
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
@@ -488,21 +488,577 @@
   </connection>
   <order>
     <hop>
+      <from>Sort rows</from>
+      <to>Unique rows</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort rows 2</from>
+      <to>Insert / Update 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
       <from>Table input</from>
-      <to>Calculator</to>
+      <to>Sort rows</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Calculator</from>
-      <to>If field value is null</to>
+      <from>Unique rows</from>
+      <to>Insert / Update</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>If field value is null</from>
-      <to>Microsoft Excel Output</to>
+      <from>Unique rows</from>
+      <to>Sort rows 2</to>
       <enabled>Y</enabled>
     </hop>
   </order>
+  <step>
+    <name>Insert / Update</name>
+    <type>InsertUpdate</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>localhost</connection>
+    <commit>100</commit>
+    <update_bypassed>N</update_bypassed>
+    <lookup>
+      <schema/>
+      <table>duplicados_st_rips</table>
+      <key>
+        <name>id_stg_ripsraw</name>
+        <field>id_stg_ripsraw</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>id_stg_ripsraw</name>
+        <rename>id_stg_ripsraw</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>cod_pre</name>
+        <rename>cod_pre</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>cod_con</name>
+        <rename>cod_con</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>tip_doc</name>
+        <rename>tip_doc</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>num_doc</name>
+        <rename>num_doc</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>fecha</name>
+        <rename>fecha</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>dx</name>
+        <rename>dx</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>tipo_dx</name>
+        <rename>tipo_dx</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>num_dx</name>
+        <rename>num_dx</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>nom_cie</name>
+        <rename>nom_cie</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>dx_ppal</name>
+        <rename>dx_ppal</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>nom_dx_pal</name>
+        <rename>nom_dx_pal</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>cod_bai</name>
+        <rename>cod_bai</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>nt_subgru</name>
+        <rename>nt_subgru</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>evto_int</name>
+        <rename>evto_int</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>s_evto_int</name>
+        <rename>s_evto_int</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>cod_eapb</name>
+        <rename>cod_eapb</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>tip_usu</name>
+        <rename>tip_usu</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>pri_ape</name>
+        <rename>pri_ape</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>seg_ape</name>
+        <rename>seg_ape</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>pri_nom</name>
+        <rename>pri_nom</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>seg_nom</name>
+        <rename>seg_nom</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>edad</name>
+        <rename>edad</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>uni_med</name>
+        <rename>uni_med</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>sexo</name>
+        <rename>sexo</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>cod_dep</name>
+        <rename>cod_dep</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>cod_mun</name>
+        <rename>cod_mun</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>zona</name>
+        <rename>zona</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>fin_con</name>
+        <rename>fin_con</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>cau_ext</name>
+        <rename>cau_ext</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>est_salida</name>
+        <rename>est_salida</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>rips</name>
+        <rename>rips</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>raz_soc</name>
+        <rename>raz_soc</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>nombre_cup</name>
+        <rename>nombre_cup</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>cal_rips</name>
+        <rename>cal_rips</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>orden</name>
+        <rename>orden</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>ctrl_</name>
+        <rename>ctrl_</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>registro</name>
+        <rename>registro</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>ruta_archivo</name>
+        <rename>ruta_archivo</rename>
+        <update>Y</update>
+      </value>
+    </lookup>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>610</xloc>
+      <yloc>348</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Insert / Update 2</name>
+    <type>InsertUpdate</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>localhost</connection>
+    <commit>100</commit>
+    <update_bypassed>N</update_bypassed>
+    <lookup>
+      <schema/>
+      <table>st_rips_unicos</table>
+      <key>
+        <name>id_stg_ripsraw</name>
+        <field>id_stg_ripsraw</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>id_stg_ripsraw</name>
+        <rename>id_stg_ripsraw</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>cod_pre</name>
+        <rename>cod_pre</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>cod_con</name>
+        <rename>cod_con</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>tip_doc</name>
+        <rename>tip_doc</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>num_doc</name>
+        <rename>num_doc</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>fecha</name>
+        <rename>fecha</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>dx</name>
+        <rename>dx</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>tipo_dx</name>
+        <rename>tipo_dx</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>num_dx</name>
+        <rename>num_dx</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>nom_cie</name>
+        <rename>nom_cie</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>dx_ppal</name>
+        <rename>dx_ppal</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>nom_dx_pal</name>
+        <rename>nom_dx_pal</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>cod_bai</name>
+        <rename>cod_bai</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>nt_subgru</name>
+        <rename>nt_subgru</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>evto_int</name>
+        <rename>evto_int</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>s_evto_int</name>
+        <rename>s_evto_int</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>cod_eapb</name>
+        <rename>cod_eapb</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>tip_usu</name>
+        <rename>tip_usu</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>pri_ape</name>
+        <rename>pri_ape</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>seg_ape</name>
+        <rename>seg_ape</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>pri_nom</name>
+        <rename>pri_nom</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>seg_nom</name>
+        <rename>seg_nom</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>edad</name>
+        <rename>edad</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>uni_med</name>
+        <rename>uni_med</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>sexo</name>
+        <rename>sexo</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>cod_dep</name>
+        <rename>cod_dep</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>cod_mun</name>
+        <rename>cod_mun</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>zona</name>
+        <rename>zona</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>fin_con</name>
+        <rename>fin_con</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>cau_ext</name>
+        <rename>cau_ext</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>est_salida</name>
+        <rename>est_salida</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>rips</name>
+        <rename>rips</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>raz_soc</name>
+        <rename>raz_soc</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>nombre_cup</name>
+        <rename>nombre_cup</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>cal_rips</name>
+        <rename>cal_rips</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>orden</name>
+        <rename>orden</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>ctrl_</name>
+        <rename>ctrl_</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>registro</name>
+        <rename>registro</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>ruta_archivo</name>
+        <rename>ruta_archivo</rename>
+        <update>Y</update>
+      </value>
+    </lookup>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>770</xloc>
+      <yloc>348</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Sort rows</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>num_doc</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>482</xloc>
+      <yloc>204</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Sort rows 2</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>id_stg_ripsraw</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>770</xloc>
+      <yloc>204</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
   <step>
     <name>Table input</name>
     <type>TableInput</type>
@@ -515,51 +1071,48 @@
       <schema_name/>
     </partitioning>
     <connection>localhost</connection>
-    <sql>select mortdef.*,who.nom_esp from (select 
-numero_registro,
-codigo_medico,
-departamento_def,
-municipio_def,
-sitio_def,
-institucion,
-primer_apellido,
-segunfo_apellido,
-nombre,
-tipo_documento,
-numero_identificacion,
-seguridad_social,
-municipio_residencia,
-barrio,
-direccion,
-area_residencia,
-tipo_certificado_def,
-c_dir1,
-c_ant1,
-c_ant2,
-c_ant3,
-c_pat1,
-c_bas1,
-substring(c_bas1 from 1 for 3) as cie10,
-ultima_ocupacion,
-nombre_aseguradora,
-tipo_def,
-fecha_def,
-sexo,
-fecha_nacimiento,
-edad_fallecimiento,
-dic.nombre_institucion
-from extr_mortalidad as mort left join dict_institucion as dic 
-on dic.cod_institucion=mort.institucion
-where exists (select 1 from dict_cie10cancer as cie where mort.c_bas1=cie.cie_10 )
-and 
---(c_bas1 like 'C50%' or c_bas1 like 'C53%') 
-fecha_nacimiento::date>='01/01/2000'
-and
-not exists (select 1 from extr_sivigila_inf as sivi where mort.numero_identificacion=sivi.numero_documento )
-) as mortdef
-left join dic_who as who
-on mortdef.cie10=who.icd10
---41</sql>
+    <sql>SELECT
+  id_stg_ripsraw
+, cod_pre
+, cod_con
+, tip_doc
+, num_doc
+, fecha
+, dx
+, tipo_dx
+, num_dx
+, nom_cie
+, dx_ppal
+, nom_dx_pal
+, cod_bai
+, nt_subgru
+, evto_int
+, s_evto_int
+, cod_eapb
+, tip_usu
+, pri_ape
+, seg_ape
+, pri_nom
+, seg_nom
+, edad
+, uni_med
+, sexo
+, cod_dep
+, cod_mun
+, zona
+, fin_con
+, cau_ext
+, est_salida
+, rips
+, raz_soc
+, nombre_cup
+, cal_rips
+, orden
+, ctrl_
+, registro
+, ruta_archivo
+FROM stg_rips_raw
+</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -573,14 +1126,14 @@ on mortdef.cie10=who.icd10
       </output>
     </remotesteps>
     <GUI>
-      <xloc>502</xloc>
-      <yloc>149</yloc>
+      <xloc>338</xloc>
+      <yloc>204</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Calculator</name>
-    <type>Calculator</type>
+    <name>Unique rows</name>
+    <type>Unique</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -589,58 +1142,14 @@ on mortdef.cie10=who.icd10
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <calculation>
-      <field_name>annio</field_name>
-      <calc_type>YEAR_OF_DATE</calc_type>
-      <field_a>fecha_def</field_a>
-      <field_b/>
-      <field_c/>
-      <value_type>Integer</value_type>
-      <value_length>-1</value_length>
-      <value_precision>-1</value_precision>
-      <remove>N</remove>
-      <conversion_mask/>
-      <decimal_symbol/>
-      <grouping_symbol/>
-      <currency_symbol/>
-    </calculation>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>726</xloc>
-      <yloc>229</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>If field value is null</name>
-    <type>IfNull</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <replaceAllByValue>Otras neoplasias malignas</replaceAllByValue>
-    <replaceAllMask/>
-    <selectFields>Y</selectFields>
-    <selectValuesType>N</selectValuesType>
-    <setEmptyStringAll>N</setEmptyStringAll>
-    <valuetypes>
-      </valuetypes>
+    <count_rows>N</count_rows>
+    <count_field/>
+    <reject_duplicate_row>Y</reject_duplicate_row>
+    <error_description>Duplicados</error_description>
     <fields>
       <field>
-        <name>nom_esp</name>
-        <value>Otras neoplasias malignas</value>
-        <mask/>
-        <set_empty_string>N</set_empty_string>
+        <name>num_doc</name>
+        <case_insensitive>N</case_insensitive>
       </field>
     </fields>
     <cluster_schema/>
@@ -651,254 +1160,24 @@ on mortdef.cie10=who.icd10
       </output>
     </remotesteps>
     <GUI>
-      <xloc>598</xloc>
-      <yloc>325</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Microsoft Excel Output</name>
-    <type>ExcelOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <header>Y</header>
-    <footer>N</footer>
-    <encoding/>
-    <append>N</append>
-    <add_to_result_filenames>Y</add_to_result_filenames>
-    <file>
-      <name>C:\Users\usuario\Documents\pentaho\sql\mort_no_en_sivigila_inf.xls</name>
-      <extention>xls</extention>
-      <do_not_open_newfile_init>N</do_not_open_newfile_init>
-      <create_parent_folder>N</create_parent_folder>
-      <split>N</split>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <SpecifyFormat>N</SpecifyFormat>
-      <date_time_format/>
-      <sheetname>Sheet1</sheetname>
-      <autosizecolums>N</autosizecolums>
-      <nullisblank>N</nullisblank>
-      <protect_sheet>N</protect_sheet>
-      <password>Encrypted </password>
-      <splitevery>0</splitevery>
-      <usetempfiles>N</usetempfiles>
-      <tempdirectory/>
-    </file>
-    <template>
-      <enabled>N</enabled>
-      <append>N</append>
-      <filename>template.xls</filename>
-    </template>
-    <fields>
-      <field>
-        <name>numero_registro</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>codigo_medico</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>departamento_def</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>municipio_def</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>sitio_def</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>institucion</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>primer_apellido</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>segunfo_apellido</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>nombre</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>tipo_documento</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>numero_identificacion</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>seguridad_social</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>municipio_residencia</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>barrio</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>direccion</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>area_residencia</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>tipo_certificado_def</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>c_dir1</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>c_ant1</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>c_ant2</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>c_ant3</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>c_pat1</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>c_bas1</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>cie10</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>ultima_ocupacion</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>nombre_aseguradora</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>tipo_def</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>fecha_def</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>sexo</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>fecha_nacimiento</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>edad_fallecimiento</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>nombre_institucion</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>nom_esp</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>annio</name>
-        <type>Integer</type>
-        <format/>
-      </field>
-    </fields>
-    <custom>
-      <header_font_name>arial</header_font_name>
-      <header_font_size>10</header_font_size>
-      <header_font_bold>N</header_font_bold>
-      <header_font_italic>N</header_font_italic>
-      <header_font_underline>no</header_font_underline>
-      <header_font_orientation>horizontal</header_font_orientation>
-      <header_font_color>black</header_font_color>
-      <header_background_color>none</header_background_color>
-      <header_row_height>255</header_row_height>
-      <header_alignment>left</header_alignment>
-      <header_image/>
-      <row_font_name>arial</row_font_name>
-      <row_font_size>10</row_font_size>
-      <row_font_color>black</row_font_color>
-      <row_background_color>none</row_background_color>
-    </custom>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>598</xloc>
-      <yloc>437</yloc>
+      <xloc>610</xloc>
+      <yloc>204</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step_error_handling>
+    <error>
+      <source_step>Unique rows</source_step>
+      <target_step>Insert / Update</target_step>
+      <is_enabled>Y</is_enabled>
+      <nr_valuename/>
+      <descriptions_valuename/>
+      <fields_valuename/>
+      <codes_valuename/>
+      <max_errors/>
+      <max_pct_errors/>
+      <min_pct_rows/>
+    </error>
   </step_error_handling>
   <slave-step-copy-partition-distribution>
   </slave-step-copy-partition-distribution>

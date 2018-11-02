@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>reporte_mort_no_sivigila_adu</name>
+    <name>reporte_mort_institucion</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -427,10 +427,10 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>-</created_user>
-    <created_date>2018/10/24 13:55:09.758</created_date>
+    <created_date>2018/10/23 11:44:41.582</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2018/10/24 13:55:09.758</modified_date>
-    <key_for_session_key/>
+    <modified_date>2018/10/23 11:44:41.582</modified_date>
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
@@ -488,6 +488,21 @@
   </connection>
   <order>
     <hop>
+      <from>Table mort_no_rips</from>
+      <to>Calculator</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Calculator</from>
+      <to>Microsoft Excel Output</to>
+      <enabled>N</enabled>
+    </hop>
+    <hop>
+      <from>Calculator</from>
+      <to>Replace in string</to>
+      <enabled>N</enabled>
+    </hop>
+    <hop>
       <from>Calculator</from>
       <to>If field value is null</to>
       <enabled>Y</enabled>
@@ -497,14 +512,48 @@
       <to>Microsoft Excel Output</to>
       <enabled>Y</enabled>
     </hop>
-    <hop>
-      <from>Table input</from>
-      <to>Calculator</to>
-      <enabled>Y</enabled>
-    </hop>
   </order>
   <step>
-    <name>Table input</name>
+    <name>Calculator</name>
+    <type>Calculator</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <calculation>
+      <field_name>annio</field_name>
+      <calc_type>YEAR_OF_DATE</calc_type>
+      <field_a>fecha_def</field_a>
+      <field_b/>
+      <field_c/>
+      <value_type>Integer</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>448</xloc>
+      <yloc>112</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Table mort_no_rips</name>
     <type>TableInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -548,18 +597,15 @@ sexo,
 fecha_nacimiento,
 edad_fallecimiento,
 dic.nombre_institucion
-from extr_mortalidad as mort left join dict_institucion as dic 
+from extr_mortalidad as mort full outer join dict_institucion as dic 
 on dic.cod_institucion=mort.institucion
 where exists (select 1 from dict_cie10cancer as cie where mort.c_bas1=cie.cie_10 )
 and 
-(c_bas1 like 'C50%' or c_bas1 like 'C53%') --and fecha_nacimiento::date>='01/01/2000'
-and
-not exists (select 1 from extr_sivigila_adu as sivi where mort.numero_identificacion=sivi.numero_documento )
+not exists (select 1 from extr_rips as rips where mort.numero_identificacion=rips.numero_identificacion )
 ) as mortdef
 left join dic_who as who
-on mortdef.cie10=who.icd10
---621</sql>
-    <limit>0</limit>
+on mortdef.cie10=who.icd10</sql>
+    <limit>-1</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
     <variables_active>N</variables_active>
@@ -573,85 +619,7 @@ on mortdef.cie10=who.icd10
     </remotesteps>
     <GUI>
       <xloc>272</xloc>
-      <yloc>80</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Calculator</name>
-    <type>Calculator</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <calculation>
-      <field_name>annio</field_name>
-      <calc_type>YEAR_OF_DATE</calc_type>
-      <field_a>fecha_def</field_a>
-      <field_b/>
-      <field_c/>
-      <value_type>Integer</value_type>
-      <value_length>-1</value_length>
-      <value_precision>-1</value_precision>
-      <remove>N</remove>
-      <conversion_mask/>
-      <decimal_symbol/>
-      <grouping_symbol/>
-      <currency_symbol/>
-    </calculation>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>496</xloc>
-      <yloc>160</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>If field value is null</name>
-    <type>IfNull</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <replaceAllByValue>Otras neoplasias malignas</replaceAllByValue>
-    <replaceAllMask/>
-    <selectFields>Y</selectFields>
-    <selectValuesType>N</selectValuesType>
-    <setEmptyStringAll>N</setEmptyStringAll>
-    <valuetypes>
-      </valuetypes>
-    <fields>
-      <field>
-        <name>nom_esp</name>
-        <value>Otras neoplasias malignas</value>
-        <mask/>
-        <set_empty_string>N</set_empty_string>
-      </field>
-    </fields>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>368</xloc>
-      <yloc>256</yloc>
+      <yloc>112</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -672,7 +640,7 @@ on mortdef.cie10=who.icd10
     <append>N</append>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name>C:\Users\usuario\Documents\pentaho\sql\mort_no_en_sivigila.xls</name>
+      <name>C:\Users\usuario\Documents\pentaho\sql\file.xls</name>
       <extention>xls</extention>
       <do_not_open_newfile_init>N</do_not_open_newfile_init>
       <create_parent_folder>N</create_parent_folder>
@@ -892,8 +860,85 @@ on mortdef.cie10=who.icd10
       </output>
     </remotesteps>
     <GUI>
-      <xloc>368</xloc>
-      <yloc>368</yloc>
+      <xloc>320</xloc>
+      <yloc>320</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Replace in string</name>
+    <type>ReplaceString</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>nom_esp</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string/>
+        <replace_by_string/>
+        <set_empty_string>Y</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+        <is_unicode>no</is_unicode>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>656</xloc>
+      <yloc>272</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>If field value is null</name>
+    <type>IfNull</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <replaceAllByValue>Otras neoplasias malignas</replaceAllByValue>
+    <replaceAllMask/>
+    <selectFields>Y</selectFields>
+    <selectValuesType>N</selectValuesType>
+    <setEmptyStringAll>N</setEmptyStringAll>
+    <valuetypes>
+      </valuetypes>
+    <fields>
+      <field>
+        <name>nom_esp</name>
+        <value>Otras neoplasias malignas</value>
+        <mask/>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>320</xloc>
+      <yloc>208</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

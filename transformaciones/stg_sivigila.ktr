@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>stg_mortalidad_multiple</name>
+    <name>stg_sivigila</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -427,9 +427,9 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>-</created_user>
-    <created_date>2018/10/13 08:07:10.888</created_date>
+    <created_date>2018/10/16 14:48:56.262</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2018/10/13 08:07:10.888</modified_date>
+    <modified_date>2018/10/16 14:48:56.262</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -493,13 +493,13 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Select values</from>
-      <to>secuencia_mortalidad</to>
+      <from>Microsoft Excel Input 2</from>
+      <to>Select values 2</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Microsoft Excel Input 2</from>
-      <to>Select values 2</to>
+      <from>Select values</from>
+      <to>Add sequence</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -512,1324 +512,9 @@
       <to>Insert / Update</to>
       <enabled>Y</enabled>
     </hop>
-    <hop>
-      <from>secuencia_mortalidad</from>
-      <to>Insert / Update</to>
-      <enabled>Y</enabled>
-    </hop>
   </order>
   <step>
-    <name>Insert / Update</name>
-    <type>InsertUpdate</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>localhost</connection>
-    <commit>100</commit>
-    <update_bypassed>N</update_bypassed>
-    <lookup>
-      <schema>public</schema>
-      <table>st_mortalidad</table>
-      <key>
-        <name>id_st_mortalidad</name>
-        <field>id_st_mortalidad</field>
-        <condition>=</condition>
-        <name2/>
-      </key>
-      <value>
-        <name>Id</name>
-        <rename>Id</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>num_form</name>
-        <rename>num_form</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>dig_con</name>
-        <rename>dig_con</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>cod_medi</name>
-        <rename>cod_medi</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>fech_lic</name>
-        <rename>fech_lic</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>tipo_def</name>
-        <rename>tipo_def</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>fech_def</name>
-        <rename>fech_def</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>sexo</name>
-        <rename>sexo</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>dpto_def</name>
-        <rename>dpto_def</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>muni_def</name>
-        <rename>muni_def</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>insp_def</name>
-        <rename>insp_def</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>a_defun</name>
-        <rename>a_defun</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>sit_defu</name>
-        <rename>sit_defu</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>institucion</name>
-        <rename>institucion</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>Pri_Apel</name>
-        <rename>Pri_Apel</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>Seg_Apel</name>
-        <rename>Seg_Apel</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>Nombre</name>
-        <rename>Nombre</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>Fech_nac</name>
-        <rename>Fech_nac</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>Tip_docu</name>
-        <rename>Tip_docu</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>num_docu</name>
-        <rename>num_docu</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>Tip_edad</name>
-        <rename>Tip_edad</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>Val_edad</name>
-        <rename>Val_edad</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>nivel_ed</name>
-        <rename>nivel_ed</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>Seg_soci</name>
-        <rename>Seg_soci</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>Est_civil</name>
-        <rename>Est_civil</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>Mun_resi</name>
-        <rename>Mun_resi</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>barrio</name>
-        <rename>barrio</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>direccio</name>
-        <rename>direccio</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>area_res</name>
-        <rename>area_res</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>Pman_mue</name>
-        <rename>Pman_mue</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>Cert_exp</name>
-        <rename>Cert_exp</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>Nom_Qexp</name>
-        <rename>Nom_Qexp</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>Dir_Qexp</name>
-        <rename>Dir_Qexp</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>Tel_Qexp</name>
-        <rename>Tel_Qexp</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>Mu_parto</name>
-        <rename>Mu_parto</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>T_Parto</name>
-        <rename>T_Parto</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>Tipo_Emb</name>
-        <rename>Tipo_Emb</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>T_ges</name>
-        <rename>T_ges</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>Peso_Nac</name>
-        <rename>Peso_Nac</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>Nomb_ma</name>
-        <rename>Nomb_ma</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>edad_ma</name>
-        <rename>edad_ma</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>Docu_ma</name>
-        <rename>Docu_ma</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>Tdocu_ma</name>
-        <rename>Tdocu_ma</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>N_hijosV</name>
-        <rename>N_hijosV</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>N_hijosM</name>
-        <rename>N_hijosM</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>Est_civM</name>
-        <rename>Est_civM</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>Nivel_EM</name>
-        <rename>Nivel_EM</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>Emb_fal</name>
-        <rename>Emb_fal</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>Emb_sem</name>
-        <rename>Emb_sem</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>Emb_mes</name>
-        <rename>Emb_mes</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>Pman_mueV</name>
-        <rename>Pman_mueV</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>como_ocu</name>
-        <rename>como_ocu</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>dir_ocu</name>
-        <rename>dir_ocu</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>C_muerte</name>
-        <rename>C_muerte</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>Asis_Med</name>
-        <rename>Asis_Med</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>C_dir1</name>
-        <rename>C_dir1</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>C_ant1</name>
-        <rename>C_ant1</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>C_ant2</name>
-        <rename>C_ant2</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>C_ant3</name>
-        <rename>C_ant3</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>C_pat1</name>
-        <rename>C_pat1</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>C_bas1</name>
-        <rename>C_bas1</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>Ult_ocu</name>
-        <rename>Ult_ocu</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>Cultura</name>
-        <rename>Cultura</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>Aque_Pueblo</name>
-        <rename>Aque_Pueblo</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>Ent_Adm_sal</name>
-        <rename>Ent_Adm_sal</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>nom_adm_sal</name>
-        <rename>nom_adm_sal</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>ruta</name>
-        <rename>ruta</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>id_st_mortalidad</name>
-        <rename>id_st_mortalidad</rename>
-        <update>Y</update>
-      </value>
-    </lookup>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>672</xloc>
-      <yloc>160</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Microsoft Excel Input</name>
-    <type>ExcelInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <header>Y</header>
-    <noempty>Y</noempty>
-    <stoponempty>N</stoponempty>
-    <filefield>ruta</filefield>
-    <sheetfield/>
-    <sheetrownumfield/>
-    <rownumfield/>
-    <sheetfield/>
-    <filefield>ruta</filefield>
-    <limit>0</limit>
-    <encoding/>
-    <add_to_result_filenames>Y</add_to_result_filenames>
-    <accept_filenames>N</accept_filenames>
-    <accept_field/>
-    <accept_stepname/>
-    <file>
-      <name>C:\Users\usuario\Desktop\secretaria\mortalidad\DEF_2018 corte 2018-03-02.xlsx</name>
-      <filemask/>
-      <exclude_filemask/>
-      <file_required>N</file_required>
-      <include_subfolders>N</include_subfolders>
-      <name>C:\Users\usuario\Desktop\secretaria\mortalidad\RPCC_DEF-corte 2018-06-26.xlsx</name>
-      <filemask/>
-      <exclude_filemask/>
-      <file_required>N</file_required>
-      <include_subfolders>N</include_subfolders>
-      <name>C:\Users\usuario\Desktop\secretaria\mortalidad\Defunciones2017_parte1.xlsx</name>
-      <filemask/>
-      <exclude_filemask/>
-      <file_required>N</file_required>
-      <include_subfolders>N</include_subfolders>
-      <name>C:\Users\usuario\Desktop\secretaria\mortalidad\Defunciones2017_parte2.xlsx</name>
-      <filemask/>
-      <exclude_filemask/>
-      <file_required>N</file_required>
-      <include_subfolders>N</include_subfolders>
-      <name>C:\Users\usuario\Desktop\secretaria\mortalidad\Defunciones2017_parte3.xlsx</name>
-      <filemask/>
-      <exclude_filemask/>
-      <file_required>N</file_required>
-      <include_subfolders>N</include_subfolders>
-      <name>C:\Users\usuario\Desktop\secretaria\mortalidad\Defunciones2017_parte4.xlsx</name>
-      <filemask/>
-      <exclude_filemask/>
-      <file_required>N</file_required>
-      <include_subfolders>N</include_subfolders>
-    </file>
-    <fields>
-      <field>
-        <name>anio</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Id</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>num_form</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>dig_con</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>cod_medi</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>fech_lic</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>tipo_def</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>fech_def</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Hora_def</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>meridian</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Sin_est</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>sexo</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>dpto_def</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>muni_def</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>insp_def</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>a_defun</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>sit_defu</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>institucion</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Pri_Apel</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Seg_Apel</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Nombre</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Fech_nac</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Tip_docu</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>num_docu</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Tip_edad</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Val_edad</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>nivel_ed</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Seg_soci</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Est_civil</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Mun_resi</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>barrio</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>direccio</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>area_res</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Pman_mue</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Cert_exp</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Nom_Qexp</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Dir_Qexp</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Tel_Qexp</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Mu_parto</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>T_Parto</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Tipo_Emb</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>T_ges</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Peso_Nac</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Nomb_ma</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>edad_ma</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Docu_ma</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Tdocu_ma</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>N_hijosV</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>N_hijosM</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Est_civM</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Nivel_EM</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Emb_fal</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Emb_sem</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Emb_mes</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Pman_mueV</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>como_ocu</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>dir_ocu</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>C_muerte</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Asis_Med</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>C_dir1</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>C_ant1</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>C_ant2</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>C_ant3</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>C_pat1</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>C_bas1</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Ult_ocu</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Cultura</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Aque_Pueblo</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Ent_Adm_sal</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>nom_adm_sal</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-    </fields>
-    <sheets>
-    </sheets>
-    <strict_types>N</strict_types>
-    <error_ignored>N</error_ignored>
-    <error_line_skipped>N</error_line_skipped>
-    <bad_line_files_destination_directory/>
-    <bad_line_files_extension>warning</bad_line_files_extension>
-    <error_line_files_destination_directory/>
-    <error_line_files_extension>error</error_line_files_extension>
-    <line_number_files_destination_directory/>
-    <line_number_files_extension>line</line_number_files_extension>
-    <shortFileFieldName/>
-    <pathFieldName/>
-    <hiddenFieldName/>
-    <lastModificationTimeFieldName/>
-    <uriNameFieldName/>
-    <rootUriNameFieldName/>
-    <extensionFieldName/>
-    <sizeFieldName/>
-    <spreadsheet_type>POI</spreadsheet_type>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>144</xloc>
-      <yloc>64</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>secuencia_mortalidad</name>
+    <name>Add sequence</name>
     <type>Sequence</type>
     <description/>
     <distribute>Y</distribute>
@@ -1839,7 +524,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <valuename>id_st_mortalidad</valuename>
+    <valuename>id_st_sivigila_adu</valuename>
     <use_database>N</use_database>
     <connection>localhost</connection>
     <schema/>
@@ -1857,13 +542,235 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>496</xloc>
-      <yloc>64</yloc>
+      <xloc>416</xloc>
+      <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Microsoft Excel Input 2</name>
+    <name>Insert / Update</name>
+    <type>InsertUpdate</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>localhost</connection>
+    <commit>100</commit>
+    <update_bypassed>N</update_bypassed>
+    <lookup>
+      <schema/>
+      <table>st_sivigila_adu</table>
+      <key>
+        <name>id_st_sivigila_adu</name>
+        <field>id_st_sivigila_adu</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>cod_eve</name>
+        <rename>cod_eve</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>fec_not</name>
+        <rename>fec_not</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>año</name>
+        <rename>año</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>cod_pre</name>
+        <rename>cod_pre</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>pri_nom</name>
+        <rename>pri_nom</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>seg_nom</name>
+        <rename>seg_nom</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>pri_ape</name>
+        <rename>pri_ape</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>seg_ape</name>
+        <rename>seg_ape</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>tip_ide</name>
+        <rename>tip_ide</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>num_ide</name>
+        <rename>num_ide</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>edad</name>
+        <rename>edad</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>sexo</name>
+        <rename>sexo</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>cod_dpto_o</name>
+        <rename>cod_dpto_o</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>cod_mun_o</name>
+        <rename>cod_mun_o</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>area</name>
+        <rename>area</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>bar_ver</name>
+        <rename>bar_ver</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>dir_res</name>
+        <rename>dir_res</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>ocupacion</name>
+        <rename>ocupacion</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>tip_ss</name>
+        <rename>tip_ss</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>cod_ase</name>
+        <rename>cod_ase</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>cod_dpto_r</name>
+        <rename>cod_dpto_r</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>cod_mun_r</name>
+        <rename>cod_mun_r</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>fec_def</name>
+        <rename>fec_def</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>telefono</name>
+        <rename>telefono</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>fecha_nto</name>
+        <rename>fecha_nto</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>cer_def</name>
+        <rename>cer_def</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>nit_upgd</name>
+        <rename>nit_upgd</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>tipo_cance</name>
+        <rename>tipo_cance</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>nom_eve</name>
+        <rename>nom_eve</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>nom_upgd</name>
+        <rename>nom_upgd</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>ndep_proce</name>
+        <rename>ndep_proce</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>nmun_proce</name>
+        <rename>nmun_proce</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>ndep_resi</name>
+        <rename>ndep_resi</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>nmun_resi</name>
+        <rename>nmun_resi</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>nreg</name>
+        <rename>nreg</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>ruta</name>
+        <rename>ruta</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>id_st_sivigila_adu</name>
+        <rename>id_st_sivigila_adu</rename>
+        <update>Y</update>
+      </value>
+    </lookup>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>576</xloc>
+      <yloc>256</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Microsoft Excel Input</name>
     <type>ExcelInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -1874,7 +781,7 @@
       <schema_name/>
     </partitioning>
     <header>Y</header>
-    <noempty>Y</noempty>
+    <noempty>N</noempty>
     <stoponempty>N</stoponempty>
     <filefield>ruta</filefield>
     <sheetfield/>
@@ -1889,7 +796,12 @@
     <accept_field/>
     <accept_stepname/>
     <file>
-      <name>C:\Users\usuario\Desktop\secretaria\mortalidad\DEF 2018-corte 2018-08-24-registros 10331.xlsx</name>
+      <name>C:\Users\usuario\Desktop\secretaria\sivigila_adu_raw\1evento 155 datos basicos y complementarios.xlsx</name>
+      <filemask/>
+      <exclude_filemask/>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+      <name>C:\Users\usuario\Desktop\secretaria\sivigila_adu_raw\2evento 155 datos basicos y complementarios.xlsx</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -1897,7 +809,7 @@
     </file>
     <fields>
       <field>
-        <name>anio</name>
+        <name>cod_eve</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1909,7 +821,7 @@
         <group/>
       </field>
       <field>
-        <name>Id</name>
+        <name>fec_not</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1921,7 +833,7 @@
         <group/>
       </field>
       <field>
-        <name>num_form</name>
+        <name>semana</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1933,7 +845,7 @@
         <group/>
       </field>
       <field>
-        <name>dig_con</name>
+        <name>año</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1945,7 +857,7 @@
         <group/>
       </field>
       <field>
-        <name>cod_medi</name>
+        <name>cod_pre</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1957,7 +869,7 @@
         <group/>
       </field>
       <field>
-        <name>fech_lic</name>
+        <name>cod_sub</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1969,7 +881,7 @@
         <group/>
       </field>
       <field>
-        <name>tipo_def</name>
+        <name>pri_nom_</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1981,7 +893,7 @@
         <group/>
       </field>
       <field>
-        <name>fech_def</name>
+        <name>seg_nom_</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1993,7 +905,7 @@
         <group/>
       </field>
       <field>
-        <name>sexo</name>
+        <name>pri_ape_</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2005,7 +917,7 @@
         <group/>
       </field>
       <field>
-        <name>dpto_def</name>
+        <name>seg_ape_</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2017,7 +929,7 @@
         <group/>
       </field>
       <field>
-        <name>muni_def</name>
+        <name>tip_ide_</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2029,7 +941,7 @@
         <group/>
       </field>
       <field>
-        <name>insp_def</name>
+        <name>num_ide_</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2041,7 +953,7 @@
         <group/>
       </field>
       <field>
-        <name>a_defun</name>
+        <name>edad_</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2053,7 +965,7 @@
         <group/>
       </field>
       <field>
-        <name>sit_defu</name>
+        <name>uni_med_</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2065,7 +977,7 @@
         <group/>
       </field>
       <field>
-        <name>institucion</name>
+        <name>sexo_</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2077,7 +989,7 @@
         <group/>
       </field>
       <field>
-        <name>Pri_Apel</name>
+        <name>cod_pais_o</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2089,7 +1001,7 @@
         <group/>
       </field>
       <field>
-        <name>Seg_Apel</name>
+        <name>cod_dpto_o</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2101,7 +1013,7 @@
         <group/>
       </field>
       <field>
-        <name>Nombre</name>
+        <name>cod_mun_o</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2113,7 +1025,7 @@
         <group/>
       </field>
       <field>
-        <name>Fech_nac</name>
+        <name>area_</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2125,7 +1037,7 @@
         <group/>
       </field>
       <field>
-        <name>Tip_docu</name>
+        <name>localidad_</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2137,7 +1049,7 @@
         <group/>
       </field>
       <field>
-        <name>num_docu</name>
+        <name>cen_pobla_</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2149,7 +1061,7 @@
         <group/>
       </field>
       <field>
-        <name>Tip_edad</name>
+        <name>vereda_</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2161,7 +1073,7 @@
         <group/>
       </field>
       <field>
-        <name>Val_edad</name>
+        <name>bar_ver_</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2173,7 +1085,7 @@
         <group/>
       </field>
       <field>
-        <name>nivel_ed</name>
+        <name>dir_res_</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2185,7 +1097,7 @@
         <group/>
       </field>
       <field>
-        <name>Seg_soci</name>
+        <name>ocupacion_</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2197,7 +1109,7 @@
         <group/>
       </field>
       <field>
-        <name>Est_civil</name>
+        <name>tip_ss_</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2209,7 +1121,7 @@
         <group/>
       </field>
       <field>
-        <name>Mun_resi</name>
+        <name>cod_ase_</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2221,7 +1133,7 @@
         <group/>
       </field>
       <field>
-        <name>barrio</name>
+        <name>per_etn_</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2233,7 +1145,7 @@
         <group/>
       </field>
       <field>
-        <name>direccio</name>
+        <name>gp_discapa</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2245,7 +1157,7 @@
         <group/>
       </field>
       <field>
-        <name>area_res</name>
+        <name>gp_desplaz</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2257,7 +1169,7 @@
         <group/>
       </field>
       <field>
-        <name>Pman_mue</name>
+        <name>gp_migrant</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2269,7 +1181,7 @@
         <group/>
       </field>
       <field>
-        <name>Cert_exp</name>
+        <name>gp_carcela</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2281,7 +1193,7 @@
         <group/>
       </field>
       <field>
-        <name>Nom_Qexp</name>
+        <name>gp_gestan</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2293,7 +1205,7 @@
         <group/>
       </field>
       <field>
-        <name>Dir_Qexp</name>
+        <name>gp_indigen</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2305,7 +1217,7 @@
         <group/>
       </field>
       <field>
-        <name>Tel_Qexp</name>
+        <name>gp_pobicbf</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2317,7 +1229,7 @@
         <group/>
       </field>
       <field>
-        <name>Mu_parto</name>
+        <name>gp_mad_com</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2329,7 +1241,7 @@
         <group/>
       </field>
       <field>
-        <name>T_Parto</name>
+        <name>gp_desmovi</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2341,7 +1253,7 @@
         <group/>
       </field>
       <field>
-        <name>Tipo_Emb</name>
+        <name>gp_psiquia</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2353,7 +1265,7 @@
         <group/>
       </field>
       <field>
-        <name>T_ges</name>
+        <name>gp_vic_vio</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2365,7 +1277,7 @@
         <group/>
       </field>
       <field>
-        <name>Peso_Nac</name>
+        <name>gp_otros</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2377,7 +1289,7 @@
         <group/>
       </field>
       <field>
-        <name>Nomb_ma</name>
+        <name>cod_dpto_r</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2389,7 +1301,7 @@
         <group/>
       </field>
       <field>
-        <name>edad_ma</name>
+        <name>cod_mun_r</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2401,7 +1313,7 @@
         <group/>
       </field>
       <field>
-        <name>Docu_ma</name>
+        <name>fec_con_</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2413,7 +1325,7 @@
         <group/>
       </field>
       <field>
-        <name>Tdocu_ma</name>
+        <name>ini_sin_</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2425,7 +1337,7 @@
         <group/>
       </field>
       <field>
-        <name>N_hijosV</name>
+        <name>tip_cas_</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2437,7 +1349,7 @@
         <group/>
       </field>
       <field>
-        <name>N_hijosM</name>
+        <name>pac_hos_</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2449,7 +1361,7 @@
         <group/>
       </field>
       <field>
-        <name>Est_civM</name>
+        <name>fec_hos_</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2461,7 +1373,7 @@
         <group/>
       </field>
       <field>
-        <name>Nivel_EM</name>
+        <name>con_fin_</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2473,7 +1385,7 @@
         <group/>
       </field>
       <field>
-        <name>Emb_fal</name>
+        <name>fec_def_</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2485,7 +1397,7 @@
         <group/>
       </field>
       <field>
-        <name>Emb_sem</name>
+        <name>ajuste_</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2497,7 +1409,7 @@
         <group/>
       </field>
       <field>
-        <name>Emb_mes</name>
+        <name>telefono_</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2509,7 +1421,7 @@
         <group/>
       </field>
       <field>
-        <name>Pman_mueV</name>
+        <name>fecha_nto_</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2521,7 +1433,7 @@
         <group/>
       </field>
       <field>
-        <name>como_ocu</name>
+        <name>cer_def_</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2533,7 +1445,7 @@
         <group/>
       </field>
       <field>
-        <name>dir_ocu</name>
+        <name>cbmte_</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2545,7 +1457,7 @@
         <group/>
       </field>
       <field>
-        <name>C_muerte</name>
+        <name>uni_modif</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2557,7 +1469,7 @@
         <group/>
       </field>
       <field>
-        <name>Asis_Med</name>
+        <name>nuni_modif</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2569,7 +1481,7 @@
         <group/>
       </field>
       <field>
-        <name>C_dir1</name>
+        <name>fec_arc_xl</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2581,7 +1493,7 @@
         <group/>
       </field>
       <field>
-        <name>C_ant1</name>
+        <name>nom_dil_f_</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2593,7 +1505,7 @@
         <group/>
       </field>
       <field>
-        <name>C_ant2</name>
+        <name>tel_dil_f_</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2605,7 +1517,7 @@
         <group/>
       </field>
       <field>
-        <name>C_ant3</name>
+        <name>fec_aju_</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2617,7 +1529,7 @@
         <group/>
       </field>
       <field>
-        <name>C_pat1</name>
+        <name>nit_upgd</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2629,7 +1541,7 @@
         <group/>
       </field>
       <field>
-        <name>C_bas1</name>
+        <name>fm_fuerza</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2641,7 +1553,7 @@
         <group/>
       </field>
       <field>
-        <name>Ult_ocu</name>
+        <name>fm_unidad</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2653,7 +1565,7 @@
         <group/>
       </field>
       <field>
-        <name>Cultura</name>
+        <name>fm_grado</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2665,7 +1577,7 @@
         <group/>
       </field>
       <field>
-        <name>Aque_Pueblo</name>
+        <name>version</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2677,7 +1589,7 @@
         <group/>
       </field>
       <field>
-        <name>Ent_Adm_sal</name>
+        <name>tipo_cance</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2689,7 +1601,367 @@
         <group/>
       </field>
       <field>
-        <name>nom_adm_sal</name>
+        <name>fec_pro_co</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>fec_res_bi</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>res_biops9</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>grad_histo</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>clas_cieo</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>fec_toma_e</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>fec_res_ex</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>biop_exoce</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>res_b_exoc</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>grado_hist</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>biop_endoc</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>res_b_aden</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>res_b_hist</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>cla_cie_hi</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>seg_trat_i</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>radioterap</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>quirurgico</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>quimiotera</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>hormonoter</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>cuid_palia</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>inmunotera</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>fch_seg_tr</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>nom_eve</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>nom_upgd</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>ndep_proce</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>nmun_proce</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>ndep_resi</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>nmun_resi</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>ndep_notif</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>nmun_notif</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>nreg</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2729,8 +2001,1293 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>144</xloc>
-      <yloc>224</yloc>
+      <xloc>176</xloc>
+      <yloc>176</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Microsoft Excel Input 2</name>
+    <type>ExcelInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <header>Y</header>
+    <noempty>N</noempty>
+    <stoponempty>N</stoponempty>
+    <filefield>ruta</filefield>
+    <sheetfield/>
+    <sheetrownumfield/>
+    <rownumfield/>
+    <sheetfield/>
+    <filefield>ruta</filefield>
+    <limit>0</limit>
+    <encoding/>
+    <add_to_result_filenames>Y</add_to_result_filenames>
+    <accept_filenames>N</accept_filenames>
+    <accept_field/>
+    <accept_stepname/>
+    <file>
+      <name>C:\Users\usuario\Desktop\secretaria\sivigila_adu_raw\3evento 155 datos basicos y complementarios.xlsx</name>
+      <filemask/>
+      <exclude_filemask/>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+      <name>C:\Users\usuario\Desktop\secretaria\sivigila_adu_raw\4evento 155 datos basicos y complementarios.xlsx</name>
+      <filemask/>
+      <exclude_filemask/>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+    </file>
+    <fields>
+      <field>
+        <name>cod_eve</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>fec_not</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>semana</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>año</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>cod_pre</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>cod_sub</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>pri_nom_</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>seg_nom_</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>pri_ape_</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>seg_ape_</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>tip_ide_</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>num_ide_</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>edad_</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>uni_med_</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>sexo_</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>cod_pais_o</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>cod_dpto_o</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>cod_mun_o</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>area_</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>localidad_</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>cen_pobla_</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>vereda_</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>bar_ver_</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>dir_res_</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>ocupacion_</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>tip_ss_</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>cod_ase_</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>per_etn_</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>nom_grupo_</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>estrato_</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>gp_discapa</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>gp_desplaz</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>gp_migrant</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>gp_carcela</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>gp_gestan</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>sem_ges_</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>gp_indigen</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>gp_pobicbf</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>gp_mad_com</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>gp_desmovi</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>gp_psiquia</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>gp_vic_vio</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>gp_otros</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>fuente_</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>cod_dpto_r</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>cod_mun_r</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>fec_con_</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>ini_sin_</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>tip_cas_</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>pac_hos_</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>fec_hos_</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>con_fin_</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>fec_def_</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>ajuste_</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>telefono_</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>fecha_nto_</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>cer_def_</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>cbmte_</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>uni_modif</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>nuni_modif</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>fec_arc_xl</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>nom_dil_f_</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>tel_dil_f_</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>fec_aju_</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>nit_upgd</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>fm_fuerza</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>fm_unidad</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>fm_grado</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>version</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>tipo_cance</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>fec_pro_co</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>fec_res_bi</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>res_biops9</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>grad_histo</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>clas_cieo</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>fec_toma_e</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>fec_res_ex</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>biop_exoce</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>res_b_exoc</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>grado_hist</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>biop_endoc</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>res_b_aden</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>res_b_hist</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>cla_cie_hi</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>seg_trat_i</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>radioterap</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>quirurgico</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>quimiotera</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>hormonoter</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>cuid_palia</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>inmunotera</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>fch_seg_tr</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>nom_eve</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>nom_upgd</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>ndep_proce</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>nmun_proce</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>ndep_resi</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>nmun_resi</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>ndep_notif</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>nmun_notif</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>nreg</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+    </fields>
+    <sheets>
+    </sheets>
+    <strict_types>N</strict_types>
+    <error_ignored>N</error_ignored>
+    <error_line_skipped>N</error_line_skipped>
+    <bad_line_files_destination_directory/>
+    <bad_line_files_extension>warning</bad_line_files_extension>
+    <error_line_files_destination_directory/>
+    <error_line_files_extension>error</error_line_files_extension>
+    <line_number_files_destination_directory/>
+    <line_number_files_extension>line</line_number_files_extension>
+    <shortFileFieldName/>
+    <pathFieldName/>
+    <hiddenFieldName/>
+    <lastModificationTimeFieldName/>
+    <uriNameFieldName/>
+    <rootUriNameFieldName/>
+    <extensionFieldName/>
+    <sizeFieldName/>
+    <spreadsheet_type>POI</spreadsheet_type>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>176</xloc>
+      <yloc>320</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2747,267 +3304,143 @@
     </partitioning>
     <fields>
       <field>
-        <name>Id</name>
+        <name>cod_eve</name>
         <rename/>
       </field>
       <field>
-        <name>num_form</name>
+        <name>fec_not</name>
         <rename/>
       </field>
       <field>
-        <name>dig_con</name>
+        <name>año</name>
         <rename/>
       </field>
       <field>
-        <name>cod_medi</name>
+        <name>cod_pre</name>
         <rename/>
       </field>
       <field>
-        <name>fech_lic</name>
-        <rename/>
-      </field>
-      <field>
-        <name>tipo_def</name>
-        <rename/>
-      </field>
-      <field>
-        <name>fech_def</name>
-        <rename/>
-      </field>
-      <field>
-        <name>sexo</name>
-        <rename/>
-      </field>
-      <field>
-        <name>dpto_def</name>
-        <rename/>
-      </field>
-      <field>
-        <name>muni_def</name>
-        <rename/>
-      </field>
-      <field>
-        <name>insp_def</name>
-        <rename/>
-      </field>
-      <field>
-        <name>a_defun</name>
-        <rename/>
-      </field>
-      <field>
-        <name>sit_defu</name>
-        <rename/>
-      </field>
-      <field>
-        <name>institucion</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Pri_Apel</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Seg_Apel</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Nombre</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Fech_nac</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Tip_docu</name>
-        <rename/>
-      </field>
-      <field>
-        <name>num_docu</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Tip_edad</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Val_edad</name>
-        <rename/>
-      </field>
-      <field>
-        <name>nivel_ed</name>
-        <rename/>
+        <name>pri_nom_</name>
+        <rename>pri_nom</rename>
       </field>
       <field>
-        <name>Seg_soci</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Est_civil</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Mun_resi</name>
-        <rename/>
-      </field>
-      <field>
-        <name>barrio</name>
-        <rename/>
-      </field>
-      <field>
-        <name>direccio</name>
-        <rename/>
-      </field>
-      <field>
-        <name>area_res</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Pman_mue</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Cert_exp</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Nom_Qexp</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Dir_Qexp</name>
-        <rename/>
+        <name>seg_nom_</name>
+        <rename>seg_nom</rename>
       </field>
       <field>
-        <name>Tel_Qexp</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Mu_parto</name>
-        <rename/>
-      </field>
-      <field>
-        <name>T_Parto</name>
-        <rename/>
+        <name>pri_ape_</name>
+        <rename>pri_ape</rename>
       </field>
       <field>
-        <name>Tipo_Emb</name>
-        <rename/>
-      </field>
-      <field>
-        <name>T_ges</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Peso_Nac</name>
-        <rename/>
+        <name>seg_ape_</name>
+        <rename>seg_ape</rename>
       </field>
       <field>
-        <name>Nomb_ma</name>
-        <rename/>
+        <name>tip_ide_</name>
+        <rename>tip_ide</rename>
       </field>
       <field>
-        <name>edad_ma</name>
-        <rename/>
+        <name>num_ide_</name>
+        <rename>num_ide</rename>
       </field>
       <field>
-        <name>Docu_ma</name>
-        <rename/>
+        <name>edad_</name>
+        <rename>edad</rename>
       </field>
       <field>
-        <name>Tdocu_ma</name>
-        <rename/>
+        <name>sexo_</name>
+        <rename>sexo</rename>
       </field>
       <field>
-        <name>N_hijosV</name>
+        <name>cod_dpto_o</name>
         <rename/>
       </field>
       <field>
-        <name>N_hijosM</name>
+        <name>cod_mun_o</name>
         <rename/>
       </field>
       <field>
-        <name>Est_civM</name>
-        <rename/>
+        <name>area_</name>
+        <rename>area</rename>
       </field>
       <field>
-        <name>Nivel_EM</name>
-        <rename/>
+        <name>bar_ver_</name>
+        <rename>bar_ver</rename>
       </field>
       <field>
-        <name>Emb_fal</name>
-        <rename/>
+        <name>dir_res_</name>
+        <rename>dir_res</rename>
       </field>
       <field>
-        <name>Emb_sem</name>
-        <rename/>
+        <name>ocupacion_</name>
+        <rename>ocupacion</rename>
       </field>
       <field>
-        <name>Emb_mes</name>
-        <rename/>
+        <name>tip_ss_</name>
+        <rename>tip_ss</rename>
       </field>
       <field>
-        <name>Pman_mueV</name>
-        <rename/>
+        <name>cod_ase_</name>
+        <rename>cod_ase</rename>
       </field>
       <field>
-        <name>como_ocu</name>
+        <name>cod_dpto_r</name>
         <rename/>
       </field>
       <field>
-        <name>dir_ocu</name>
+        <name>cod_mun_r</name>
         <rename/>
       </field>
       <field>
-        <name>C_muerte</name>
-        <rename/>
+        <name>fec_def_</name>
+        <rename>fec_def</rename>
       </field>
       <field>
-        <name>Asis_Med</name>
-        <rename/>
+        <name>telefono_</name>
+        <rename>telefono</rename>
       </field>
       <field>
-        <name>C_dir1</name>
-        <rename/>
+        <name>fecha_nto_</name>
+        <rename>fecha_nto</rename>
       </field>
       <field>
-        <name>C_ant1</name>
-        <rename/>
+        <name>cer_def_</name>
+        <rename>cer_def</rename>
       </field>
       <field>
-        <name>C_ant2</name>
+        <name>nit_upgd</name>
         <rename/>
       </field>
       <field>
-        <name>C_ant3</name>
+        <name>tipo_cance</name>
         <rename/>
       </field>
       <field>
-        <name>C_pat1</name>
+        <name>nom_eve</name>
         <rename/>
       </field>
       <field>
-        <name>C_bas1</name>
+        <name>nom_upgd</name>
         <rename/>
       </field>
       <field>
-        <name>Ult_ocu</name>
+        <name>ndep_proce</name>
         <rename/>
       </field>
       <field>
-        <name>Cultura</name>
+        <name>nmun_proce</name>
         <rename/>
       </field>
       <field>
-        <name>Aque_Pueblo</name>
+        <name>ndep_resi</name>
         <rename/>
       </field>
       <field>
-        <name>Ent_Adm_sal</name>
+        <name>nmun_resi</name>
         <rename/>
       </field>
       <field>
-        <name>nom_adm_sal</name>
+        <name>nreg</name>
         <rename/>
       </field>
       <field>
@@ -3024,42 +3457,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>304</xloc>
-      <yloc>64</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Add sequence</name>
-    <type>Sequence</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <valuename>id_st_mortalidad</valuename>
-    <use_database>N</use_database>
-    <connection>localhost</connection>
-    <schema/>
-    <seqname>SEQ_</seqname>
-    <use_counter>Y</use_counter>
-    <counter_name/>
-    <start_at>1</start_at>
-    <increment_by>1</increment_by>
-    <max_value>999999999</max_value>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>496</xloc>
-      <yloc>224</yloc>
+      <xloc>320</xloc>
+      <yloc>176</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -3076,267 +3475,143 @@
     </partitioning>
     <fields>
       <field>
-        <name>Id</name>
+        <name>cod_eve</name>
         <rename/>
       </field>
       <field>
-        <name>num_form</name>
+        <name>fec_not</name>
         <rename/>
       </field>
       <field>
-        <name>dig_con</name>
+        <name>año</name>
         <rename/>
       </field>
       <field>
-        <name>cod_medi</name>
+        <name>cod_pre</name>
         <rename/>
       </field>
       <field>
-        <name>fech_lic</name>
-        <rename/>
-      </field>
-      <field>
-        <name>tipo_def</name>
-        <rename/>
-      </field>
-      <field>
-        <name>fech_def</name>
-        <rename/>
-      </field>
-      <field>
-        <name>sexo</name>
-        <rename/>
-      </field>
-      <field>
-        <name>dpto_def</name>
-        <rename/>
-      </field>
-      <field>
-        <name>muni_def</name>
-        <rename/>
-      </field>
-      <field>
-        <name>insp_def</name>
-        <rename/>
-      </field>
-      <field>
-        <name>a_defun</name>
-        <rename/>
-      </field>
-      <field>
-        <name>sit_defu</name>
-        <rename/>
-      </field>
-      <field>
-        <name>institucion</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Pri_Apel</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Seg_Apel</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Nombre</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Fech_nac</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Tip_docu</name>
-        <rename/>
-      </field>
-      <field>
-        <name>num_docu</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Tip_edad</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Val_edad</name>
-        <rename/>
-      </field>
-      <field>
-        <name>nivel_ed</name>
-        <rename/>
+        <name>pri_nom_</name>
+        <rename>pri_nom</rename>
       </field>
       <field>
-        <name>Seg_soci</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Est_civil</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Mun_resi</name>
-        <rename/>
-      </field>
-      <field>
-        <name>barrio</name>
-        <rename/>
-      </field>
-      <field>
-        <name>direccio</name>
-        <rename/>
-      </field>
-      <field>
-        <name>area_res</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Pman_mue</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Cert_exp</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Nom_Qexp</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Dir_Qexp</name>
-        <rename/>
+        <name>seg_nom_</name>
+        <rename>seg_nom</rename>
       </field>
       <field>
-        <name>Tel_Qexp</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Mu_parto</name>
-        <rename/>
-      </field>
-      <field>
-        <name>T_Parto</name>
-        <rename/>
+        <name>pri_ape_</name>
+        <rename>pri_ape</rename>
       </field>
       <field>
-        <name>Tipo_Emb</name>
-        <rename/>
-      </field>
-      <field>
-        <name>T_ges</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Peso_Nac</name>
-        <rename/>
+        <name>seg_ape_</name>
+        <rename>seg_ape</rename>
       </field>
       <field>
-        <name>Nomb_ma</name>
-        <rename/>
+        <name>tip_ide_</name>
+        <rename>tip_ide</rename>
       </field>
       <field>
-        <name>edad_ma</name>
-        <rename/>
+        <name>num_ide_</name>
+        <rename>num_ide</rename>
       </field>
       <field>
-        <name>Docu_ma</name>
-        <rename/>
+        <name>edad_</name>
+        <rename>edad</rename>
       </field>
       <field>
-        <name>Tdocu_ma</name>
-        <rename/>
+        <name>sexo_</name>
+        <rename>sexo</rename>
       </field>
       <field>
-        <name>N_hijosV</name>
+        <name>cod_dpto_o</name>
         <rename/>
       </field>
       <field>
-        <name>N_hijosM</name>
+        <name>cod_mun_o</name>
         <rename/>
       </field>
       <field>
-        <name>Est_civM</name>
-        <rename/>
+        <name>area_</name>
+        <rename>area</rename>
       </field>
       <field>
-        <name>Nivel_EM</name>
-        <rename/>
+        <name>bar_ver_</name>
+        <rename>bar_ver</rename>
       </field>
       <field>
-        <name>Emb_fal</name>
-        <rename/>
+        <name>dir_res_</name>
+        <rename>dir_res</rename>
       </field>
       <field>
-        <name>Emb_sem</name>
-        <rename/>
+        <name>ocupacion_</name>
+        <rename>ocupacion</rename>
       </field>
       <field>
-        <name>Emb_mes</name>
-        <rename/>
+        <name>tip_ss_</name>
+        <rename>tip_ss</rename>
       </field>
       <field>
-        <name>Pman_mueV</name>
-        <rename/>
+        <name>cod_ase_</name>
+        <rename>cod_ase</rename>
       </field>
       <field>
-        <name>como_ocu</name>
+        <name>cod_dpto_r</name>
         <rename/>
       </field>
       <field>
-        <name>dir_ocu</name>
+        <name>cod_mun_r</name>
         <rename/>
       </field>
       <field>
-        <name>C_muerte</name>
-        <rename/>
+        <name>fec_def_</name>
+        <rename>fec_def</rename>
       </field>
       <field>
-        <name>Asis_Med</name>
-        <rename/>
+        <name>telefono_</name>
+        <rename>telefono</rename>
       </field>
       <field>
-        <name>C_dir1</name>
-        <rename/>
+        <name>fecha_nto_</name>
+        <rename>fecha_nto</rename>
       </field>
       <field>
-        <name>C_ant1</name>
-        <rename/>
+        <name>cer_def_</name>
+        <rename>cer_def</rename>
       </field>
       <field>
-        <name>C_ant2</name>
+        <name>nit_upgd</name>
         <rename/>
       </field>
       <field>
-        <name>C_ant3</name>
+        <name>tipo_cance</name>
         <rename/>
       </field>
       <field>
-        <name>C_pat1</name>
+        <name>nom_eve</name>
         <rename/>
       </field>
       <field>
-        <name>C_bas1</name>
+        <name>nom_upgd</name>
         <rename/>
       </field>
       <field>
-        <name>Ult_ocu</name>
+        <name>ndep_proce</name>
         <rename/>
       </field>
       <field>
-        <name>Cultura</name>
+        <name>nmun_proce</name>
         <rename/>
       </field>
       <field>
-        <name>Aque_Pueblo</name>
+        <name>ndep_resi</name>
         <rename/>
       </field>
       <field>
-        <name>Ent_Adm_sal</name>
+        <name>nmun_resi</name>
         <rename/>
       </field>
       <field>
-        <name>nom_adm_sal</name>
+        <name>nreg</name>
         <rename/>
       </field>
       <field>
@@ -3353,8 +3628,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>304</xloc>
-      <yloc>224</yloc>
+      <xloc>320</xloc>
+      <yloc>320</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
