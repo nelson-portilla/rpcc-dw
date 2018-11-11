@@ -35,11 +35,11 @@ from extr_mortalidad as mort left join dict_institucion as dic
 on dic.cod_institucion=mort.institucion
 where exists (select 1 from dict_cie10cancer as cie where mort.c_bas1=cie.cie_10 )
 and 
---(c_bas1 like 'C50%' or c_bas1 like 'C53%') 
-fecha_nacimiento::date>='01/01/2000'
+(c_bas1 like 'C50%' or c_bas1 like 'C53%') --and fecha_nacimiento::date>='01/01/2000'
 and
-not exists (select 1 from extr_sivigila_inf as sivi where mort.numero_identificacion=sivi.numero_identificacion )
+--not
+exists (select sivi.fecha_notificacion from extr_sivigila_adu as sivi where mort.numero_identificacion=sivi.numero_identificacion and mort.fecha_def::date=sivi.fecha_notificacion::date )
 ) as mortdef
 left join dic_who as who
 on mortdef.cie10=who.icd10
---41
+--621

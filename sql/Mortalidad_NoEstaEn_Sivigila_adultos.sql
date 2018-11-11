@@ -37,7 +37,7 @@ where exists (select 1 from dict_cie10cancer as cie where mort.c_bas1=cie.cie_10
 and 
 (c_bas1 like 'C50%' or c_bas1 like 'C53%') --and fecha_nacimiento::date>='01/01/2000'
 and
-not exists (select 1 from extr_sivigila_adu as sivi where mort.numero_identificacion=sivi.numero_documento )
+not exists (select 1 from extr_sivigila_adu as sivi where mort.numero_identificacion=sivi.numero_identificacion )
 ) as mortdef
 left join dic_who as who
 on mortdef.cie10=who.icd10

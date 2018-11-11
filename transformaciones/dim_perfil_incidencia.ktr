@@ -493,9 +493,9 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>tiene_num_registro</from>
+      <from>tiene_num_registro[VA EN HECHOS]</from>
       <to>producto_cartesiano</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>agregar_key_dim</from>
@@ -590,7 +590,6 @@
     <fields>
       <field>
         <name>consecutivo</name>
-        <rename/>
       </field>
       <field>
         <name>years</name>
@@ -645,6 +644,40 @@
     <GUI>
       <xloc>816</xloc>
       <yloc>176</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>años_1930a2030</name>
+    <type>Sequence</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <valuename>years</valuename>
+    <use_database>N</use_database>
+    <connection>localhost</connection>
+    <schema/>
+    <seqname>SEQ_</seqname>
+    <use_counter>Y</use_counter>
+    <counter_name/>
+    <start_at>1930</start_at>
+    <increment_by>1</increment_by>
+    <max_value>999999999</max_value>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>240</xloc>
+      <yloc>304</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -941,7 +974,7 @@
     </GUI>
   </step>
   <step>
-    <name>tiene_num_registro</name>
+    <name>tiene_num_registro[VA EN HECHOS]</name>
     <type>DataGrid</type>
     <description/>
     <distribute>Y</distribute>
@@ -982,40 +1015,6 @@
     <GUI>
       <xloc>384</xloc>
       <yloc>400</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>años_1930a2030</name>
-    <type>Sequence</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <valuename>years</valuename>
-    <use_database>N</use_database>
-    <connection>localhost</connection>
-    <schema/>
-    <seqname>SEQ_</seqname>
-    <use_counter>Y</use_counter>
-    <counter_name/>
-    <start_at>1930</start_at>
-    <increment_by>1</increment_by>
-    <max_value>999999999</max_value>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>240</xloc>
-      <yloc>304</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
