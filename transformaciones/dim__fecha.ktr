@@ -420,11 +420,6 @@
     <step_performance_capturing_delay>1000</step_performance_capturing_delay>
     <step_performance_capturing_size_limit>100</step_performance_capturing_size_limit>
     <dependencies>
-      <dependency>
-        <connection>localhost</connection>
-        <table/>
-        <field/>
-      </dependency>
     </dependencies>
     <partitionschemas>
     </partitionschemas>
@@ -605,7 +600,7 @@
     <counter_name/>
     <start_at>0</start_at>
     <increment_by>1</increment_by>
-    <max_value>10000</max_value>
+    <max_value>50000</max_value>
     <cluster_schema/>
     <remotesteps>
       <input>
@@ -1042,7 +1037,7 @@
       </return>
     </fields>
     <sequence/>
-    <min_year>2000</min_year>
+    <min_year>1900</min_year>
     <max_year>2018</max_year>
     <cache_size>5000</cache_size>
     <preload_cache>N</preload_cache>
@@ -1140,13 +1135,13 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>2000-01-01</nullif>
+        <nullif>1900-01-01</nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
       </field>
     </fields>
-    <limit>10000</limit>
+    <limit>50000</limit>
     <never_ending>N</never_ending>
     <interval_in_ms>5000</interval_in_ms>
     <row_time_field>now</row_time_field>

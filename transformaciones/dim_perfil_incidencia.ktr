@@ -505,7 +505,7 @@
     <hop>
       <from>meses</from>
       <to>producto_cartesiano</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>edad_diag</from>
@@ -524,11 +524,11 @@
     </hop>
     <hop>
       <from>Generate Rows</from>
-      <to>años_1930a2030</to>
+      <to>años_1928a2030</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>años_1930a2030</from>
+      <from>años_1928a2030</from>
       <to>Select values</to>
       <enabled>Y</enabled>
     </hop>
@@ -648,7 +648,7 @@
     </GUI>
   </step>
   <step>
-    <name>años_1930a2030</name>
+    <name>años_1928a2030</name>
     <type>Sequence</type>
     <description/>
     <distribute>Y</distribute>
@@ -665,7 +665,7 @@
     <seqname>SEQ_</seqname>
     <use_counter>Y</use_counter>
     <counter_name/>
-    <start_at>1930</start_at>
+    <start_at>1928</start_at>
     <increment_by>1</increment_by>
     <max_value>999999999</max_value>
     <cluster_schema/>
@@ -759,6 +759,9 @@
       </line>
       <line>
         <item>80-85</item>
+      </line>
+      <line>
+        <item>mayor 85</item>
       </line>
     </data>
     <cluster_schema/>
@@ -904,6 +907,17 @@
         <currency/>
         <decimal/>
         <group/>
+        <length>4</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>cod_sexo</name>
+        <type>Integer</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
         <length>1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -912,9 +926,15 @@
     <data>
       <line>
         <item>m</item>
+        <item>1</item>
       </line>
       <line>
         <item>f</item>
+        <item>2</item>
+      </line>
+      <line>
+        <item>desc</item>
+        <item>9</item>
       </line>
     </data>
     <cluster_schema/>
