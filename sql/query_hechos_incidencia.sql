@@ -1,6 +1,6 @@
 select distinct(pac."IdUnion") from "PACIENTES" as pac,"TUMORES" as tum, "DIRECCIONES" as dir, "RECOLECTORES" as rec, "ULTIMOCONTACTO" as ult
 where pac."IdUnion"=tum."IdUnion" and pac."IdUnion"=dir."IdUnion" and pac."IdUnion"=rec."IdUnion" and pac."IdUnion"=ult."IdUnion"
-and pac."NoReg" is not null
+--and pac."NoReg" is not null
 --order by pac."IdUnion",ult."Ult" desc ,dir."Com",dir."Ciudad" asc
 limit 20
 
