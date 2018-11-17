@@ -430,7 +430,7 @@
     <created_date>2018/11/15 23:17:20.261</created_date>
     <modified_user>-</modified_user>
     <modified_date>2018/11/15 23:17:20.261</modified_date>
-    <key_for_session_key/>
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
@@ -513,7 +513,7 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>dim perfil_residencia</from>
+      <from>dim perfil_incidencia</from>
       <to>Join Rows (cartesian product) 3</to>
       <enabled>Y</enabled>
     </hop>
@@ -670,132 +670,191 @@
     <fields>
       <field>
         <name>fecha_nacimiento</name>
+        <rename/>
       </field>
       <field>
         <name>edad</name>
+        <rename/>
       </field>
       <field>
         <name>IdUnion</name>
+        <rename/>
       </field>
       <field>
         <name>fecha_diagnostico</name>
+        <rename/>
       </field>
       <field>
         <name>cod_localizacion</name>
+        <rename/>
       </field>
       <field>
         <name>cod_metodo_diagnostico</name>
+        <rename/>
       </field>
       <field>
         <name>cod_morfologia</name>
+        <rename/>
       </field>
       <field>
         <name>comportamiento</name>
+        <rename/>
       </field>
       <field>
         <name>grado_diferenciacion</name>
+        <rename/>
       </field>
       <field>
         <name>observaciones</name>
+        <rename/>
       </field>
       <field>
         <name>descripcion_local</name>
+        <rename/>
       </field>
       <field>
         <name>descripcion_morf</name>
+        <rename/>
       </field>
       <field>
         <name>nombre_morfologia</name>
+        <rename/>
       </field>
       <field>
         <name>nombre_metodo_diag</name>
+        <rename/>
       </field>
       <field>
         <name>nombre_estado</name>
+        <rename/>
       </field>
       <field>
         <name>nombre_comportamiento</name>
+        <rename/>
       </field>
       <field>
         <name>cod_barrio</name>
+        <rename/>
       </field>
       <field>
         <name>tipo_residencia</name>
+        <rename/>
       </field>
       <field>
         <name>cod_ciudad</name>
+        <rename/>
       </field>
       <field>
         <name>rec_estado</name>
+        <rename/>
       </field>
       <field>
         <name>rec_criterio</name>
+        <rename/>
       </field>
       <field>
         <name>fuente</name>
+        <rename/>
       </field>
       <field>
         <name>estado_vital</name>
+        <rename/>
       </field>
       <field>
         <name>nombrefuente</name>
+        <rename/>
       </field>
       <field>
         <name>sexo</name>
+        <rename/>
       </field>
       <field>
         <name>fecdiag_calc</name>
+        <rename/>
       </field>
       <field>
         <name>key_date</name>
+        <rename/>
       </field>
       <field>
         <name>date_iso</name>
+        <rename/>
       </field>
       <field>
         <name>fecha_plain</name>
+        <rename/>
       </field>
       <field>
         <name>dim_cod_loc</name>
+        <rename/>
       </field>
       <field>
         <name>sk_localizacion</name>
+        <rename/>
       </field>
       <field>
         <name>dim_cod_barrio</name>
+        <rename/>
       </field>
       <field>
         <name>dim_cod_ciudad</name>
+        <rename/>
       </field>
       <field>
         <name>dim_residencia</name>
+        <rename/>
       </field>
       <field>
         <name>sk_dim_residencia</name>
+        <rename/>
       </field>
       <field>
         <name>nombre_entidad</name>
+        <rename/>
       </field>
       <field>
         <name>sk_dim_entidad</name>
+        <rename/>
       </field>
       <field>
         <name>rango_edad</name>
+        <rename/>
       </field>
       <field>
         <name>fecnac_year</name>
+        <rename/>
       </field>
       <field>
         <name>cod_sexo</name>
+        <rename/>
       </field>
       <field>
         <name>grupos_edad</name>
+        <rename/>
       </field>
       <field>
         <name>años</name>
+        <rename/>
       </field>
       <field>
         <name>sk_dim_perfil_incidencia</name>
+        <rename/>
+      </field>
+      <field>
+        <name>esta_codificado</name>
+        <rename/>
+      </field>
+      <field>
+        <name>dim_codmor</name>
+        <rename/>
+      </field>
+      <field>
+        <name>des_clasberg</name>
+        <rename/>
+      </field>
+      <field>
+        <name>sk_dim_morfologia</name>
+        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -813,7 +872,7 @@
     </GUI>
   </step>
   <step>
-    <name>dim perfil_residencia</name>
+    <name>dim perfil_incidencia</name>
     <type>TableInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -970,6 +1029,213 @@ FROM dim_perfil_incidencia
     <GUI>
       <xloc>432</xloc>
       <yloc>144</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>extr_fact_inci_dentidad</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>localhost</connection>
+    <sql>SELECT
+  idunion
+, fecha_nacimiento
+, edad
+, fecha_diagnostico
+, cod_localizacion
+, cod_metodo_diagnostico
+, cod_morfologia
+, comportamiento
+, grado_diferenciacion
+, observaciones
+, descripcion_local
+, descripcion_morf
+, nombre_morfologia
+, nombre_metodo_diag
+, nombre_estado
+, nombre_comportamiento
+, cod_barrio
+, tipo_residencia
+, cod_ciudad
+, rec_estado
+, rec_criterio
+, fuente
+, estado_vital
+, nombrefuente
+, sexo
+, noreg
+, esta_codificado
+, fecdiag_calc
+, fecha_plain
+, dim_cod_loc
+, sk_localizacion
+, nombre_entidad
+, sk_dim_entidad
+, key_date
+, date_iso
+, dim_cod_barrio
+, dim_cod_ciudad
+, dim_residencia
+, sk_dim_residencia
+, dim_codmor
+, des_clasberg
+, sk_dim_morfologia
+FROM extr_fact_inci_dentidad
+</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>128</xloc>
+      <yloc>144</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>hecho_incidencia</name>
+    <type>InsertUpdate</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>localhost</connection>
+    <commit>100</commit>
+    <update_bypassed>N</update_bypassed>
+    <lookup>
+      <schema/>
+      <table>fact_incidencia</table>
+      <key>
+        <name>idunion</name>
+        <field>idunion</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>id_fact_incidencia</name>
+        <rename>id_fact_incidencia</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>IdUnion</name>
+        <rename>IdUnion</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>comportamiento</name>
+        <rename>comportamiento</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>grado_diferenciacion</name>
+        <rename>grado_diferenciacion</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>observaciones</name>
+        <rename>observaciones</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>descripcion_local</name>
+        <rename>descripcion_local</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>descripcion_morf</name>
+        <rename>descripcion_morf</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>nombre_metodo_diag</name>
+        <rename>nombre_metodo_diag</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>nombre_estado</name>
+        <rename>nombre_estado</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>nombre_comportamiento</name>
+        <rename>nombre_comportamiento</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>rec_criterio</name>
+        <rename>rec_criterio</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>estado_vital</name>
+        <rename>estado_vital</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>key_date</name>
+        <rename>key_date</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>esta_codificado</name>
+        <rename>esta_codificado</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>sk_localizacion</name>
+        <rename>sk_localizacion</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>sk_dim_residencia</name>
+        <rename>sk_dim_residencia</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>sk_dim_entidad</name>
+        <rename>sk_dim_entidad</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>sk_dim_perfil_incidencia</name>
+        <rename>sk_dim_perfil_incidencia</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>sk_dim_morfologia</name>
+        <rename>sk_dim_morfologia</rename>
+        <update>Y</update>
+      </value>
+    </lookup>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1008</xloc>
+      <yloc>384</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1357,220 +1623,6 @@ else{
     <GUI>
       <xloc>736</xloc>
       <yloc>480</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>extr_fact_inci_dentidad</name>
-    <type>TableInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>localhost</connection>
-    <sql>SELECT
-  idunion
-, fecha_nacimiento
-, edad
-, fecha_diagnostico
-, cod_localizacion
-, cod_metodo_diagnostico
-, cod_morfologia
-, comportamiento
-, grado_diferenciacion
-, observaciones
-, descripcion_local
-, descripcion_morf
-, nombre_morfologia
-, nombre_metodo_diag
-, nombre_estado
-, nombre_comportamiento
-, cod_barrio
-, tipo_residencia
-, cod_ciudad
-, rec_estado
-, rec_criterio
-, fuente
-, estado_vital
-, nombrefuente
-, sexo
-, noreg
-, esta_codificado
-, fecdiag_calc
-, fecha_plain
-, dim_cod_loc
-, sk_localizacion
-, nombre_entidad
-, sk_dim_entidad
-, key_date
-, date_iso
-, dim_cod_barrio
-, dim_cod_ciudad
-, dim_residencia
-, sk_dim_residencia
-FROM extr_fact_inci_dentidad
-</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>128</xloc>
-      <yloc>144</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>hecho_incidencia</name>
-    <type>InsertUpdate</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>localhost</connection>
-    <commit>100</commit>
-    <update_bypassed>N</update_bypassed>
-    <lookup>
-      <schema/>
-      <table>fact_incidencia</table>
-      <key>
-        <name>idunion</name>
-        <field>idunion</field>
-        <condition>=</condition>
-        <name2/>
-      </key>
-      <value>
-        <name>id_fact_incidencia</name>
-        <rename>id_fact_incidencia</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>IdUnion</name>
-        <rename>IdUnion</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>cod_metodo_diagnostico</name>
-        <rename>cod_metodo_diagnostico</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>cod_morfologia</name>
-        <rename>cod_morfologia</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>comportamiento</name>
-        <rename>comportamiento</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>grado_diferenciacion</name>
-        <rename>grado_diferenciacion</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>observaciones</name>
-        <rename>observaciones</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>descripcion_local</name>
-        <rename>descripcion_local</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>descripcion_morf</name>
-        <rename>descripcion_morf</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>nombre_morfologia</name>
-        <rename>nombre_morfologia</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>nombre_metodo_diag</name>
-        <rename>nombre_metodo_diag</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>nombre_estado</name>
-        <rename>nombre_estado</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>nombre_comportamiento</name>
-        <rename>nombre_comportamiento</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>rec_estado</name>
-        <rename>rec_estado</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>rec_criterio</name>
-        <rename>rec_criterio</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>estado_vital</name>
-        <rename>estado_vital</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>key_date</name>
-        <rename>key_date</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>sk_localizacion</name>
-        <rename>sk_localizacion</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>sk_dim_residencia</name>
-        <rename>sk_dim_residencia</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>sk_dim_entidad</name>
-        <rename>sk_dim_entidad</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>sk_dim_perfil_incidencia</name>
-        <rename>sk_dim_perfil_incidencia</rename>
-        <update>Y</update>
-      </value>
-    </lookup>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>1008</xloc>
-      <yloc>384</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

@@ -656,7 +656,7 @@
     </hop>
     <hop>
       <from>si noreg es null</from>
-      <to>tabla_extr_hecho_incidencia_data</to>
+      <to>extr_fact__inci_data</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -1201,11 +1201,11 @@
         <storage_type/>
       </meta>
       <meta>
-        <name>Estado</name>
+        <name>Recolectado</name>
         <rename>rec_estado</rename>
-        <type>Number</type>
-        <length>1</length>
-        <precision>0</precision>
+        <type>String</type>
+        <length>-2</length>
+        <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
         <date_format_locale/>
@@ -1218,11 +1218,11 @@
         <storage_type/>
       </meta>
       <meta>
-        <name>Criterio</name>
+        <name>criterio_1</name>
         <rename>rec_criterio</rename>
-        <type>Number</type>
-        <length>1</length>
-        <precision>0</precision>
+        <type>String</type>
+        <length>-2</length>
+        <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
         <date_format_locale/>
@@ -1644,103 +1644,78 @@
     <fields>
       <field>
         <name>fecha_nacimiento</name>
-        <rename/>
       </field>
       <field>
         <name>edad</name>
-        <rename/>
       </field>
       <field>
         <name>IdUnion</name>
-        <rename/>
       </field>
       <field>
         <name>fecha_diagnostico</name>
-        <rename/>
       </field>
       <field>
         <name>cod_localizacion</name>
-        <rename/>
       </field>
       <field>
         <name>cod_metodo_diagnostico</name>
-        <rename/>
       </field>
       <field>
         <name>cod_morfologia</name>
-        <rename/>
       </field>
       <field>
         <name>comportamiento</name>
-        <rename/>
       </field>
       <field>
         <name>grado_diferenciacion</name>
-        <rename/>
       </field>
       <field>
         <name>observaciones</name>
-        <rename/>
       </field>
       <field>
         <name>descripcion_local</name>
-        <rename/>
       </field>
       <field>
         <name>descripcion_morf</name>
-        <rename/>
       </field>
       <field>
         <name>nombre_morfologia</name>
-        <rename/>
       </field>
       <field>
         <name>nombre_metodo_diag</name>
-        <rename/>
       </field>
       <field>
         <name>nombre_estado</name>
-        <rename/>
       </field>
       <field>
         <name>nombre_comportamiento</name>
-        <rename/>
       </field>
       <field>
         <name>cod_barrio</name>
-        <rename/>
       </field>
       <field>
         <name>tipo_residencia</name>
-        <rename/>
       </field>
       <field>
         <name>cod_ciudad</name>
-        <rename/>
       </field>
       <field>
         <name>rec_estado</name>
-        <rename/>
       </field>
       <field>
         <name>rec_criterio</name>
-        <rename/>
       </field>
       <field>
         <name>fuente</name>
-        <rename/>
       </field>
       <field>
         <name>estado_vital</name>
-        <rename/>
       </field>
       <field>
         <name>nombrefuente</name>
-        <rename/>
       </field>
       <field>
         <name>sexo</name>
-        <rename/>
       </field>
       <field>
         <name>NoReg</name>
@@ -1762,6 +1737,38 @@
     </GUI>
   </step>
   <step>
+    <name>si noreg es null</name>
+    <type>Formula</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <formula>
+      <field_name>esta_codificado</field_name>
+      <formula_string>IF(isblank(["noreg"]);"False";"True")</formula_string>
+      <value_type>Boolean</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <replace_field/>
+    </formula>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1232</xloc>
+      <yloc>576</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
     <name>tabla direcciones</name>
     <type>TableInput</type>
     <description/>
@@ -1776,8 +1783,9 @@
     <sql>select pac."IdUnion",dir.* from "PACIENTES" as pac,"DIRECCIONES" as dir
 where pac."IdUnion"=dir."IdUnion"
 --and pac."NoReg" is not null
+and dir."PrimerDir"=true
 order by pac."IdUnion",dir."Com"
-limit 400</sql>
+limit 2000</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -1808,13 +1816,17 @@ limit 400</sql>
       <schema_name/>
     </partitioning>
     <connection>localhostrpcc</connection>
-    <sql>select pac."IdUnion", rec.*, fr.nombrefuente from "PACIENTES" as pac join "RECOLECTORES" as rec
+    <sql>select pac."IdUnion", rec.*, fr.nombrefuente,estado."Recolectado",cri.criterio from "PACIENTES" as pac join "RECOLECTORES" as rec
 on pac."IdUnion"=rec."IdUnion"
 --and pac."NoReg" is not null
 left join "FuenteRecoleccion" as fr
 on rec."Fuente"=fr.id
+left join "Criterio" as cri
+on rec."Criterio"=cri.id
+left join "Recolectados" as estado
+on rec."Estado"=estado.id
 order by pac."IdUnion",rec."Fecha" desc
-limit 400</sql>
+limit 2000</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -1853,7 +1865,7 @@ and tum."Estad2"=est."CodigoEstado"
 and tum."Comp"=comp."CodigoComportamiento"
 --and pac."NoReg" is not null
 order by pac."IdUnion",tum."Loc" asc
-limit 200</sql>
+limit 1000</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -1890,7 +1902,7 @@ where pac."IdUnion"=ult."IdUnion"
 and ult."VM" is not null
 and ult."Ult" is not null
 order by pac."IdUnion",ult."Ult" desc
-limit 400</sql>
+limit 2000</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -1910,175 +1922,7 @@ limit 400</sql>
     </GUI>
   </step>
   <step>
-    <name>unico x idunion dir</name>
-    <type>Unique</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <count_rows>N</count_rows>
-    <count_field/>
-    <reject_duplicate_row>N</reject_duplicate_row>
-    <error_description/>
-    <fields>
-      <field>
-        <name>IdUnion</name>
-        <case_insensitive>N</case_insensitive>
-      </field>
-    </fields>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>574</xloc>
-      <yloc>197</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>unico x idunion reco</name>
-    <type>Unique</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <count_rows>N</count_rows>
-    <count_field/>
-    <reject_duplicate_row>N</reject_duplicate_row>
-    <error_description/>
-    <fields>
-      <field>
-        <name>IdUnion</name>
-        <case_insensitive>N</case_insensitive>
-      </field>
-    </fields>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>574</xloc>
-      <yloc>325</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>unico x idunion tum</name>
-    <type>Unique</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <count_rows>N</count_rows>
-    <count_field/>
-    <reject_duplicate_row>N</reject_duplicate_row>
-    <error_description/>
-    <fields>
-      <field>
-        <name>IdUnion</name>
-        <case_insensitive>N</case_insensitive>
-      </field>
-    </fields>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>574</xloc>
-      <yloc>101</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>unico x idunion ult</name>
-    <type>Unique</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <count_rows>N</count_rows>
-    <count_field/>
-    <reject_duplicate_row>N</reject_duplicate_row>
-    <error_description/>
-    <fields>
-      <field>
-        <name>IdUnion</name>
-        <case_insensitive>N</case_insensitive>
-      </field>
-    </fields>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>574</xloc>
-      <yloc>453</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>si noreg es null</name>
-    <type>Formula</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <formula>
-      <field_name>esta_codificado</field_name>
-      <formula_string>IF(isblank(["noreg"]);"False";"True")</formula_string>
-      <value_type>Boolean</value_type>
-      <value_length>-1</value_length>
-      <value_precision>-1</value_precision>
-      <replace_field/>
-    </formula>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>1232</xloc>
-      <yloc>576</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>tabla_extr_hecho_incidencia_data</name>
+    <name>extr_fact__inci_data</name>
     <type>InsertUpdate</type>
     <description/>
     <distribute>Y</distribute>
@@ -2093,7 +1937,7 @@ limit 400</sql>
     <update_bypassed>N</update_bypassed>
     <lookup>
       <schema/>
-      <table>extr_hecho__incidencia_data</table>
+      <table>extr_fact__inci_data</table>
       <key>
         <name>IdUnion</name>
         <field>IdUnion</field>
@@ -2246,6 +2090,142 @@ limit 400</sql>
     <GUI>
       <xloc>1408</xloc>
       <yloc>576</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>unico x idunion dir</name>
+    <type>Unique</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <count_rows>N</count_rows>
+    <count_field/>
+    <reject_duplicate_row>N</reject_duplicate_row>
+    <error_description/>
+    <fields>
+      <field>
+        <name>IdUnion</name>
+        <case_insensitive>N</case_insensitive>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>574</xloc>
+      <yloc>197</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>unico x idunion reco</name>
+    <type>Unique</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <count_rows>N</count_rows>
+    <count_field/>
+    <reject_duplicate_row>N</reject_duplicate_row>
+    <error_description/>
+    <fields>
+      <field>
+        <name>IdUnion</name>
+        <case_insensitive>N</case_insensitive>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>574</xloc>
+      <yloc>325</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>unico x idunion tum</name>
+    <type>Unique</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <count_rows>N</count_rows>
+    <count_field/>
+    <reject_duplicate_row>N</reject_duplicate_row>
+    <error_description/>
+    <fields>
+      <field>
+        <name>IdUnion</name>
+        <case_insensitive>N</case_insensitive>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>574</xloc>
+      <yloc>101</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>unico x idunion ult</name>
+    <type>Unique</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <count_rows>N</count_rows>
+    <count_field/>
+    <reject_duplicate_row>N</reject_duplicate_row>
+    <error_description/>
+    <fields>
+      <field>
+        <name>IdUnion</name>
+        <case_insensitive>N</case_insensitive>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>574</xloc>
+      <yloc>453</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

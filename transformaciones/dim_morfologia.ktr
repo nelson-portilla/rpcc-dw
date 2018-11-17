@@ -427,9 +427,9 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>-</created_user>
-    <created_date>2018/11/02 06:18:59.001</created_date>
+    <created_date>2018/11/17 08:13:53.507</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2018/11/02 06:18:59.001</modified_date>
+    <modified_date>2018/11/17 08:13:53.507</modified_date>
     <key_for_session_key/>
     <is_key_private>N</is_key_private>
   </info>
@@ -539,23 +539,23 @@
   </connection>
   <order>
     <hop>
-      <from>table_source_mor</from>
-      <to>Select values and rename</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Select values and rename</from>
+      <from>morfologia_clas_berg</from>
       <to>Add sequence</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Add sequence</from>
-      <to>table_dim_morfologia</to>
+      <to>Select values</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values</from>
+      <to>dim_morfologia</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <step>
-    <name>table_source_mor</name>
+    <name>morfologia_clas_berg</name>
     <type>TableInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -566,9 +566,8 @@
       <schema_name/>
     </partitioning>
     <connection>localhostrpcc</connection>
-    <sql>SELECT *
-FROM "public"."Mor"
-</sql>
+    <sql>select * from "Mor" left join clasificacion_berg
+on "Mor".clas_berg = clasificacion_berg.idclas</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -582,8 +581,8 @@ FROM "public"."Mor"
       </output>
     </remotesteps>
     <GUI>
-      <xloc>208</xloc>
-      <yloc>112</yloc>
+      <xloc>96</xloc>
+      <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -598,7 +597,7 @@ FROM "public"."Mor"
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <valuename>id_dim_morfologia</valuename>
+    <valuename>sk_dim_morfologia</valuename>
     <use_database>N</use_database>
     <connection/>
     <schema/>
@@ -616,72 +615,13 @@ FROM "public"."Mor"
       </output>
     </remotesteps>
     <GUI>
-      <xloc>624</xloc>
-      <yloc>112</yloc>
+      <xloc>272</xloc>
+      <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>table_dim_morfologia</name>
-    <type>TableOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>localhost</connection>
-    <schema/>
-    <table>dim_morfologia</table>
-    <commit>1000</commit>
-    <truncate>N</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>Y</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
-    <fields>
-      <field>
-        <column_name>id_dim_morfologia</column_name>
-        <stream_name>id_dim_morfologia</stream_name>
-      </field>
-      <field>
-        <column_name>cod_morfologia</column_name>
-        <stream_name>cod_morfologia</stream_name>
-      </field>
-      <field>
-        <column_name>nombre_morfologia</column_name>
-        <stream_name>nombre_morfologia</stream_name>
-      </field>
-      <field>
-        <column_name>clase_berg</column_name>
-        <stream_name>clase_berg</stream_name>
-      </field>
-    </fields>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>848</xloc>
-      <yloc>112</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Select values and rename</name>
+    <name>Select values</name>
     <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>
@@ -701,8 +641,12 @@ FROM "public"."Mor"
         <rename>nombre_morfologia</rename>
       </field>
       <field>
-        <name>clas_berg</name>
-        <rename>clase_berg</rename>
+        <name>des_clasberg</name>
+        <rename/>
+      </field>
+      <field>
+        <name>sk_dim_morfologia</name>
+        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -714,8 +658,51 @@ FROM "public"."Mor"
       </output>
     </remotesteps>
     <GUI>
-      <xloc>416</xloc>
-      <yloc>112</yloc>
+      <xloc>272</xloc>
+      <yloc>192</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>dim_morfologia</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>localhost</connection>
+    <schema/>
+    <table>dim_morfologia</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>N</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>480</xloc>
+      <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
