@@ -672,6 +672,16 @@
     <hop>
       <from>map noreg integer</from>
       <to>extr_fact__inci_data</to>
+      <enabled>N</enabled>
+    </hop>
+    <hop>
+      <from>map noreg integer</from>
+      <to>Get fecha sistema</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Get fecha sistema</from>
+      <to>extr_fact__inci_data</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -1909,6 +1919,11 @@
         <rename>esta_codificado</rename>
         <update>Y</update>
       </value>
+      <value>
+        <name>fec_carga</name>
+        <rename>fec_carga</rename>
+        <update>Y</update>
+      </value>
     </lookup>
     <cluster_schema/>
     <remotesteps>
@@ -2808,6 +2823,36 @@ order by pac."IdUnion",ult."Ult" desc
     <GUI>
       <xloc>574</xloc>
       <yloc>453</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Get fecha sistema</name>
+    <type>SystemInfo</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>fec_carga</name>
+        <type>system date (fixed)</type>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1280</xloc>
+      <yloc>720</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

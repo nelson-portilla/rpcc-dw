@@ -857,6 +857,11 @@ FROM dim_fecha
         <rename>fecha_plain</rename>
         <update>Y</update>
       </value>
+      <value>
+        <name>fec_carga</name>
+        <rename>fec_carga</rename>
+        <update>Y</update>
+      </value>
     </lookup>
     <cluster_schema/>
     <remotesteps>
@@ -1030,6 +1035,7 @@ FROM dim_fecha
 , sexo
 , noreg
 , esta_codificado
+, fec_carga
 FROM extr_fact__inci_data
 </sql>
     <limit>0</limit>

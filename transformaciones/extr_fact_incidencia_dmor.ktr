@@ -675,6 +675,7 @@ FROM dim_morfologia
 , sk_localizacion
 , key_date
 , date_iso
+, fec_carga
 FROM extr_fact_inci_dloc
 </sql>
     <limit>0</limit>
@@ -901,6 +902,11 @@ FROM extr_fact_inci_dloc
       <value>
         <name>sk_dim_morfologia</name>
         <rename>sk_dim_morfologia</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>fec_carga</name>
+        <rename>fec_carga</rename>
         <update>Y</update>
       </value>
     </lookup>

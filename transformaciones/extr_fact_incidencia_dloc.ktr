@@ -676,6 +676,7 @@ FROM dim_localizacion
 , key_date
 , date_iso
 , fecha_plain
+, fec_carga
 FROM extr_fact__inci_dfecha
 </sql>
     <limit>0</limit>
@@ -882,6 +883,11 @@ FROM extr_fact__inci_dfecha
       <value>
         <name>sk_localizacion</name>
         <rename>sk_localizacion</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>fec_carga</name>
+        <rename>fec_carga</rename>
         <update>Y</update>
       </value>
     </lookup>

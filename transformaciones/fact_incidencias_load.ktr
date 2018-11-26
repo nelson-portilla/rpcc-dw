@@ -551,144 +551,195 @@
     <fields>
       <field>
         <name>fecha_nacimiento</name>
+        <rename/>
       </field>
       <field>
         <name>edad</name>
+        <rename/>
       </field>
       <field>
         <name>IdUnion</name>
+        <rename/>
       </field>
       <field>
         <name>fecha_diagnostico</name>
+        <rename/>
       </field>
       <field>
         <name>cod_localizacion</name>
+        <rename/>
       </field>
       <field>
         <name>cod_metodo_diagnostico</name>
+        <rename/>
       </field>
       <field>
         <name>cod_morfologia</name>
+        <rename/>
       </field>
       <field>
         <name>comportamiento</name>
+        <rename/>
       </field>
       <field>
         <name>grado_diferenciacion</name>
+        <rename/>
       </field>
       <field>
         <name>observaciones</name>
+        <rename/>
       </field>
       <field>
         <name>descripcion_local</name>
+        <rename/>
       </field>
       <field>
         <name>descripcion_morf</name>
+        <rename/>
       </field>
       <field>
         <name>nombre_morfologia</name>
+        <rename/>
       </field>
       <field>
         <name>nombre_metodo_diag</name>
+        <rename/>
       </field>
       <field>
         <name>nombre_estado</name>
+        <rename/>
       </field>
       <field>
         <name>nombre_comportamiento</name>
+        <rename/>
       </field>
       <field>
         <name>cod_barrio</name>
+        <rename/>
       </field>
       <field>
         <name>tipo_residencia</name>
+        <rename/>
       </field>
       <field>
         <name>cod_ciudad</name>
+        <rename/>
       </field>
       <field>
         <name>rec_estado</name>
+        <rename/>
       </field>
       <field>
         <name>rec_criterio</name>
+        <rename/>
       </field>
       <field>
         <name>fuente</name>
+        <rename/>
       </field>
       <field>
         <name>estado_vital</name>
+        <rename/>
       </field>
       <field>
         <name>nombrefuente</name>
+        <rename/>
       </field>
       <field>
         <name>sexo</name>
+        <rename/>
       </field>
       <field>
         <name>fecdiag_calc</name>
+        <rename/>
       </field>
       <field>
         <name>key_date</name>
+        <rename/>
       </field>
       <field>
         <name>date_iso</name>
+        <rename/>
       </field>
       <field>
         <name>fecha_plain</name>
+        <rename/>
       </field>
       <field>
         <name>dim_cod_loc</name>
+        <rename/>
       </field>
       <field>
         <name>sk_localizacion</name>
+        <rename/>
       </field>
       <field>
         <name>dim_cod_barrio</name>
+        <rename/>
       </field>
       <field>
         <name>dim_cod_ciudad</name>
+        <rename/>
       </field>
       <field>
         <name>dim_residencia</name>
+        <rename/>
       </field>
       <field>
         <name>sk_dim_residencia</name>
+        <rename/>
       </field>
       <field>
         <name>nombre_entidad</name>
+        <rename/>
       </field>
       <field>
         <name>sk_dim_entidad</name>
+        <rename/>
       </field>
       <field>
         <name>rango_edad</name>
+        <rename/>
       </field>
       <field>
         <name>fecnac_year</name>
+        <rename/>
       </field>
       <field>
         <name>cod_sexo</name>
+        <rename/>
       </field>
       <field>
         <name>grupos_edad</name>
+        <rename/>
       </field>
       <field>
         <name>años</name>
+        <rename/>
       </field>
       <field>
         <name>sk_dim_perfil_incidencia</name>
+        <rename/>
       </field>
       <field>
         <name>esta_codificado</name>
+        <rename/>
       </field>
       <field>
         <name>dim_codmor</name>
+        <rename/>
       </field>
       <field>
         <name>des_clasberg</name>
+        <rename/>
       </field>
       <field>
         <name>sk_dim_morfologia</name>
+        <rename/>
+      </field>
+      <field>
+        <name>fec_carga</name>
+        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -826,6 +877,11 @@
       <value>
         <name>rec_estado</name>
         <rename>rec_estado</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>fec_carga</name>
+        <rename>fec_carga</rename>
         <update>Y</update>
       </value>
     </lookup>

@@ -884,6 +884,11 @@ FROM dim_entidad
         <rename>sk_dim_morfologia</rename>
         <update>Y</update>
       </value>
+      <value>
+        <name>fec_carga</name>
+        <rename>fec_carga</rename>
+        <update>Y</update>
+      </value>
     </lookup>
     <cluster_schema/>
     <remotesteps>
@@ -951,6 +956,7 @@ FROM dim_entidad
 , dim_codmor
 , des_clasberg
 , sk_dim_morfologia
+, fec_carga
 FROM extr_fact_inci_dreside
 </sql>
     <limit>0</limit>

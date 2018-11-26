@@ -702,6 +702,7 @@ ORDER BY dim_cod_barrio,dim_cod_ciudad,dim_residencia
 , nombre_morfologia_1
 , des_clasberg
 , sk_dim_morfologia
+, fec_carga
 FROM extr_fact_inci_dmor
 </sql>
     <limit>0</limit>
@@ -943,6 +944,11 @@ FROM extr_fact_inci_dmor
       <value>
         <name>sk_dim_morfologia</name>
         <rename>sk_dim_morfologia</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>fec_carga</name>
+        <rename>fec_carga</rename>
         <update>Y</update>
       </value>
     </lookup>

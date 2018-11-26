@@ -687,6 +687,7 @@
 , dim_codmor
 , des_clasberg
 , sk_dim_morfologia
+, fec_carga
 FROM extr_fact_inci_dentidad
 </sql>
     <limit>0</limit>
@@ -1053,6 +1054,11 @@ else{
       <value>
         <name>fecnac_year</name>
         <rename>fecnac_year</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>fec_carga</name>
+        <rename>fec_carga</rename>
         <update>Y</update>
       </value>
     </lookup>
