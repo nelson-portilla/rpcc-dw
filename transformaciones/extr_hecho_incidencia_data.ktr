@@ -620,11 +620,6 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>tabla tumores</from>
-      <to>Select values</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>tabla ult contacto</from>
       <to>Select values 4</to>
       <enabled>Y</enabled>
@@ -661,18 +656,8 @@
     </hop>
     <hop>
       <from>limpiar nulos</from>
-      <to>extr_fact__inci_data</to>
-      <enabled>N</enabled>
-    </hop>
-    <hop>
-      <from>limpiar nulos</from>
       <to>map noreg integer</to>
       <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>map noreg integer</from>
-      <to>extr_fact__inci_data</to>
-      <enabled>N</enabled>
     </hop>
     <hop>
       <from>map noreg integer</from>
@@ -684,7 +669,82 @@
       <to>extr_fact__inci_data</to>
       <enabled>Y</enabled>
     </hop>
+    <hop>
+      <from>remove special char</from>
+      <to>nada_sc</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>clean obs</from>
+      <to>nada_o</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>clean obs</from>
+      <to>clean desc loc</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>clean desc loc</from>
+      <to>clean desc mor</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>clean desc loc</from>
+      <to>nada_loc</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>clean desc mor</from>
+      <to>nada_mor</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>tabla tumores</from>
+      <to>clean obs</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>clean desc mor</from>
+      <to>remove special char</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>remove special char</from>
+      <to>Select values</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
+  <step>
+    <name>Get fecha sistema</name>
+    <type>SystemInfo</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>fec_carga</name>
+        <type>system date (fixed)</type>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1264</xloc>
+      <yloc>976</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
   <step>
     <name>Merge Join</name>
     <type>MergeJoin</type>
@@ -713,8 +773,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>782</xloc>
-      <yloc>197</yloc>
+      <xloc>784</xloc>
+      <yloc>464</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -746,8 +806,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>910</xloc>
-      <yloc>325</yloc>
+      <xloc>912</xloc>
+      <yloc>576</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -779,8 +839,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1022</xloc>
-      <yloc>453</yloc>
+      <xloc>1024</xloc>
+      <yloc>704</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -968,8 +1028,8 @@
         <storage_type/>
       </meta>
       <meta>
-        <name>Observaciones</name>
-        <rename>observaciones</rename>
+        <name>observaciones_clean</name>
+        <rename>observaciones_clean</rename>
         <type>String</type>
         <length>2147483647</length>
         <precision>-2</precision>
@@ -985,7 +1045,7 @@
         <storage_type/>
       </meta>
       <meta>
-        <name>DescripcionLoc</name>
+        <name>descripcionloc_clean</name>
         <rename>descripcion_local</rename>
         <type>String</type>
         <length>2147483647</length>
@@ -1002,7 +1062,7 @@
         <storage_type/>
       </meta>
       <meta>
-        <name>DescripcionMor</name>
+        <name>descripcionmor_clean</name>
         <rename>descripcion_morf</rename>
         <type>String</type>
         <length>2147483647</length>
@@ -1095,8 +1155,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>446</xloc>
-      <yloc>101</yloc>
+      <xloc>1056</xloc>
+      <yloc>336</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1190,8 +1250,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>446</xloc>
-      <yloc>197</yloc>
+      <xloc>448</xloc>
+      <yloc>464</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1302,8 +1362,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>446</xloc>
-      <yloc>325</yloc>
+      <xloc>448</xloc>
+      <yloc>576</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1363,8 +1423,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>446</xloc>
-      <yloc>453</yloc>
+      <xloc>448</xloc>
+      <yloc>704</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1404,8 +1464,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>686</xloc>
-      <yloc>101</yloc>
+      <xloc>784</xloc>
+      <yloc>336</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1445,8 +1505,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>686</xloc>
-      <yloc>197</yloc>
+      <xloc>688</xloc>
+      <yloc>464</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1486,8 +1546,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>910</xloc>
-      <yloc>197</yloc>
+      <xloc>912</xloc>
+      <yloc>464</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1527,8 +1587,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>686</xloc>
-      <yloc>325</yloc>
+      <xloc>688</xloc>
+      <yloc>576</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1568,8 +1628,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1022</xloc>
-      <yloc>325</yloc>
+      <xloc>1024</xloc>
+      <yloc>576</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1609,8 +1669,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>686</xloc>
-      <yloc>453</yloc>
+      <xloc>688</xloc>
+      <yloc>704</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1650,8 +1710,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1118</xloc>
-      <yloc>453</yloc>
+      <xloc>1120</xloc>
+      <yloc>704</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1756,8 +1816,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1230</xloc>
-      <yloc>453</yloc>
+      <xloc>1232</xloc>
+      <yloc>704</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1933,8 +1993,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1408</xloc>
-      <yloc>576</yloc>
+      <xloc>1424</xloc>
+      <yloc>976</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2015,7 +2075,7 @@
     </remotesteps>
     <GUI>
       <xloc>1152</xloc>
-      <yloc>576</yloc>
+      <yloc>832</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2501,7 +2561,7 @@
     </remotesteps>
     <GUI>
       <xloc>1264</xloc>
-      <yloc>608</yloc>
+      <yloc>864</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2533,7 +2593,7 @@
     </remotesteps>
     <GUI>
       <xloc>1024</xloc>
-      <yloc>576</yloc>
+      <yloc>832</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2568,8 +2628,8 @@ order by pac."IdUnion",dir."Com"
       </output>
     </remotesteps>
     <GUI>
-      <xloc>334</xloc>
-      <yloc>197</yloc>
+      <xloc>336</xloc>
+      <yloc>464</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2610,7 +2670,7 @@ order by pac."IdUnion",rec."Fecha" desc
     </remotesteps>
     <GUI>
       <xloc>336</xloc>
-      <yloc>320</yloc>
+      <yloc>576</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2648,8 +2708,8 @@ order by pac."IdUnion",tum."Loc" asc
       </output>
     </remotesteps>
     <GUI>
-      <xloc>334</xloc>
-      <yloc>101</yloc>
+      <xloc>48</xloc>
+      <yloc>32</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2685,8 +2745,8 @@ order by pac."IdUnion",ult."Ult" desc
       </output>
     </remotesteps>
     <GUI>
-      <xloc>334</xloc>
-      <yloc>453</yloc>
+      <xloc>336</xloc>
+      <yloc>704</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2719,8 +2779,8 @@ order by pac."IdUnion",ult."Ult" desc
       </output>
     </remotesteps>
     <GUI>
-      <xloc>574</xloc>
-      <yloc>197</yloc>
+      <xloc>576</xloc>
+      <yloc>464</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2753,8 +2813,8 @@ order by pac."IdUnion",ult."Ult" desc
       </output>
     </remotesteps>
     <GUI>
-      <xloc>574</xloc>
-      <yloc>325</yloc>
+      <xloc>576</xloc>
+      <yloc>576</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2787,8 +2847,8 @@ order by pac."IdUnion",ult."Ult" desc
       </output>
     </remotesteps>
     <GUI>
-      <xloc>574</xloc>
-      <yloc>101</yloc>
+      <xloc>912</xloc>
+      <yloc>336</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2821,16 +2881,16 @@ order by pac."IdUnion",ult."Ult" desc
       </output>
     </remotesteps>
     <GUI>
-      <xloc>574</xloc>
-      <yloc>453</yloc>
+      <xloc>576</xloc>
+      <yloc>704</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Get fecha sistema</name>
-    <type>SystemInfo</type>
+    <name>remove special char</name>
+    <type>StringOperations</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
     <partitioning>
@@ -2839,8 +2899,160 @@ order by pac."IdUnion",ult."Ult" desc
     </partitioning>
     <fields>
       <field>
-        <name>fec_carga</name>
-        <type>system date (fixed)</type>
+        <in_stream_name>observaciones_clean</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>upper</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>remove_digits</digits>
+        <remove_special_characters>cr</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>descripcionloc_clean</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>upper</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>remove_digits</digits>
+        <remove_special_characters>cr</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>descripcionmor_clean</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>upper</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>remove_digits</digits>
+        <remove_special_characters>cr</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>observaciones_clean</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>upper</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>remove_digits</digits>
+        <remove_special_characters>lf</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>descripcionloc_clean</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>upper</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>remove_digits</digits>
+        <remove_special_characters>lf</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>descripcionmor_clean</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>upper</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>remove_digits</digits>
+        <remove_special_characters>lf</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>observaciones_clean</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>upper</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>remove_digits</digits>
+        <remove_special_characters>crlf</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>descripcionloc_clean</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>upper</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>remove_digits</digits>
+        <remove_special_characters>crlf</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>descripcionmor_clean</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>upper</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>remove_digits</digits>
+        <remove_special_characters>crlf</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>observaciones_clean</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>upper</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>remove_digits</digits>
+        <remove_special_characters>tab</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>descripcionloc_clean</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>upper</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>remove_digits</digits>
+        <remove_special_characters>tab</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>descripcionmor_clean</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>upper</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>remove_digits</digits>
+        <remove_special_characters>tab</remove_special_characters>
       </field>
     </fields>
     <cluster_schema/>
@@ -2851,12 +3063,270 @@ order by pac."IdUnion",ult."Ult" desc
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1280</xloc>
-      <yloc>720</yloc>
+      <xloc>1056</xloc>
+      <yloc>176</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>nada_sc</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1200</xloc>
+      <yloc>176</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>nada_o</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>288</xloc>
+      <yloc>192</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>nada_loc</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>512</xloc>
+      <yloc>192</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>nada_mor</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>784</xloc>
+      <yloc>192</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>clean obs</name>
+    <type>ReplaceString</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>Observaciones</in_stream_name>
+        <out_stream_name>observaciones_clean</out_stream_name>
+        <use_regex>yes</use_regex>
+        <replace_string>\p{Punct}</replace_string>
+        <replace_by_string/>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+        <is_unicode>no</is_unicode>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>288</xloc>
+      <yloc>32</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>clean desc loc</name>
+    <type>ReplaceString</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>DescripcionLoc</in_stream_name>
+        <out_stream_name>descripcionloc_clean</out_stream_name>
+        <use_regex>yes</use_regex>
+        <replace_string>\p{Punct}</replace_string>
+        <replace_by_string/>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+        <is_unicode>no</is_unicode>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>512</xloc>
+      <yloc>32</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>clean desc mor</name>
+    <type>ReplaceString</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>DescripcionMor</in_stream_name>
+        <out_stream_name>descripcionmor_clean</out_stream_name>
+        <use_regex>yes</use_regex>
+        <replace_string>\p{Punct}</replace_string>
+        <replace_by_string/>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+        <is_unicode>no</is_unicode>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>784</xloc>
+      <yloc>32</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step_error_handling>
+    <error>
+      <source_step>remove special char</source_step>
+      <target_step>nada_sc</target_step>
+      <is_enabled>Y</is_enabled>
+      <nr_valuename/>
+      <descriptions_valuename/>
+      <fields_valuename/>
+      <codes_valuename/>
+      <max_errors/>
+      <max_pct_errors/>
+      <min_pct_rows/>
+    </error>
+    <error>
+      <source_step>clean obs</source_step>
+      <target_step>nada_o</target_step>
+      <is_enabled>Y</is_enabled>
+      <nr_valuename/>
+      <descriptions_valuename/>
+      <fields_valuename/>
+      <codes_valuename/>
+      <max_errors/>
+      <max_pct_errors/>
+      <min_pct_rows/>
+    </error>
+    <error>
+      <source_step>clean desc loc</source_step>
+      <target_step>nada_loc</target_step>
+      <is_enabled>Y</is_enabled>
+      <nr_valuename/>
+      <descriptions_valuename/>
+      <fields_valuename/>
+      <codes_valuename/>
+      <max_errors/>
+      <max_pct_errors/>
+      <min_pct_rows/>
+    </error>
+    <error>
+      <source_step>clean desc mor</source_step>
+      <target_step>nada_mor</target_step>
+      <is_enabled>Y</is_enabled>
+      <nr_valuename/>
+      <descriptions_valuename/>
+      <fields_valuename/>
+      <codes_valuename/>
+      <max_errors/>
+      <max_pct_errors/>
+      <min_pct_rows/>
+    </error>
   </step_error_handling>
   <slave-step-copy-partition-distribution>
   </slave-step-copy-partition-distribution>
