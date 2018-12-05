@@ -1,0 +1,25 @@
+2018/11/26 22:22:38 - dim_morfologia - Loading transformation from XML file [file:///C:/Users/usuario/Documents/GitHub/rpcc-dw/transformaciones/extr_fact_incidencia_dmor.ktr]
+2018/11/26 22:22:38 - dim_morfologia - Using run configuration [Pentaho local]
+2018/11/26 22:22:38 - dim_morfologia - Using legacy execution engine
+2018/11/26 22:22:38 - extr_fact_incidencia_dmor - Dispatching started for transformation [extr_fact_incidencia_dmor]
+2018/11/26 22:22:38 - dim morfologia.0 - Finished reading query, closing connection.
+2018/11/26 22:22:38 - dim morfologia.0 - Finished processing (I=768, O=0, R=0, W=768, U=0, E=0)
+2018/11/26 22:22:38 - sort x dim mor.0 - Finished processing (I=0, O=0, R=768, W=768, U=0, E=0)
+2018/11/26 22:22:39 - extr_fact_inci_dloc.0 - linenr 50000
+2018/11/26 22:22:39 - Sort x mor.0 - Linenr 50000
+2018/11/26 22:22:41 - extr_fact_inci_dloc.0 - linenr 100000
+2018/11/26 22:22:41 - Sort x mor.0 - Linenr 100000
+2018/11/26 22:22:43 - extr_fact_inci_dloc.0 - linenr 150000
+2018/11/26 22:22:43 - Sort x mor.0 - Linenr 150000
+2018/11/26 22:22:43 - extr_fact_inci_dloc.0 - Finished reading query, closing connection.
+2018/11/26 22:22:43 - extr_fact_inci_dloc.0 - Finished processing (I=169313, O=0, R=0, W=169313, U=0, E=0)
+2018/11/26 22:22:44 - sort x idunion 2.0 - Linenr 50000
+2018/11/26 22:22:44 - sort x idunion 2.0 - Linenr 100000
+2018/11/26 22:22:44 - Sort x mor.0 - Finished processing (I=0, O=0, R=169313, W=169313, U=0, E=0)
+2018/11/26 22:22:44 - sort x idunion 2.0 - Linenr 150000
+2018/11/26 22:22:44 - Merge Join 4 2.0 - Finished processing (I=0, O=0, R=170081, W=169313, U=0, E=0)
+2018/11/26 22:23:04 - extr_fact_inci_dmor.0 - linenr 50000
+2018/11/26 22:23:23 - extr_fact_inci_dmor.0 - linenr 100000
+2018/11/26 22:23:45 - extr_fact_inci_dmor.0 - linenr 150000
+2018/11/26 22:23:48 - sort x idunion 2.0 - Finished processing (I=0, O=0, R=169313, W=169313, U=0, E=0)
+2018/11/26 22:23:52 - extr_fact_inci_dmor.0 - Finished processing (I=169313, O=169313, R=169313, W=169313, U=0, E=0)

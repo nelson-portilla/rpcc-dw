@@ -1,0 +1,27 @@
+2018/11/26 22:20:30 - dim_fecha - Loading transformation from XML file [C:\Users\usuario\Documents\GitHub\rpcc-dw\transformaciones\extr_fact_incidencia_dfecha.ktr]
+2018/11/26 22:20:30 - dim_fecha - Using run configuration [Pentaho local]
+2018/11/26 22:20:30 - dim_fecha - Using legacy execution engine
+2018/11/26 22:20:30 - extr_fact_incidencia_dfecha - Dispatching started for transformation [extr_fact_incidencia_dfecha]
+2018/11/26 22:20:30 - dim fecha.0 - Finished reading query, closing connection.
+2018/11/26 22:20:30 - format_fecha_dim.0 - Finished processing (I=0, O=0, R=43417, W=43417, U=0, E=0)
+2018/11/26 22:20:30 - dim fecha.0 - Finished processing (I=43417, O=0, R=0, W=43417, U=0, E=0)
+2018/11/26 22:20:31 - tabla_extr_hechos_data.0 - linenr 50000
+2018/11/26 22:20:31 - format_fecha.0 - Linenr 50000
+2018/11/26 22:20:31 - Sort x fecha diag.0 - Linenr 50000
+2018/11/26 22:20:31 - tabla_extr_hechos_data.0 - linenr 100000
+2018/11/26 22:20:31 - format_fecha.0 - Linenr 100000
+2018/11/26 22:20:31 - Sort x fecha diag.0 - Linenr 100000
+2018/11/26 22:20:33 - tabla_extr_hechos_data.0 - linenr 150000
+2018/11/26 22:20:33 - format_fecha.0 - Linenr 150000
+2018/11/26 22:20:33 - Sort x fecha diag.0 - Linenr 150000
+2018/11/26 22:20:33 - tabla_extr_hechos_data.0 - Finished reading query, closing connection.
+2018/11/26 22:20:33 - tabla_extr_hechos_data.0 - Finished processing (I=169323, O=0, R=0, W=169323, U=0, E=0)
+2018/11/26 22:20:33 - format_fecha.0 - Finished processing (I=0, O=0, R=169323, W=169323, U=0, E=0)
+2018/11/26 22:20:51 - extr_fact__inci_dfecha.0 - linenr 50000
+2018/11/26 22:21:08 - extr_fact__inci_dfecha.0 - linenr 100000
+2018/11/26 22:21:25 - Sort x fecha diag.0 - Finished processing (I=0, O=0, R=169323, W=169323, U=0, E=0)
+2018/11/26 22:21:25 - extr_fact__inci_dfecha.0 - linenr 150000
+2018/11/26 22:21:28 - Merge Join 4.0 - linenr 200000
+2018/11/26 22:21:28 - sort x fecha.0 - Finished processing (I=0, O=0, R=43417, W=43417, U=0, E=0)
+2018/11/26 22:21:28 - Merge Join 4.0 - Finished processing (I=0, O=0, R=212740, W=169313, U=0, E=0)
+2018/11/26 22:21:32 - extr_fact__inci_dfecha.0 - Finished processing (I=169313, O=169313, R=169313, W=169313, U=0, E=0)

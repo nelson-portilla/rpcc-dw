@@ -1,0 +1,21 @@
+2018/11/26 22:28:52 - fact_incidencia - Loading transformation from XML file [file:///C:/Users/usuario/Documents/GitHub/rpcc-dw/transformaciones/fact_incidencias_load.ktr]
+2018/11/26 22:28:52 - fact_incidencia - Using run configuration [Pentaho local]
+2018/11/26 22:28:52 - fact_incidencia - Using legacy execution engine
+2018/11/26 22:28:52 - fact_incidencias_load - Dispatching started for transformation [fact_incidencias_load]
+2018/11/26 22:28:59 - join_perfil_incidencia.0 - linenr 50000
+2018/11/26 22:29:02 - Select values 5.0 - linenr 50000
+2018/11/26 22:29:05 - Add id_fact_incidencia.0 - linenr 50000
+2018/11/26 22:29:07 - hecho_incidencia.0 - linenr 50000
+2018/11/26 22:29:13 - join_perfil_incidencia.0 - linenr 100000
+2018/11/26 22:29:16 - Select values 5.0 - linenr 100000
+2018/11/26 22:29:19 - Add id_fact_incidencia.0 - linenr 100000
+2018/11/26 22:29:22 - hecho_incidencia.0 - linenr 100000
+2018/11/26 22:29:28 - join_perfil_incidencia.0 - linenr 150000
+2018/11/26 22:29:32 - Select values 5.0 - linenr 150000
+2018/11/26 22:29:35 - join_perfil_incidencia.0 - Finished reading query, closing connection.
+2018/11/26 22:29:35 - join_perfil_incidencia.0 - Finished processing (I=168912, O=0, R=0, W=168912, U=0, E=0)
+2018/11/26 22:29:35 - Add id_fact_incidencia.0 - linenr 150000
+2018/11/26 22:29:38 - Select values 5.0 - Finished processing (I=0, O=0, R=168912, W=168912, U=0, E=0)
+2018/11/26 22:29:38 - hecho_incidencia.0 - linenr 150000
+2018/11/26 22:29:42 - Add id_fact_incidencia.0 - Finished processing (I=0, O=0, R=168912, W=168912, U=0, E=0)
+2018/11/26 22:29:45 - hecho_incidencia.0 - Finished processing (I=168912, O=168912, R=168912, W=168912, U=0, E=0)

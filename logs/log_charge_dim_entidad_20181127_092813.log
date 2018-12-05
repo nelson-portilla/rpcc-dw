@@ -1,0 +1,22 @@
+2018/11/27 09:28:13 - dim_entidad - Loading transformation from XML file [file:///C:/Users/usuario/Documents/GitHub/rpcc-dw/transformaciones/extr_fact_incidencia_dentidad.ktr]
+2018/11/27 09:28:13 - dim_entidad - Using run configuration [Pentaho local]
+2018/11/27 09:28:13 - dim_entidad - Using legacy execution engine
+2018/11/27 09:28:13 - extr_fact_incidencia_dentidad - Dispatching started for transformation [extr_fact_incidencia_dentidad]
+2018/11/27 09:28:13 - dim entidad.0 - Finished reading query, closing connection.
+2018/11/27 09:28:13 - dim entidad.0 - Finished processing (I=948, O=0, R=0, W=948, U=0, E=0)
+2018/11/27 09:28:13 - sort x nom_fuente.0 - Finished processing (I=0, O=0, R=948, W=948, U=0, E=0)
+2018/11/27 09:28:13 - quitar entidad duplic.0 - Finished processing (I=0, O=0, R=948, W=170, U=0, E=0)
+2018/11/27 09:28:14 - extr_fact_inci_dreside.0 - linenr 50000
+2018/11/27 09:28:15 - Sort x entidad.0 - Linenr 50000
+2018/11/27 09:28:16 - extr_fact_inci_dreside.0 - linenr 100000
+2018/11/27 09:28:16 - Sort x entidad.0 - Linenr 100000
+2018/11/27 09:28:17 - extr_fact_inci_dreside.0 - linenr 150000
+2018/11/27 09:28:17 - Sort x entidad.0 - Linenr 150000
+2018/11/27 09:28:18 - extr_fact_inci_dreside.0 - Finished reading query, closing connection.
+2018/11/27 09:28:18 - extr_fact_inci_dreside.0 - Finished processing (I=169313, O=0, R=0, W=169313, U=0, E=0)
+2018/11/27 09:29:03 - extr_fact_inci_dentidad.0 - linenr 50000
+2018/11/27 09:29:36 - extr_fact_inci_dentidad.0 - linenr 100000
+2018/11/27 09:30:11 - Sort x entidad.0 - Finished processing (I=0, O=0, R=169313, W=169313, U=0, E=0)
+2018/11/27 09:30:12 - extr_fact_inci_dentidad.0 - linenr 150000
+2018/11/27 09:30:19 - Join Rows (cartesian product) 2.0 - Finished processing (I=0, O=0, R=169483, W=169313, U=0, E=0)
+2018/11/27 09:30:27 - extr_fact_inci_dentidad.0 - Finished processing (I=169313, O=0, R=169313, W=169313, U=169313, E=0)

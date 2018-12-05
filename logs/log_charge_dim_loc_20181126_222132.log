@@ -1,0 +1,57 @@
+2018/11/26 22:21:32 - dim_localizacion - Loading transformation from XML file [file:///C:/Users/usuario/Documents/GitHub/rpcc-dw/transformaciones/extr_fact_incidencia_dloc.ktr]
+2018/11/26 22:21:32 - dim_localizacion - Using run configuration [Pentaho local]
+2018/11/26 22:21:32 - dim_localizacion - Using legacy execution engine
+2018/11/26 22:21:32 - extr_fact_incidencia_dloc - Dispatching started for transformation [extr_fact_incidencia_dloc]
+2018/11/26 22:21:32 - dim localizacion.0 - Finished reading query, closing connection.
+2018/11/26 22:21:32 - dim localizacion.0 - Finished processing (I=482, O=0, R=0, W=482, U=0, E=0)
+2018/11/26 22:21:32 - sort x loc 2.0 - Finished processing (I=0, O=0, R=482, W=482, U=0, E=0)
+2018/11/26 22:21:33 - extr_fact_inci_dfecha.0 - linenr 50000
+2018/11/26 22:21:34 - Sort x loc.0 - Linenr 50000
+2018/11/26 22:21:35 - extr_fact_inci_dfecha.0 - linenr 100000
+2018/11/26 22:21:35 - Sort x loc.0 - Linenr 100000
+2018/11/26 22:21:36 - extr_fact_inci_dfecha.0 - linenr 150000
+2018/11/26 22:21:36 - Sort x loc.0 - Linenr 150000
+2018/11/26 22:21:36 - extr_fact_inci_dfecha.0 - Finished reading query, closing connection.
+2018/11/26 22:21:36 - extr_fact_inci_dfecha.0 - Finished processing (I=169313, O=0, R=0, W=169313, U=0, E=0)
+2018/11/26 22:21:36 - sort x idunion 2.0 - Linenr 50000
+2018/11/26 22:21:37 - sort x idunion 2.0 - Linenr 100000
+2018/11/26 22:21:37 - sort x idunion 2.0 - Linenr 150000
+2018/11/26 22:21:37 - sort x idunion 2.0 - Linenr 200000
+2018/11/26 22:21:37 - sort x idunion 2.0 - Linenr 250000
+2018/11/26 22:21:37 - sort x idunion 2.0 - Linenr 300000
+2018/11/26 22:21:37 - sort x idunion 2.0 - Linenr 350000
+2018/11/26 22:21:37 - sort x idunion 2.0 - Linenr 400000
+2018/11/26 22:21:37 - sort x idunion 2.0 - Linenr 450000
+2018/11/26 22:21:37 - sort x idunion 2.0 - Linenr 500000
+2018/11/26 22:21:37 - sort x idunion 2.0 - Linenr 550000
+2018/11/26 22:21:37 - sort x idunion 2.0 - Linenr 600000
+2018/11/26 22:21:37 - sort x idunion 2.0 - Linenr 650000
+2018/11/26 22:21:37 - sort x idunion 2.0 - Linenr 700000
+2018/11/26 22:21:37 - sort x idunion 2.0 - Linenr 750000
+2018/11/26 22:21:38 - sort x idunion 2.0 - Linenr 800000
+2018/11/26 22:21:38 - sort x idunion 2.0 - Linenr 850000
+2018/11/26 22:21:38 - Sort x loc.0 - Finished processing (I=0, O=0, R=169313, W=169313, U=0, E=0)
+2018/11/26 22:21:38 - Merge Join 4 2.0 - Finished processing (I=0, O=0, R=169795, W=873292, U=0, E=0)
+2018/11/26 22:21:39 - quitar idunion duplicados.0 - Linenr 50000
+2018/11/26 22:21:42 - quitar idunion duplicados.0 - Linenr 100000
+2018/11/26 22:21:45 - quitar idunion duplicados.0 - Linenr 150000
+2018/11/26 22:21:47 - quitar idunion duplicados.0 - Linenr 200000
+2018/11/26 22:21:49 - quitar idunion duplicados.0 - Linenr 250000
+2018/11/26 22:21:52 - quitar idunion duplicados.0 - Linenr 300000
+2018/11/26 22:21:55 - quitar idunion duplicados.0 - Linenr 350000
+2018/11/26 22:21:55 - extr_fact_inci_dloc.0 - linenr 50000
+2018/11/26 22:21:58 - quitar idunion duplicados.0 - Linenr 400000
+2018/11/26 22:22:01 - quitar idunion duplicados.0 - Linenr 450000
+2018/11/26 22:22:03 - quitar idunion duplicados.0 - Linenr 500000
+2018/11/26 22:22:06 - quitar idunion duplicados.0 - Linenr 550000
+2018/11/26 22:22:10 - quitar idunion duplicados.0 - Linenr 600000
+2018/11/26 22:22:12 - extr_fact_inci_dloc.0 - linenr 100000
+2018/11/26 22:22:13 - quitar idunion duplicados.0 - Linenr 650000
+2018/11/26 22:22:17 - quitar idunion duplicados.0 - Linenr 700000
+2018/11/26 22:22:20 - quitar idunion duplicados.0 - Linenr 750000
+2018/11/26 22:22:23 - quitar idunion duplicados.0 - Linenr 800000
+2018/11/26 22:22:28 - quitar idunion duplicados.0 - Linenr 850000
+2018/11/26 22:22:30 - extr_fact_inci_dloc.0 - linenr 150000
+2018/11/26 22:22:31 - sort x idunion 2.0 - Finished processing (I=0, O=0, R=873292, W=873292, U=0, E=0)
+2018/11/26 22:22:33 - quitar idunion duplicados.0 - Finished processing (I=0, O=0, R=873292, W=169313, U=0, E=0)
+2018/11/26 22:22:37 - extr_fact_inci_dloc.0 - Finished processing (I=169313, O=169313, R=169313, W=169313, U=0, E=0)

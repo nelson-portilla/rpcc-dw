@@ -1,0 +1,158 @@
+2018/11/27 11:04:51 - data - Loading transformation from XML file [C:\Users\usuario\Documents\GitHub\rpcc-dw\transformaciones\extr_hecho_incidencia_data.ktr]
+2018/11/27 11:04:51 - data - Using run configuration [Pentaho local]
+2018/11/27 11:04:51 - data - Using legacy execution engine
+2018/11/27 11:04:51 - extr_hecho_incidencia_data - Dispatching started for transformation [extr_hecho_incidencia_data]
+2018/11/27 11:04:52 - tabla direcciones.0 - linenr 50000
+2018/11/27 11:04:52 - Select values 2.0 - linenr 50000
+2018/11/27 11:04:52 - unico x idunion dir.0 - Linenr 50000
+2018/11/27 11:04:52 - Sort rows 2.0 - Linenr 50000
+2018/11/27 11:04:53 - tabla ult contacto.0 - linenr 50000
+2018/11/27 11:04:53 - tabla direcciones.0 - linenr 100000
+2018/11/27 11:04:53 - Select values 4.0 - linenr 50000
+2018/11/27 11:04:53 - unico x idunion ult.0 - Linenr 50000
+2018/11/27 11:04:53 - Select values 2.0 - linenr 100000
+2018/11/27 11:04:53 - unico x idunion dir.0 - Linenr 100000
+2018/11/27 11:04:53 - Sort rows 2.0 - Linenr 100000
+2018/11/27 11:04:53 - Sort rows 6.0 - Linenr 50000
+2018/11/27 11:04:53 - tabla ult contacto.0 - linenr 100000
+2018/11/27 11:04:53 - Select values 4.0 - linenr 100000
+2018/11/27 11:04:53 - unico x idunion ult.0 - Linenr 100000
+2018/11/27 11:04:53 - tabla direcciones.0 - linenr 150000
+2018/11/27 11:04:53 - tabla ult contacto.0 - linenr 150000
+2018/11/27 11:04:53 - Select values 4.0 - linenr 150000
+2018/11/27 11:04:53 - Sort rows 6.0 - Linenr 100000
+2018/11/27 11:04:53 - unico x idunion ult.0 - Linenr 150000
+2018/11/27 11:04:53 - Select values 2.0 - linenr 150000
+2018/11/27 11:04:53 - unico x idunion dir.0 - Linenr 150000
+2018/11/27 11:04:53 - Sort rows 2.0 - Linenr 150000
+2018/11/27 11:04:53 - tabla ult contacto.0 - linenr 200000
+2018/11/27 11:04:53 - Select values 4.0 - linenr 200000
+2018/11/27 11:04:53 - unico x idunion ult.0 - Linenr 200000
+2018/11/27 11:04:53 - tabla direcciones.0 - linenr 200000
+2018/11/27 11:04:53 - tabla ult contacto.0 - linenr 250000
+2018/11/27 11:04:53 - Select values 4.0 - linenr 250000
+2018/11/27 11:04:53 - unico x idunion ult.0 - Linenr 250000
+2018/11/27 11:04:53 - Select values 2.0 - linenr 200000
+2018/11/27 11:04:53 - unico x idunion dir.0 - Linenr 200000
+2018/11/27 11:04:53 - Sort rows 6.0 - Linenr 150000
+2018/11/27 11:04:53 - Sort rows 2.0 - Linenr 200000
+2018/11/27 11:04:53 - tabla ult contacto.0 - linenr 300000
+2018/11/27 11:04:53 - Select values 4.0 - linenr 300000
+2018/11/27 11:04:53 - unico x idunion ult.0 - Linenr 300000
+2018/11/27 11:04:53 - tabla direcciones.0 - linenr 250000
+2018/11/27 11:04:53 - tabla ult contacto.0 - linenr 350000
+2018/11/27 11:04:53 - Select values 4.0 - linenr 350000
+2018/11/27 11:04:53 - unico x idunion ult.0 - Linenr 350000
+2018/11/27 11:04:53 - Select values 2.0 - linenr 250000
+2018/11/27 11:04:53 - unico x idunion dir.0 - Linenr 250000
+2018/11/27 11:04:53 - Sort rows 2.0 - Linenr 250000
+2018/11/27 11:04:53 - Sort rows 6.0 - Linenr 200000
+2018/11/27 11:04:53 - tabla direcciones.0 - Finished reading query, closing connection.
+2018/11/27 11:04:53 - Select values 2.0 - Finished processing (I=0, O=0, R=266342, W=266342, U=0, E=0)
+2018/11/27 11:04:53 - tabla direcciones.0 - Finished processing (I=266342, O=0, R=0, W=266342, U=0, E=0)
+2018/11/27 11:04:53 - unico x idunion dir.0 - Finished processing (I=0, O=0, R=266342, W=266223, U=0, E=0)
+2018/11/27 11:04:53 - tabla ult contacto.0 - Finished reading query, closing connection.
+2018/11/27 11:04:53 - tabla ult contacto.0 - Finished processing (I=392447, O=0, R=0, W=392447, U=0, E=0)
+2018/11/27 11:04:53 - Select values 4.0 - Finished processing (I=0, O=0, R=392447, W=392447, U=0, E=0)
+2018/11/27 11:04:53 - unico x idunion ult.0 - Finished processing (I=0, O=0, R=392447, W=225158, U=0, E=0)
+2018/11/27 11:04:54 - tabla recolectores.0 - linenr 50000
+2018/11/27 11:04:54 - Select values 3.0 - linenr 50000
+2018/11/27 11:04:54 - unico x idunion reco.0 - Linenr 50000
+2018/11/27 11:04:54 - Sort rows 4.0 - Linenr 50000
+2018/11/27 11:04:54 - tabla recolectores.0 - linenr 100000
+2018/11/27 11:04:54 - Select values 3.0 - linenr 100000
+2018/11/27 11:04:54 - unico x idunion reco.0 - Linenr 100000
+2018/11/27 11:04:54 - Sort rows 4.0 - Linenr 100000
+2018/11/27 11:04:54 - tabla recolectores.0 - linenr 150000
+2018/11/27 11:04:54 - Select values 3.0 - linenr 150000
+2018/11/27 11:04:54 - unico x idunion reco.0 - Linenr 150000
+2018/11/27 11:04:54 - Sort rows 4.0 - Linenr 150000
+2018/11/27 11:04:54 - tabla recolectores.0 - linenr 200000
+2018/11/27 11:04:55 - Select values 3.0 - linenr 200000
+2018/11/27 11:04:55 - unico x idunion reco.0 - Linenr 200000
+2018/11/27 11:04:55 - tabla tumores.0 - linenr 50000
+2018/11/27 11:04:55 - tabla recolectores.0 - linenr 250000
+2018/11/27 11:04:55 - Select values 3.0 - linenr 250000
+2018/11/27 11:04:55 - unico x idunion reco.0 - Linenr 250000
+2018/11/27 11:04:55 - Select values.0 - linenr 50000
+2018/11/27 11:04:55 - unico x idunion tum.0 - Linenr 50000
+2018/11/27 11:04:55 - Sort rows.0 - Linenr 50000
+2018/11/27 11:04:55 - Sort rows 4.0 - Linenr 200000
+2018/11/27 11:04:55 - tabla recolectores.0 - linenr 300000
+2018/11/27 11:04:55 - Select values 3.0 - linenr 300000
+2018/11/27 11:04:55 - unico x idunion reco.0 - Linenr 300000
+2018/11/27 11:04:56 - tabla recolectores.0 - linenr 350000
+2018/11/27 11:04:56 - Select values 3.0 - linenr 350000
+2018/11/27 11:04:56 - unico x idunion reco.0 - Linenr 350000
+2018/11/27 11:04:56 - Sort rows 4.0 - Linenr 250000
+2018/11/27 11:04:56 - tabla tumores.0 - linenr 100000
+2018/11/27 11:04:56 - tabla recolectores.0 - Finished reading query, closing connection.
+2018/11/27 11:04:56 - Select values 3.0 - Finished processing (I=0, O=0, R=390828, W=390828, U=0, E=0)
+2018/11/27 11:04:56 - tabla recolectores.0 - Finished processing (I=390828, O=0, R=0, W=390828, U=0, E=0)
+2018/11/27 11:04:56 - unico x idunion reco.0 - Finished processing (I=0, O=0, R=390828, W=273780, U=0, E=0)
+2018/11/27 11:04:56 - Select values.0 - linenr 100000
+2018/11/27 11:04:56 - unico x idunion tum.0 - Linenr 100000
+2018/11/27 11:04:56 - Sort rows.0 - Linenr 100000
+2018/11/27 11:04:57 - tabla tumores.0 - linenr 150000
+2018/11/27 11:05:00 - Select values.0 - linenr 150000
+2018/11/27 11:05:00 - unico x idunion tum.0 - Linenr 150000
+2018/11/27 11:05:00 - tabla tumores.0 - Finished reading query, closing connection.
+2018/11/27 11:05:00 - Sort rows.0 - Linenr 150000
+2018/11/27 11:05:00 - tabla tumores.0 - Finished processing (I=185701, O=0, R=0, W=185701, U=0, E=0)
+2018/11/27 11:05:00 - clean obs.0 - Finished processing (I=0, O=0, R=185701, W=185701, U=0, E=0)
+2018/11/27 11:05:01 - clean desc loc.0 - Finished processing (I=0, O=0, R=185701, W=185701, U=0, E=0)
+2018/11/27 11:05:01 - clean desc mor.0 - Finished processing (I=0, O=0, R=185701, W=185701, U=0, E=0)
+2018/11/27 11:05:01 - remove special char.0 - Finished processing (I=0, O=0, R=185701, W=185701, U=0, E=0)
+2018/11/27 11:05:01 - Select values.0 - Finished processing (I=0, O=0, R=185701, W=185701, U=0, E=0)
+2018/11/27 11:05:01 - unico x idunion tum.0 - Finished processing (I=0, O=0, R=185701, W=185691, U=0, E=0)
+2018/11/27 11:05:01 - Merge Join.0 - linenr 50000
+2018/11/27 11:05:01 - Merge Join.0 - linenr 100000
+2018/11/27 11:05:01 - Merge Join.0 - linenr 150000
+2018/11/27 11:05:01 - Sort rows 3.0 - Linenr 50000
+2018/11/27 11:05:01 - Merge Join.0 - linenr 200000
+2018/11/27 11:05:02 - Sort rows 3.0 - Linenr 100000
+2018/11/27 11:05:02 - Sort rows 3.0 - Linenr 150000
+2018/11/27 11:05:02 - Sort rows.0 - Finished processing (I=0, O=0, R=185691, W=185691, U=0, E=0)
+2018/11/27 11:05:02 - Sort rows 2.0 - Finished processing (I=0, O=0, R=266223, W=266223, U=0, E=0)
+2018/11/27 11:05:02 - Merge Join.0 - linenr 450000
+2018/11/27 11:05:02 - Merge Join.0 - Finished processing (I=0, O=0, R=451914, W=184881, U=0, E=0)
+2018/11/27 11:05:02 - Merge Join 2.0 - linenr 50000
+2018/11/27 11:05:02 - Merge Join 2.0 - linenr 150000
+2018/11/27 11:05:02 - Sort rows 5.0 - Linenr 50000
+2018/11/27 11:05:03 - Sort rows 5.0 - Linenr 100000
+2018/11/27 11:05:03 - Sort rows 5.0 - Linenr 150000
+2018/11/27 11:05:03 - Sort rows 4.0 - Finished processing (I=0, O=0, R=273780, W=273780, U=0, E=0)
+2018/11/27 11:05:03 - Sort rows 3.0 - Finished processing (I=0, O=0, R=184881, W=184881, U=0, E=0)
+2018/11/27 11:05:03 - Merge Join 2.0 - linenr 450000
+2018/11/27 11:05:03 - Merge Join 2.0 - Finished processing (I=0, O=0, R=458661, W=184853, U=0, E=0)
+2018/11/27 11:05:03 - Merge Join 3.0 - linenr 100000
+2018/11/27 11:05:03 - Merge Join 3.0 - linenr 150000
+2018/11/27 11:05:03 - Sort rows 7.0 - Linenr 50000
+2018/11/27 11:05:04 - Merge Join 3.0 - linenr 200000
+2018/11/27 11:05:04 - Merge Join 3.0 - linenr 250000
+2018/11/27 11:05:04 - Sort rows 7.0 - Linenr 100000
+2018/11/27 11:05:04 - Merge Join 3.0 - linenr 300000
+2018/11/27 11:05:04 - Sort rows 7.0 - Linenr 150000
+2018/11/27 11:05:04 - Sort rows 5.0 - Finished processing (I=0, O=0, R=184853, W=184853, U=0, E=0)
+2018/11/27 11:05:04 - Sort rows 6.0 - Finished processing (I=0, O=0, R=225158, W=225158, U=0, E=0)
+2018/11/27 11:05:04 - Merge Join 3.0 - linenr 400000
+2018/11/27 11:05:04 - Merge Join 3.0 - Finished processing (I=0, O=0, R=410011, W=169323, U=0, E=0)
+2018/11/27 11:05:05 - data bd.0 - linenr 50000
+2018/11/27 11:05:15 - si noreg es null.0 - Linenr 50000
+2018/11/27 11:05:35 - map noreg integer.0 - linenr 50000
+2018/11/27 11:05:53 - extr_fact__inci_data.0 - linenr 50000
+2018/11/27 11:05:54 - data bd.0 - linenr 100000
+2018/11/27 11:06:03 - si noreg es null.0 - Linenr 100000
+2018/11/27 11:06:21 - map noreg integer.0 - linenr 100000
+2018/11/27 11:06:39 - extr_fact__inci_data.0 - linenr 100000
+2018/11/27 11:06:39 - data bd.0 - linenr 150000
+2018/11/27 11:06:48 - Sort rows 7.0 - Finished processing (I=0, O=0, R=169323, W=169323, U=0, E=0)
+2018/11/27 11:06:49 - si noreg es null.0 - Linenr 150000
+2018/11/27 11:06:58 - data bd.0 - Finished processing (I=0, O=0, R=169323, W=169323, U=0, E=0)
+2018/11/27 11:07:08 - si noreg es null.0 - Finished processing (I=0, O=0, R=169323, W=169323, U=0, E=0)
+2018/11/27 11:07:08 - map noreg integer.0 - linenr 150000
+2018/11/27 11:07:18 - limpiar nulos.0 - Finished processing (I=0, O=0, R=169323, W=169323, U=0, E=0)
+2018/11/27 11:07:28 - map noreg integer.0 - Finished processing (I=0, O=0, R=169323, W=169323, U=0, E=0)
+2018/11/27 11:07:28 - extr_fact__inci_data.0 - linenr 150000
+2018/11/27 11:07:39 - Get fecha sistema.0 - Finished processing (I=0, O=0, R=169323, W=169323, U=0, E=0)
+2018/11/27 11:07:49 - extr_fact__inci_data.0 - Finished processing (I=169323, O=169323, R=169323, W=169323, U=0, E=0)

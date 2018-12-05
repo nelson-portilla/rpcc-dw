@@ -1,0 +1,23 @@
+2018/11/27 11:17:26 - dim_perfil - Loading transformation from XML file [file:///C:/Users/usuario/Documents/GitHub/rpcc-dw/transformaciones/extr_fact_incidencia_dperfil.ktr]
+2018/11/27 11:17:26 - dim_perfil - Using run configuration [Pentaho local]
+2018/11/27 11:17:26 - dim_perfil - Using legacy execution engine
+2018/11/27 11:17:26 - extr_fact_incidencia_dperfil - Dispatching started for transformation [extr_fact_incidencia_dperfil]
+2018/11/27 11:17:28 - extr_fact_inci_dentidad.0 - linenr 50000
+2018/11/27 11:17:28 - sort x idunion.0 - Linenr 50000
+2018/11/27 11:17:29 - extr_fact_inci_dentidad.0 - linenr 100000
+2018/11/27 11:17:30 - sort x idunion.0 - Linenr 100000
+2018/11/27 11:17:33 - extr_fact_inci_dentidad.0 - linenr 150000
+2018/11/27 11:17:33 - sort x idunion.0 - Linenr 150000
+2018/11/27 11:17:33 - extr_fact_inci_dentidad.0 - Finished reading query, closing connection.
+2018/11/27 11:17:33 - extr_fact_inci_dentidad.0 - Finished processing (I=169313, O=0, R=0, W=169313, U=0, E=0)
+2018/11/27 11:17:33 - modificar_fec_nacim.0 - Optimization level set to 9.
+2018/11/27 11:17:52 - modificar_fec_nacim.0 - linenr 50000
+2018/11/27 11:17:57 - tabla extr_fact_inci_dperfil.0 - linenr 50000
+2018/11/27 11:18:17 - modificar_fec_nacim.0 - linenr 100000
+2018/11/27 11:18:22 - tabla extr_fact_inci_dperfil.0 - linenr 100000
+2018/11/27 11:18:44 - sort x idunion.0 - Finished processing (I=0, O=0, R=169313, W=169313, U=0, E=0)
+2018/11/27 11:18:44 - modificar_fec_nacim.0 - linenr 150000
+2018/11/27 11:18:49 - edad_rango.0 - Finished processing (I=0, O=0, R=169313, W=169313, U=0, E=0)
+2018/11/27 11:18:49 - tabla extr_fact_inci_dperfil.0 - linenr 150000
+2018/11/27 11:18:55 - modificar_fec_nacim.0 - Finished processing (I=0, O=0, R=169313, W=169313, U=0, E=0)
+2018/11/27 11:19:00 - tabla extr_fact_inci_dperfil.0 - Finished processing (I=169313, O=169313, R=169313, W=169313, U=0, E=0)

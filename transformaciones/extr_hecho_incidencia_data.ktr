@@ -1028,7 +1028,7 @@
         <storage_type/>
       </meta>
       <meta>
-        <name>observaciones_clean</name>
+        <name>observaciones_cleaned</name>
         <rename>observaciones_clean</rename>
         <type>String</type>
         <length>2147483647</length>
@@ -1729,78 +1729,103 @@
     <fields>
       <field>
         <name>fecha_nacimiento</name>
+        <rename/>
       </field>
       <field>
         <name>edad</name>
+        <rename/>
       </field>
       <field>
         <name>IdUnion</name>
+        <rename/>
       </field>
       <field>
         <name>fecha_diagnostico</name>
+        <rename/>
       </field>
       <field>
         <name>cod_localizacion</name>
+        <rename/>
       </field>
       <field>
         <name>cod_metodo_diagnostico</name>
+        <rename/>
       </field>
       <field>
         <name>cod_morfologia</name>
+        <rename/>
       </field>
       <field>
         <name>comportamiento</name>
+        <rename/>
       </field>
       <field>
         <name>grado_diferenciacion</name>
+        <rename/>
       </field>
       <field>
-        <name>observaciones</name>
+        <name>observaciones_clean</name>
+        <rename/>
       </field>
       <field>
         <name>descripcion_local</name>
+        <rename/>
       </field>
       <field>
         <name>descripcion_morf</name>
+        <rename/>
       </field>
       <field>
         <name>nombre_morfologia</name>
+        <rename/>
       </field>
       <field>
         <name>nombre_metodo_diag</name>
+        <rename/>
       </field>
       <field>
         <name>nombre_estado</name>
+        <rename/>
       </field>
       <field>
         <name>nombre_comportamiento</name>
+        <rename/>
       </field>
       <field>
         <name>cod_barrio</name>
+        <rename/>
       </field>
       <field>
         <name>tipo_residencia</name>
+        <rename/>
       </field>
       <field>
         <name>cod_ciudad</name>
+        <rename/>
       </field>
       <field>
         <name>rec_estado</name>
+        <rename/>
       </field>
       <field>
         <name>rec_criterio</name>
+        <rename/>
       </field>
       <field>
         <name>fuente</name>
+        <rename/>
       </field>
       <field>
         <name>estado_vital</name>
+        <rename/>
       </field>
       <field>
         <name>nombrefuente</name>
+        <rename/>
       </field>
       <field>
         <name>sexo</name>
+        <rename/>
       </field>
       <field>
         <name>NoReg</name>
@@ -1890,8 +1915,8 @@
         <update>Y</update>
       </value>
       <value>
-        <name>observaciones</name>
-        <rename>observaciones</rename>
+        <name>observaciones_clean</name>
+        <rename>observaciones_clean</rename>
         <update>Y</update>
       </value>
       <value>
@@ -2246,8 +2271,8 @@
         <storage_type/>
       </meta>
       <meta>
-        <name>observaciones</name>
-        <rename>observaciones</rename>
+        <name>observaciones_clean</name>
+        <rename>observaciones_clean</rename>
         <type>String</type>
         <length>2147483647</length>
         <precision>-2</precision>
@@ -2899,7 +2924,7 @@ order by pac."IdUnion",ult."Ult" desc
     </partitioning>
     <fields>
       <field>
-        <in_stream_name>observaciones_clean</in_stream_name>
+        <in_stream_name>observaciones_cleaned</in_stream_name>
         <out_stream_name/>
         <trim_type>both</trim_type>
         <lower_upper>upper</lower_upper>
@@ -2938,7 +2963,7 @@ order by pac."IdUnion",ult."Ult" desc
         <remove_special_characters>cr</remove_special_characters>
       </field>
       <field>
-        <in_stream_name>observaciones_clean</in_stream_name>
+        <in_stream_name>observaciones_cleaned</in_stream_name>
         <out_stream_name/>
         <trim_type>both</trim_type>
         <lower_upper>upper</lower_upper>
@@ -2977,7 +3002,7 @@ order by pac."IdUnion",ult."Ult" desc
         <remove_special_characters>lf</remove_special_characters>
       </field>
       <field>
-        <in_stream_name>observaciones_clean</in_stream_name>
+        <in_stream_name>observaciones_cleaned</in_stream_name>
         <out_stream_name/>
         <trim_type>both</trim_type>
         <lower_upper>upper</lower_upper>
@@ -3016,7 +3041,7 @@ order by pac."IdUnion",ult."Ult" desc
         <remove_special_characters>crlf</remove_special_characters>
       </field>
       <field>
-        <in_stream_name>observaciones_clean</in_stream_name>
+        <in_stream_name>observaciones_cleaned</in_stream_name>
         <out_stream_name/>
         <trim_type>both</trim_type>
         <lower_upper>upper</lower_upper>
@@ -3178,7 +3203,7 @@ order by pac."IdUnion",ult."Ult" desc
     <fields>
       <field>
         <in_stream_name>Observaciones</in_stream_name>
-        <out_stream_name>observaciones_clean</out_stream_name>
+        <out_stream_name>observaciones_cleaned</out_stream_name>
         <use_regex>yes</use_regex>
         <replace_string>\p{Punct}</replace_string>
         <replace_by_string/>

@@ -1017,7 +1017,7 @@ FROM dim_fecha
 , cod_morfologia
 , comportamiento
 , grado_diferenciacion
-, observaciones
+, observaciones_clean as observaciones
 , descripcion_local
 , descripcion_morf
 , nombre_morfologia

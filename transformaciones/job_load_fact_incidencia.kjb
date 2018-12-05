@@ -707,7 +707,7 @@
       <yloc>368</yloc>
     </entry>
     <entry>
-      <name>Write To Log delete 2</name>
+      <name>Write To Log success</name>
       <description/>
       <type>WRITE_TO_LOG</type>
       <logmessage>Proceso terminado exitosamente
@@ -841,7 +841,7 @@
     </hop>
     <hop>
       <from>Success</from>
-      <to>Write To Log delete 2</to>
+      <to>Write To Log success</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
