@@ -488,11 +488,6 @@
   </connection>
   <order>
     <hop>
-      <from>Add sequence</from>
-      <to>tabla_extr_rips</to>
-      <enabled>N</enabled>
-    </hop>
-    <hop>
       <from>Select values</from>
       <to>Add sequence</to>
       <enabled>Y</enabled>
@@ -783,7 +778,6 @@
     <fields>
       <field>
         <name>id_st_sivigila_adu</name>
-        <rename/>
       </field>
       <field>
         <name>cod_eve</name>
@@ -799,7 +793,6 @@
       </field>
       <field>
         <name>cod_pre</name>
-        <rename/>
       </field>
       <field>
         <name>pri_nom</name>
@@ -827,23 +820,18 @@
       </field>
       <field>
         <name>edad</name>
-        <rename/>
       </field>
       <field>
         <name>sexo</name>
-        <rename/>
       </field>
       <field>
         <name>cod_dpto_o</name>
-        <rename/>
       </field>
       <field>
         <name>cod_mun_o</name>
-        <rename/>
       </field>
       <field>
         <name>area</name>
-        <rename/>
       </field>
       <field>
         <name>bar_ver</name>
@@ -855,7 +843,6 @@
       </field>
       <field>
         <name>ocupacion</name>
-        <rename/>
       </field>
       <field>
         <name>tip_ss</name>
@@ -879,7 +866,6 @@
       </field>
       <field>
         <name>telefono</name>
-        <rename/>
       </field>
       <field>
         <name>fecha_nto</name>
@@ -891,7 +877,6 @@
       </field>
       <field>
         <name>nit_upgd</name>
-        <rename/>
       </field>
       <field>
         <name>tipo_cance</name>
@@ -903,7 +888,6 @@
       </field>
       <field>
         <name>nom_upgd</name>
-        <rename/>
       </field>
       <field>
         <name>ndep_proce</name>
@@ -927,7 +911,6 @@
       </field>
       <field>
         <name>ruta</name>
-        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -940,49 +923,6 @@
     </remotesteps>
     <GUI>
       <xloc>370</xloc>
-      <yloc>104</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>tabla_extr_rips</name>
-    <type>TableOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>localhost</connection>
-    <schema>public</schema>
-    <table>extr_sivigila_adu</table>
-    <commit>1000</commit>
-    <truncate>N</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>N</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
-    <fields>
-    </fields>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>658</xloc>
       <yloc>104</yloc>
       <draw>Y</draw>
     </GUI>
