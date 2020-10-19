@@ -498,14 +498,14 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Table input</from>
+      <from>Table st_sivigila_inf</from>
       <to>Sort rows</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Unique rows</from>
       <to>Insert / Update</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Unique rows</from>
@@ -984,6 +984,14 @@
         <collator_strength>0</collator_strength>
         <presorted>N</presorted>
       </field>
+      <field>
+        <name>fec_not</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
     </fields>
     <cluster_schema/>
     <remotesteps>
@@ -1040,7 +1048,7 @@
     </GUI>
   </step>
   <step>
-    <name>Table input</name>
+    <name>Table st_sivigila_inf</name>
     <type>TableInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -1052,43 +1060,7 @@
     </partitioning>
     <connection>localhost</connection>
     <sql>SELECT
-  id_st_sivigila_inf
-, cod_eve
-, fec_not
-, año
-, cod_pre
-, pri_nom
-, seg_nom
-, pri_ape
-, seg_ape
-, tip_ide
-, num_ide
-, edad
-, sexo
-, cod_dpto_o
-, cod_mun_o
-, area
-, bar_ver
-, dir_res
-, ocupacion
-, tip_ss
-, cod_ase
-, cod_dpto_r
-, cod_mun_r
-, fec_def
-, telefono
-, fecha_nto
-, cer_def
-, nit_upgd
-, nom_eve
-, nom_upgd
-, ndep_proce
-, nmun_proce
-, ndep_resi
-, nmun_resi
-, nreg
-, ruta
-, tipo_ca
+*
 FROM st_sivigila_inf
 </sql>
     <limit>0</limit>
@@ -1129,6 +1101,10 @@ FROM st_sivigila_inf
         <name>num_ide</name>
         <case_insensitive>N</case_insensitive>
       </field>
+      <field>
+        <name>año</name>
+        <case_insensitive>N</case_insensitive>
+      </field>
     </fields>
     <cluster_schema/>
     <remotesteps>
@@ -1147,7 +1123,7 @@ FROM st_sivigila_inf
     <error>
       <source_step>Unique rows</source_step>
       <target_step>Insert / Update</target_step>
-      <is_enabled>Y</is_enabled>
+      <is_enabled>N</is_enabled>
       <nr_valuename/>
       <descriptions_valuename/>
       <fields_valuename/>

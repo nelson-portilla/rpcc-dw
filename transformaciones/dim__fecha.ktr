@@ -492,7 +492,7 @@
     <server>localhost</server>
     <type>POSTGRESQL</type>
     <access>Native</access>
-    <database>bodegarpcc</database>
+    <database>dwlab</database>
     <port>5432</port>
     <username>postgres</username>
     <password>Encrypted 2be98afc86ac99788b816a071d297a5d5</password>
@@ -1188,7 +1188,8 @@ var cal = Calendar.getInstance();
 cal.set(year, month-1, day);
 var d = cal.getTime();
 
-var hoy = new java.util.Date();
+//var hoy = new java.util.Date();
+var hoy =  new java.util.Date(2021,12,31);
 
 // generate labels for months and weeks of day in spanish
 var day_of_week_short_label_eng = new SimpleDateFormat("E", new Locale("es","ES")).format(d);
